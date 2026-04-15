@@ -63,6 +63,43 @@ namespace TESTUCP1PABD
 
         private void btnView_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Koneksi();
+                conn.Open();
+
+                string query =
+                "SELECT " +
+                "p.PengajuanID, " +
+                "p.NIM, " +
+                "m.NamaMahasiswa, " +
+                "d.NamaDosen, " +
+                "j.NamaJenis, " +
+                "p.NamaLomba, " +
+                "p.Penyelenggara, " +
+                "p.TanggalPelaksanaan, " +
+                "p.Status " +
+                "FROM PengajuanLomba p " +
+                "JOIN Mahasiswa m ON p.NIM = m.NIM " +
+                "JOIN Dosen d ON p.NIDN = d.NIDN " +
+                "JOIN JenisLomba j ON p.JenisID = j.JenisID";
+
+                cmd = new SqlCommand(query, conn);
+
+                SqlDataReader reader =
+                    cmd.ExecuteReader();
+
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+
+                dataGridView1.DataSource = dt;
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
