@@ -16,6 +16,8 @@ namespace TESTUCP1PABD
         SqlConnection conn;
         SqlCommand cmd;
 
+        bool isConnected = false;
+
         private void Koneksi()
         {
             conn = new SqlConnection(
@@ -32,6 +34,26 @@ namespace TESTUCP1PABD
         {
             try
             {
+             
+                if (!isConnected)
+                {
+                    MessageBox.Show("Silakan koneksikan database terlebih dahulu!");
+                    return;
+                }
+
+               
+                if (txtUsername.Text == "")
+                {
+                    MessageBox.Show("Username tidak boleh kosong!");
+                    return;
+                }
+
+                if (txtPassword.Text == "")
+                {
+                    MessageBox.Show("Password tidak boleh kosong!");
+                    return;
+                }
+
                 Koneksi();
                 conn.Open();
 
@@ -41,11 +63,8 @@ namespace TESTUCP1PABD
 
                 cmd = new SqlCommand(query, conn);
 
-                cmd.Parameters.AddWithValue("@Username",
-                    txtUsername.Text);
-
-                cmd.Parameters.AddWithValue("@Password",
-                    txtPassword.Text);
+                cmd.Parameters.AddWithValue("@Username", txtUsername.Text);
+                cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
 
                 object role = cmd.ExecuteScalar();
 
@@ -59,18 +78,15 @@ namespace TESTUCP1PABD
 
                     if (userRole == "Mahasiswa")
                     {
-                        Mahasiswa mhs = new Mahasiswa();
-                        mhs.Show();
+                        new Mahasiswa().Show();
                     }
                     else if (userRole == "Dosen")
                     {
-                        Dosen dosen = new Dosen();
-                        dosen.Show();
+                        new Dosen().Show();
                     }
                     else if (userRole == "Admin")
                     {
-                        Admin1 admin = new Admin1();
-                        admin.Show();
+                        new Admin1().Show();
                     }
                 }
                 else
@@ -100,6 +116,34 @@ namespace TESTUCP1PABD
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Koneksi(); 
+
+                conn.Open();
+
+                MessageBox.Show("Koneksi ke database berhasil!");
+
+                lblStatus.Text = "Connected";
+
+                isConnected = true; 
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Koneksi gagal: " + ex.Message);
+                lblStatus.Text = "Failed";
+            }
+        }
+
+        private void lblStatus_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
