@@ -30,7 +30,61 @@ namespace TESTUCP1PABD
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-        
+            try
+            {
+                Koneksi();
+                conn.Open();
+
+                string query =
+                "SELECT Role FROM Users " +
+                "WHERE Username=@Username AND Password=@Password";
+
+                cmd = new SqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@Username",
+                    txtUsername.Text);
+
+                cmd.Parameters.AddWithValue("@Password",
+                    txtPassword.Text);
+
+                object role = cmd.ExecuteScalar();
+
+                if (role != null)
+                {
+                    string userRole = role.ToString();
+
+                    MessageBox.Show("Login Berhasil sebagai " + userRole);
+
+                    this.Hide();
+
+                    if (userRole == "Mahasiswa")
+                    {
+                        Mahasiswa mhs = new Mahasiswa();
+                        mhs.Show();
+                    }
+                    else if (userRole == "Dosen")
+                    {
+                        Dosen dosen = new Dosen();
+                        dosen.Show();
+                    }
+                    else if (userRole == "Admin")
+                    {
+                        Admin1 admin = new Admin1();
+                        admin.Show();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Username atau Password salah");
+                }
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
