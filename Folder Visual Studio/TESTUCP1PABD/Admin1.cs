@@ -41,7 +41,10 @@ namespace TESTUCP1PABD
 
         private void btnPage_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+
+            Admin2 dosenPage = new Admin2();
+            dosenPage.Show();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
