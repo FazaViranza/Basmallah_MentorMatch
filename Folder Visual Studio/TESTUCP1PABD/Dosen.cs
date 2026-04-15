@@ -38,7 +38,17 @@ namespace TESTUCP1PABD
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row =
+                    dataGridView1.Rows[e.RowIndex];
+
+                txtNIDN.Text =
+                    row.Cells["NIDN"].Value.ToString();
+
+                comboBoxStatus.Text =
+                    row.Cells["Status"].Value.ToString();
+            }
         }
 
 
