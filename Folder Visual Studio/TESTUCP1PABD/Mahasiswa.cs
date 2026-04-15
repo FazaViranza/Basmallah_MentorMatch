@@ -222,7 +222,30 @@ namespace TESTUCP1PABD
 
         void LoadDosen()
         {
-            
+            try
+            {
+                Koneksi();
+                conn.Open();
+
+                string query =
+                "SELECT NIDN, NamaDosen FROM Dosen WHERE Status='Available'";
+
+                SqlDataAdapter da =
+                    new SqlDataAdapter(query, conn);
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                comboBoxDosen.DataSource = dt;
+                comboBoxDosen.DisplayMember = "NamaDosen";
+                comboBoxDosen.ValueMember = "NIDN";
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         void LoadJenis()
