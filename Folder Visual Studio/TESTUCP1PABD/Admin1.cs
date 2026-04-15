@@ -49,7 +49,39 @@ namespace TESTUCP1PABD
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                if (MessageBox.Show(
+                    "Yakin ingin menghapus data?",
+                    "Konfirmasi",
+                    MessageBoxButtons.YesNo)
+                    == DialogResult.Yes)
+                {
+                    Koneksi();
+                    conn.Open();
+
+                    string query =
+                    "DELETE FROM PengajuanLomba WHERE PengajuanID=@ID";
+
+                    cmd = new SqlCommand(query, conn);
+
+                    cmd.Parameters.AddWithValue(
+                        "@ID",
+                        txtID.Text);
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("ID yang dihapus: " + txtID.Text);
+
+                    conn.Close();
+
+                    btnRead_Click(sender, e);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnRead_Click(object sender, EventArgs e)
