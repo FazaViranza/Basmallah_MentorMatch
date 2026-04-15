@@ -59,7 +59,30 @@ namespace TESTUCP1PABD
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                Koneksi();
+                conn.Open();
+
+                string query =
+                "SELECT * FROM PengajuanLomba";
+
+                cmd = new SqlCommand(query, conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+
+                dataGridView1.DataSource = dt;
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
