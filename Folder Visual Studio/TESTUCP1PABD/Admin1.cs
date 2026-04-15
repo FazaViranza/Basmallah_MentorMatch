@@ -115,7 +115,11 @@ namespace TESTUCP1PABD
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+
+            Form1 login = new Form1();
+            login.Show();
+
         }
 
         private void txtID_TextChanged(object sender, EventArgs e)
@@ -125,12 +129,40 @@ namespace TESTUCP1PABD
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row =
+                    dataGridView1.Rows[e.RowIndex];
+
+                txtID.Text =
+                    row.Cells["PengajuanID"].Value.ToString();
+            }
         }
 
         void HitungTotal()
         {
-            
+            try
+            {
+                Koneksi();
+                conn.Open();
+
+                string query =
+                "SELECT COUNT(*) FROM PengajuanLomba";
+
+                cmd = new SqlCommand(query, conn);
+
+                int total =
+                    (int)cmd.ExecuteScalar();
+
+                lblTotal.Text =
+                    "Total Pengajuan: " + total;
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
