@@ -27,7 +27,13 @@ namespace TESTUCP1PABD
         {
             InitializeComponent();
 
-            
+            comboBoxStatus.Items.Clear();
+
+            comboBoxStatus.Items.Add("Approved");
+            comboBoxStatus.Items.Add("Rejected");
+            comboBoxStatus.Items.Add("Pending");
+
+            comboBoxStatus.SelectedIndex = 0;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
