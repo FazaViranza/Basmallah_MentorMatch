@@ -87,7 +87,36 @@ namespace TESTUCP1PABD
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                Koneksi();
+                conn.Open();
+
+                string query =
+                "UPDATE PengajuanLomba " +
+                "SET Status=@Status " +
+                "WHERE NIDN=@NIDN";
+
+                cmd = new SqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@Status",
+                    comboBoxStatus.Text);
+
+                cmd.Parameters.AddWithValue("@NIDN",
+                    txtNIDN.Text);
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Status berhasil diupdate");
+
+                conn.Close();
+
+                btnRead_Click(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
