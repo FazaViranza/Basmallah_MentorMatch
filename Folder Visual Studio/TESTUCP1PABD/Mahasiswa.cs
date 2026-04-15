@@ -105,7 +105,75 @@ namespace TESTUCP1PABD
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                if (txtNIM.Text == "")
+                {
+                    MessageBox.Show("NIM tidak boleh kosong!");
+                    return;
+                }
+
+                if (txtNamaLomba.Text == "")
+                {
+                    MessageBox.Show("Nama lomba tidak boleh kosong!");
+                    return;
+                }
+
+                if (txtPenyelenggara.Text == "")
+                {
+                    MessageBox.Show("Penyelenggara tidak boleh kosong!");
+                    return;
+                }
+
+                if (txtNIDN.Text == "")
+                {
+                    MessageBox.Show("Pilih dosen terlebih dahulu!");
+                    return;
+                }
+
+                Koneksi();
+                conn.Open();
+
+                cmd.Parameters.AddWithValue("@Jenis",
+                    comboBoxJenisMabar.SelectedValue);
+
+                string query =
+                "INSERT INTO PengajuanLomba " +
+                "(NIM,NIDN,JenisID,NamaLomba,Penyelenggara,TanggalPelaksanaan,Status) " +
+                "VALUES (@NIM,@NIDN,@Jenis,@Nama,@Penyelenggara,@Tanggal,'Pending')";
+
+                cmd = new SqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@NIM",
+                    txtNIM.Text);
+
+                cmd.Parameters.AddWithValue("@NIDN",
+                    txtNIDN.Text);
+
+                cmd.Parameters.AddWithValue("@Jenis",
+                    comboBoxJenisMabar.SelectedValue);
+
+                cmd.Parameters.AddWithValue("@Nama",
+                    txtNamaLomba.Text);
+
+                cmd.Parameters.AddWithValue("@Penyelenggara",
+                    txtPenyelenggara.Text);
+
+                cmd.Parameters.AddWithValue("@Tanggal",
+                    dateTimePickerTanggal.Value);
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Data berhasil disimpan");
+
+                conn.Close();
+
+                btnView_Click(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
