@@ -213,7 +213,11 @@ namespace TESTUCP1PABD
 
         private void comboBoxDosen_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if (comboBoxDosen.SelectedValue != null)
+            {
+                txtNIDN.Text =
+                    comboBoxDosen.SelectedValue.ToString();
+            }
         }
 
         void LoadDosen()
