@@ -1,0 +1,14 @@
+D:\PABD\Basmallah_MentorMatch\Folder Visual Studio\TESTUCP1PABD\obj\Debug\TESTUCP1PABD.csproj.AssemblyReference.cache
+D:\PABD\Basmallah_MentorMatch\Folder Visual Studio\TESTUCP1PABD\obj\Debug\TESTUCP1PABD.Admin1.resources
+D:\PABD\Basmallah_MentorMatch\Folder Visual Studio\TESTUCP1PABD\obj\Debug\TESTUCP1PABD.Admin2.resources
+D:\PABD\Basmallah_MentorMatch\Folder Visual Studio\TESTUCP1PABD\obj\Debug\TESTUCP1PABD.Dosen.resources
+D:\PABD\Basmallah_MentorMatch\Folder Visual Studio\TESTUCP1PABD\obj\Debug\TESTUCP1PABD.Form1.resources
+D:\PABD\Basmallah_MentorMatch\Folder Visual Studio\TESTUCP1PABD\obj\Debug\TESTUCP1PABD.Mahasiswa.resources
+D:\PABD\Basmallah_MentorMatch\Folder Visual Studio\TESTUCP1PABD\obj\Debug\TESTUCP1PABD.Properties.Resources.resources
+D:\PABD\Basmallah_MentorMatch\Folder Visual Studio\TESTUCP1PABD\obj\Debug\TESTUCP1PABD.csproj.GenerateResource.cache
+D:\PABD\Basmallah_MentorMatch\Folder Visual Studio\TESTUCP1PABD\obj\Debug\TESTUCP1PABD.csproj.CoreCompileInputs.cache
+D:\PABD\Basmallah_MentorMatch\Folder Visual Studio\TESTUCP1PABD\bin\Debug\TESTUCP1PABD.exe.config
+D:\PABD\Basmallah_MentorMatch\Folder Visual Studio\TESTUCP1PABD\bin\Debug\TESTUCP1PABD.exe
+D:\PABD\Basmallah_MentorMatch\Folder Visual Studio\TESTUCP1PABD\bin\Debug\TESTUCP1PABD.pdb
+D:\PABD\Basmallah_MentorMatch\Folder Visual Studio\TESTUCP1PABD\obj\Debug\TESTUCP1PABD.exe
+D:\PABD\Basmallah_MentorMatch\Folder Visual Studio\TESTUCP1PABD\obj\Debug\TESTUCP1PABD.pdb
