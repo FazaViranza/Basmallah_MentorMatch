@@ -187,7 +187,28 @@ namespace TESTUCP1PABD
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row =
+                    dataGridView1.Rows[e.RowIndex];
+
+                txtNIM.Text =
+                    row.Cells["NIM"].Value.ToString();
+
+                comboBoxJenisMabar.SelectedValue =
+                    row.Cells["JenisID"].Value;
+
+                txtNamaLomba.Text =
+                    row.Cells["NamaLomba"].Value.ToString();
+
+                txtPenyelenggara.Text =
+                    row.Cells["Penyelenggara"].Value.ToString();
+
+                dateTimePickerTanggal.Value =
+                    Convert.ToDateTime(
+                        row.Cells["TanggalPelaksanaan"].Value);
+            }
+
         }
 
         private void comboBoxDosen_SelectedIndexChanged(object sender, EventArgs e)
