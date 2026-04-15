@@ -29,7 +29,14 @@ namespace TESTUCP1PABD
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row =
+                    dataGridView1.Rows[e.RowIndex];
+
+                txtID.Text =
+                    row.Cells["PengajuanID"].Value.ToString();
+            }
         }
 
         private void btnPage_Click(object sender, EventArgs e)
