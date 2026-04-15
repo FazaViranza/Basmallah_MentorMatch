@@ -12,7 +12,7 @@ using System.Windows.Forms.VisualStyles;
 
 namespace TESTUCP1PABD
 {
-    public partial class Mahasiswa: Form
+    public partial class Mahasiswa : Form
     {
         SqlConnection conn;
         SqlCommand cmd;
@@ -30,8 +30,8 @@ namespace TESTUCP1PABD
 
             txtNIDN.ReadOnly = true;
 
-            LoadJenis();  
-            LoadDosen();   
+            LoadJenis();
+
         }
 
         private void txtNIM_TextChanged(object sender, EventArgs e)
@@ -42,7 +42,13 @@ namespace TESTUCP1PABD
 
         private void comboBoxJenisMabar_SelectedIndexChanged(object sender, EventArgs e)
         {
+            comboBoxDosen.DataSource = null;
+            txtNIDN.Clear();
 
+            if (comboBoxJenisMabar.Text != "")
+            {
+                LoadDosenByJenis(comboBoxJenisMabar.Text);
+            }
         }
 
         private void txtNamaLomba_TextChanged(object sender, EventArgs e)
@@ -128,6 +134,12 @@ namespace TESTUCP1PABD
                 if (txtNIDN.Text == "")
                 {
                     MessageBox.Show("Pilih dosen terlebih dahulu!");
+                    return;
+                }
+
+                if (comboBoxDosen.SelectedValue == null)
+                {
+                    MessageBox.Show("Tidak ada dosen tersedia untuk jenis ini!");
                     return;
                 }
 
@@ -266,6 +278,37 @@ namespace TESTUCP1PABD
                 comboBoxJenisMabar.DataSource = dt;
                 comboBoxJenisMabar.DisplayMember = "NamaJenis";
                 comboBoxJenisMabar.ValueMember = "JenisID";
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        void LoadDosenByJenis(string jenis)
+        {
+            try
+            {
+                Koneksi();
+                conn.Open();
+
+                string query =
+                "SELECT NIDN, NamaDosen FROM Dosen " +
+                "WHERE Status='Available' AND Jenis=@jenis";
+
+                SqlDataAdapter da =
+                    new SqlDataAdapter(query, conn);
+
+                da.SelectCommand.Parameters.AddWithValue("@jenis", jenis);
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                comboBoxDosen.DataSource = dt;
+                comboBoxDosen.DisplayMember = "NamaDosen";
+                comboBoxDosen.ValueMember = "NIDN";
 
                 conn.Close();
             }
