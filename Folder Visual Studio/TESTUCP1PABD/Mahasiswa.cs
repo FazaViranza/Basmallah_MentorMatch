@@ -250,7 +250,29 @@ namespace TESTUCP1PABD
 
         void LoadJenis()
         {
-            
+            try
+            {
+                Koneksi();
+                conn.Open();
+
+                string query = "SELECT * FROM JenisLomba";
+
+                SqlDataAdapter da =
+                    new SqlDataAdapter(query, conn);
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                comboBoxJenisMabar.DataSource = dt;
+                comboBoxJenisMabar.DisplayMember = "NamaJenis";
+                comboBoxJenisMabar.ValueMember = "JenisID";
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
