@@ -171,15 +171,11 @@ namespace TESTUCP1PABD
                 Koneksi();
                 conn.Open();
 
-                cmd = new SqlCommand("sp_SearchDosen", conn);
-
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@Jenis",
-                    comboBoxSearch.Text);
+                string query =
+                "SELECT * FROM vw_Dosen";
 
                 SqlDataAdapter da =
-                    new SqlDataAdapter(cmd);
+                    new SqlDataAdapter(query, conn);
 
                 DataTable dt = new DataTable();
                 da.Fill(dt);
