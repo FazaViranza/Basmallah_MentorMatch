@@ -71,11 +71,9 @@ namespace TESTUCP1PABD
 
                 string code = GenerateCode();
 
-                string query =
-                "INSERT INTO Mahasiswa (NIM, NamaMahasiswa, Prodi, Email, VerificationCode, Status) " +
-                "VALUES (@NIM,@Nama,@Prodi,@Email,@Code,'Pending')";
+                cmd = new SqlCommand("sp_RegisterMahasiswa", conn);
 
-                cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@NIM", txtNIM.Text);
                 cmd.Parameters.AddWithValue("@Nama", txtNama.Text);
