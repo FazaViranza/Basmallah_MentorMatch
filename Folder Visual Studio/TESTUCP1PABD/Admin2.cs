@@ -83,15 +83,11 @@ namespace TESTUCP1PABD
                 Koneksi();
                 conn.Open();
 
-                string query =
-                "DELETE FROM Dosen " +
-                "WHERE NIDN=@NIDN";
+                cmd = new SqlCommand("sp_DeleteDosen", conn);
 
-                cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue(
-                    "@NIDN",
-                    txtNIDN.Text);
+                cmd.Parameters.AddWithValue("@NIDN", txtNIDN.Text);
 
                 cmd.ExecuteNonQuery();
 
