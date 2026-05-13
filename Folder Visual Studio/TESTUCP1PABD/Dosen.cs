@@ -15,6 +15,7 @@ namespace TESTUCP1PABD
     {
         SqlConnection conn;
         SqlCommand cmd;
+        BindingSource bs = new BindingSource();
 
         // KONEKSI DATABASE
         private void Koneksi()
@@ -65,16 +66,18 @@ namespace TESTUCP1PABD
                 conn.Open();
 
                 string query =
-                "SELECT * FROM PengajuanLomba";
+                "SELECT * FROM vw_PengajuanLomba";
 
-                cmd = new SqlCommand(query, conn);
-
-                SqlDataReader reader = cmd.ExecuteReader();
+                SqlDataAdapter da =
+                    new SqlDataAdapter(query, conn);
 
                 DataTable dt = new DataTable();
-                dt.Load(reader);
+                da.Fill(dt);
 
-                dataGridView1.DataSource = dt;
+                bs.DataSource = dt;
+
+                dataGridView1.DataSource = bs;
+                bindingNavigator1.BindingSource = bs;
 
                 conn.Close();
             }
