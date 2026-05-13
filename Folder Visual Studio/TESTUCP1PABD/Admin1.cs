@@ -164,5 +164,13 @@ namespace TESTUCP1PABD
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnMahasiswa_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            AdminMahasiswa mhs = new AdminMahasiswa();
+            mhs.Show();
+        }
     }
 }

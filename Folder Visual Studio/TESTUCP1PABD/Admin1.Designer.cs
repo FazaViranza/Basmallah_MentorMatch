@@ -35,6 +35,7 @@
             this.btnPage = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.btnMahasiswa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(486, 319);
+            this.btnLogout.Location = new System.Drawing.Point(361, 372);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(75, 23);
             this.btnLogout.TabIndex = 1;
@@ -60,7 +61,7 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(253, 319);
+            this.btnRead.Location = new System.Drawing.Point(486, 316);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(75, 23);
             this.btnRead.TabIndex = 2;
@@ -105,11 +106,22 @@
             this.lblTotal.TabIndex = 6;
             this.lblTotal.Text = "Total Pengajuan :";
             // 
+            // btnMahasiswa
+            // 
+            this.btnMahasiswa.Location = new System.Drawing.Point(242, 316);
+            this.btnMahasiswa.Name = "btnMahasiswa";
+            this.btnMahasiswa.Size = new System.Drawing.Size(98, 23);
+            this.btnMahasiswa.TabIndex = 7;
+            this.btnMahasiswa.Text = "Page Mahasiswa";
+            this.btnMahasiswa.UseVisualStyleBackColor = true;
+            this.btnMahasiswa.Click += new System.EventHandler(this.btnMahasiswa_Click);
+            // 
             // Admin1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnMahasiswa);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.btnPage);
@@ -134,5 +146,6 @@
         private System.Windows.Forms.Button btnPage;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Button btnMahasiswa;
     }
 }

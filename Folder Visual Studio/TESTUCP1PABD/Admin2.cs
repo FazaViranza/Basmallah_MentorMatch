@@ -15,6 +15,7 @@ namespace TESTUCP1PABD
     {
         SqlConnection conn;
         SqlCommand cmd;
+        BindingSource bs = new BindingSource();
 
         private void Koneksi()
         {
@@ -193,6 +194,7 @@ namespace TESTUCP1PABD
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
         private void btnRead_Click(object sender, EventArgs e)
@@ -334,6 +336,33 @@ namespace TESTUCP1PABD
                 dataGridView1.DataSource = dt;
 
                 conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnTestInjection_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Koneksi();
+                conn.Open();
+
+                string query =
+                "UPDATE Dosen SET NamaDosen='HACKED' WHERE NIDN='" +
+                txtNIDN.Text + "'";
+
+                cmd = new SqlCommand(query, conn);
+
+                int result = cmd.ExecuteNonQuery();
+
+                MessageBox.Show(result + " data berhasil diubah!");
+
+                conn.Close();
+
+                btnRead_Click(sender, e);
             }
             catch (Exception ex)
             {

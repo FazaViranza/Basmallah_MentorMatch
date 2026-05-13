@@ -36,6 +36,7 @@
             this.btnConnect = new System.Windows.Forms.Button();
             this.lblStatus = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtUsername
@@ -111,11 +112,22 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "status ke database :";
             // 
+            // btnRegister
+            // 
+            this.btnRegister.Location = new System.Drawing.Point(346, 357);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnRegister.TabIndex = 8;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnConnect);
@@ -141,6 +153,7 @@
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnRegister;
     }
 }
 

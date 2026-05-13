@@ -143,11 +143,18 @@ namespace TESTUCP1PABD
                     return;
                 }
 
+                // 🔥 TAMBAH DI SINI
+                if (dateTimePickerTanggal.Value.Date < DateTime.Now.Date)
+                {
+                    MessageBox.Show("Tanggal pelaksanaan tidak boleh di masa lalu!");
+                    return;
+                }
+
+                // =====================
+                // BARU MASUK DATABASE
+                // =====================
                 Koneksi();
                 conn.Open();
-
-                cmd.Parameters.AddWithValue("@Jenis",
-                    comboBoxJenisMabar.SelectedValue);
 
                 string query =
                 "INSERT INTO PengajuanLomba " +
@@ -156,23 +163,12 @@ namespace TESTUCP1PABD
 
                 cmd = new SqlCommand(query, conn);
 
-                cmd.Parameters.AddWithValue("@NIM",
-                    txtNIM.Text);
-
-                cmd.Parameters.AddWithValue("@NIDN",
-                    txtNIDN.Text);
-
-                cmd.Parameters.AddWithValue("@Jenis",
-                    comboBoxJenisMabar.SelectedValue);
-
-                cmd.Parameters.AddWithValue("@Nama",
-                    txtNamaLomba.Text);
-
-                cmd.Parameters.AddWithValue("@Penyelenggara",
-                    txtPenyelenggara.Text);
-
-                cmd.Parameters.AddWithValue("@Tanggal",
-                    dateTimePickerTanggal.Value);
+                cmd.Parameters.AddWithValue("@NIM", txtNIM.Text);
+                cmd.Parameters.AddWithValue("@NIDN", txtNIDN.Text);
+                cmd.Parameters.AddWithValue("@Jenis", comboBoxJenisMabar.SelectedValue);
+                cmd.Parameters.AddWithValue("@Nama", txtNamaLomba.Text);
+                cmd.Parameters.AddWithValue("@Penyelenggara", txtPenyelenggara.Text);
+                cmd.Parameters.AddWithValue("@Tanggal", dateTimePickerTanggal.Value);
 
                 cmd.ExecuteNonQuery();
 
