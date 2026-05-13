@@ -145,19 +145,16 @@ namespace TESTUCP1PABD
                 Koneksi();
                 conn.Open();
 
-                string query =
-                "INSERT INTO PengajuanLomba " +
-                "(NIM,NIDN,JenisID,NamaLomba,Penyelenggara,TanggalPelaksanaan,Status) " +
-                "VALUES (@NIM,@NIDN,@Jenis,@Nama,@Penyelenggara,@Tanggal,'Pending')";
+                cmd = new SqlCommand("sp_SubmitPengajuan", conn);
 
-                cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@NIM", txtNIM.Text);
                 cmd.Parameters.AddWithValue("@NIDN", txtNIDN.Text);
-                cmd.Parameters.AddWithValue("@Jenis", comboBoxJenisMabar.SelectedValue);
-                cmd.Parameters.AddWithValue("@Nama", txtNamaLomba.Text);
+                cmd.Parameters.AddWithValue("@JenisID", comboBoxJenisMabar.SelectedValue);
+                cmd.Parameters.AddWithValue("@NamaLomba", txtNamaLomba.Text);
                 cmd.Parameters.AddWithValue("@Penyelenggara", txtPenyelenggara.Text);
-                cmd.Parameters.AddWithValue("@Tanggal", dateTimePickerTanggal.Value);
+                cmd.Parameters.AddWithValue("@TanggalPelaksanaan", dateTimePickerTanggal.Value);
 
                 cmd.ExecuteNonQuery();
 
