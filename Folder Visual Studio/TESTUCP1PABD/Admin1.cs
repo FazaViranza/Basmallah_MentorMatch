@@ -152,10 +152,12 @@ namespace TESTUCP1PABD
                 Koneksi();
                 conn.Open();
 
-                string query =
-                "SELECT COUNT(*) FROM PengajuanLomba";
+                cmd = new SqlCommand(
+                    "sp_TotalPengajuan",
+                    conn);
 
-                cmd = new SqlCommand(query, conn);
+                cmd.CommandType =
+                    CommandType.StoredProcedure;
 
                 int total =
                     (int)cmd.ExecuteScalar();
