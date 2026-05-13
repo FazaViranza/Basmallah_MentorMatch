@@ -109,11 +109,9 @@ namespace TESTUCP1PABD
                 Koneksi();
                 conn.Open();
 
-                string query =
-                "UPDATE Mahasiswa SET Status='Active' " +
-                "WHERE NIM=@NIM AND VerificationCode=@Code";
+                cmd = new SqlCommand("sp_VerifyMahasiswa", conn);
 
-                cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@NIM", txtNIM.Text);
                 cmd.Parameters.AddWithValue("@Code", txtCode.Text);
