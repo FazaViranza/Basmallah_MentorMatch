@@ -9,8 +9,9 @@ namespace TESTUCP1PABD
     {
         SqlConnection conn;
         SqlCommand cmd;
+        BindingSource bs = new BindingSource();
 
-    void Koneksi()
+        void Koneksi()
         {
             conn = new SqlConnection(
                 "Data Source=LAPTOP-QL2H17RM;Initial Catalog=MentorMatchMabarDB;Integrated Security=True"
@@ -31,13 +32,18 @@ namespace TESTUCP1PABD
                 conn.Open();
 
                 string query =
-                "SELECT NIM, NamaMahasiswa, Prodi, Email, Status FROM Mahasiswa";
+                "SELECT * FROM vw_Mahasiswa";
 
-                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                SqlDataAdapter da =
+                    new SqlDataAdapter(query, conn);
+
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                dataGridView1.DataSource = dt;
+                bs.DataSource = dt;
+
+                dataGridView1.DataSource = bs;
+                bindingNavigator1.BindingSource = bs;
 
                 conn.Close();
             }
