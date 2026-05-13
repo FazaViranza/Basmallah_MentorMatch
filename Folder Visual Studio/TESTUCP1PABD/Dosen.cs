@@ -79,6 +79,25 @@ namespace TESTUCP1PABD
                 dataGridView1.DataSource = bs;
                 bindingNavigator1.BindingSource = bs;
 
+                txtID.DataBindings.Clear();
+                txtNIDN.DataBindings.Clear();
+                comboBoxStatus.DataBindings.Clear();
+
+                txtID.DataBindings.Add(
+                    "Text",
+                    bs,
+                    "PengajuanID");
+
+                txtNIDN.DataBindings.Add(
+                    "Text",
+                    bs,
+                    "NIDN");
+
+                comboBoxStatus.DataBindings.Add(
+                    "Text",
+                    bs,
+                    "Status");
+
                 conn.Close();
             }
             catch (Exception ex)
@@ -107,8 +126,8 @@ namespace TESTUCP1PABD
                     comboBoxStatus.Text);
 
                 cmd.Parameters.AddWithValue(
-                    "@NIDN",
-                    txtNIDN.Text);
+                    "@ID",
+                    txtID.Text);
 
                 cmd.ExecuteNonQuery();
 

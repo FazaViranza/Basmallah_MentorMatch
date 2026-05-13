@@ -45,6 +45,13 @@ namespace TESTUCP1PABD
                 dataGridView1.DataSource = bs;
                 bindingNavigator1.BindingSource = bs;
 
+                txtNIM.DataBindings.Clear();
+
+                txtNIM.DataBindings.Add(
+                    "Text",
+                    bs,
+                    "NIM");
+
                 conn.Close();
             }
             catch (Exception ex)

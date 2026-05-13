@@ -109,6 +109,13 @@ namespace TESTUCP1PABD
                 dataGridView1.DataSource = bs;
                 bindingNavigator1.BindingSource = bs;
 
+                txtID.DataBindings.Clear();
+
+                txtID.DataBindings.Add(
+                    "Text",
+                    bs,
+                    "PengajuanID");
+
                 conn.Close();
 
                 HitungTotal();

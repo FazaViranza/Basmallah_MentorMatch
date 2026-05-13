@@ -264,6 +264,31 @@ namespace TESTUCP1PABD
                 dataGridView1.DataSource = bs;
                 bindingNavigator1.BindingSource = bs;
 
+                txtNIDN.DataBindings.Clear();
+                txtNama.DataBindings.Clear();
+                comboBoxJenis.DataBindings.Clear();
+                comboBoxStatus.DataBindings.Clear();
+
+                txtNIDN.DataBindings.Add(
+                    "Text",
+                    bs,
+                    "NIDN");
+
+                txtNama.DataBindings.Add(
+                    "Text",
+                    bs,
+                    "NamaDosen");
+
+                comboBoxJenis.DataBindings.Add(
+                    "Text",
+                    bs,
+                    "Jenis");
+
+                comboBoxStatus.DataBindings.Add(
+                    "Text",
+                    bs,
+                    "Status");
+
                 conn.Close();
             }
             catch (Exception ex)
