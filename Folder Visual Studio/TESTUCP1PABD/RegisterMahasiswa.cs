@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace TESTUCP1PABD
 {
@@ -40,12 +41,31 @@ namespace TESTUCP1PABD
         {
             try
             {
-                if (txtNIM.Text == "" || txtNama.Text == "" || txtProdi.Text == "" || txtEmail.Text == "")
+                // 🔥 VALIDASI KOSONG
+                if (txtNIM.Text == "" ||
+                    txtNama.Text == "" ||
+                    txtProdi.Text == "" ||
+                    txtEmail.Text == "")
                 {
                     MessageBox.Show("Semua field harus diisi!");
                     return;
                 }
 
+                // 🔥 VALIDASI NIM
+                if (!Regex.IsMatch(txtNIM.Text, @"^\d{11}$"))
+                {
+                    MessageBox.Show("NIM harus 11 digit angka!");
+                    return;
+                }
+
+                // 🔥 VALIDASI NAMA
+                if (Regex.IsMatch(txtNama.Text, @"\d"))
+                {
+                    MessageBox.Show("Nama tidak boleh mengandung angka!");
+                    return;
+                }
+
+                // 🔥 VALIDASI EMAIL
                 if (!txtEmail.Text.Contains("@"))
                 {
                     MessageBox.Show("Format email tidak valid!");
@@ -56,11 +76,18 @@ namespace TESTUCP1PABD
                 conn.Open();
 
                 // 🔥 CEK NIM SUDAH ADA
-                string checkNIM = "SELECT COUNT(*) FROM Mahasiswa WHERE NIM=@NIM";
-                SqlCommand checkCmd = new SqlCommand(checkNIM, conn);
-                checkCmd.Parameters.AddWithValue("@NIM", txtNIM.Text);
+                string checkNIM =
+                "SELECT COUNT(*) FROM Mahasiswa WHERE NIM=@NIM";
 
-                int exists = (int)checkCmd.ExecuteScalar();
+                SqlCommand checkCmd =
+                    new SqlCommand(checkNIM, conn);
+
+                checkCmd.Parameters.AddWithValue(
+                    "@NIM",
+                    txtNIM.Text);
+
+                int exists =
+                    (int)checkCmd.ExecuteScalar();
 
                 if (exists > 0)
                 {
@@ -69,21 +96,41 @@ namespace TESTUCP1PABD
                     return;
                 }
 
+                // 🔥 GENERATE CODE
                 string code = GenerateCode();
 
-                cmd = new SqlCommand("sp_RegisterMahasiswa", conn);
+                // 🔥 STORED PROCEDURE
+                cmd = new SqlCommand(
+                    "sp_RegisterMahasiswa",
+                    conn);
 
-                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandType =
+                    CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@NIM", txtNIM.Text);
-                cmd.Parameters.AddWithValue("@Nama", txtNama.Text);
-                cmd.Parameters.AddWithValue("@Prodi", txtProdi.Text);
-                cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-                cmd.Parameters.AddWithValue("@Code", code);
+                cmd.Parameters.AddWithValue(
+                    "@NIM",
+                    txtNIM.Text);
+
+                cmd.Parameters.AddWithValue(
+                    "@Nama",
+                    txtNama.Text);
+
+                cmd.Parameters.AddWithValue(
+                    "@Prodi",
+                    txtProdi.Text);
+
+                cmd.Parameters.AddWithValue(
+                    "@Email",
+                    txtEmail.Text);
+
+                cmd.Parameters.AddWithValue(
+                    "@Code",
+                    code);
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Kode verifikasi: " + code);
+                MessageBox.Show(
+                    "Kode verifikasi: " + code);
 
                 conn.Close();
 

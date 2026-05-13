@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace TESTUCP1PABD
 {
@@ -107,21 +108,60 @@ namespace TESTUCP1PABD
         {
             try
             {
+           
+                if (txtNIDN.Text == "" ||
+                    txtNama.Text == "" ||
+                    comboBoxJenis.Text == "" ||
+                    comboBoxStatus.Text == "")
+                {
+                    MessageBox.Show("Semua field harus diisi!");
+                    return;
+                }
+
+               
+                if (!Regex.IsMatch(txtNIDN.Text, @"^D\d{3}$"))
+                {
+                    MessageBox.Show("NIDN harus format D---!");
+                    return;
+                }
+
+              
+                if (Regex.IsMatch(txtNama.Text, @"\d"))
+                {
+                    MessageBox.Show("Nama tidak boleh mengandung angka!");
+                    return;
+                }
+
                 Koneksi();
                 conn.Open();
 
-                cmd = new SqlCommand("sp_UpdateDosen", conn);
+                cmd = new SqlCommand(
+                    "sp_UpdateDosen",
+                    conn);
 
-                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandType =
+                    CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@NIDN", txtNIDN.Text);
-                cmd.Parameters.AddWithValue("@Nama", txtNama.Text);
-                cmd.Parameters.AddWithValue("@Jenis", comboBoxJenis.Text);
-                cmd.Parameters.AddWithValue("@Status", comboBoxStatus.Text);
+                cmd.Parameters.AddWithValue(
+                    "@NIDN",
+                    txtNIDN.Text);
+
+                cmd.Parameters.AddWithValue(
+                    "@Nama",
+                    txtNama.Text);
+
+                cmd.Parameters.AddWithValue(
+                    "@Jenis",
+                    comboBoxJenis.Text);
+
+                cmd.Parameters.AddWithValue(
+                    "@Status",
+                    comboBoxStatus.Text);
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Data berhasil diupdate");
+                MessageBox.Show(
+                    "Data berhasil diupdate");
 
                 conn.Close();
 
@@ -137,21 +177,60 @@ namespace TESTUCP1PABD
         {
             try
             {
+               
+                if (txtNIDN.Text == "" ||
+                    txtNama.Text == "" ||
+                    comboBoxJenis.Text == "" ||
+                    comboBoxStatus.Text == "")
+                {
+                    MessageBox.Show("Semua field harus diisi!");
+                    return;
+                }
+
+               
+                if (!Regex.IsMatch(txtNIDN.Text, @"^D\d{3}$"))
+                {
+                    MessageBox.Show("NIDN harus format D001!");
+                    return;
+                }
+
+                
+                if (Regex.IsMatch(txtNama.Text, @"\d"))
+                {
+                    MessageBox.Show("Nama tidak boleh mengandung angka!");
+                    return;
+                }
+
                 Koneksi();
                 conn.Open();
 
-                cmd = new SqlCommand("sp_InsertDosen", conn);
+                cmd = new SqlCommand(
+                    "sp_InsertDosen",
+                    conn);
 
-                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandType =
+                    CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@NIDN", txtNIDN.Text);
-                cmd.Parameters.AddWithValue("@Nama", txtNama.Text);
-                cmd.Parameters.AddWithValue("@Jenis", comboBoxJenis.Text);
-                cmd.Parameters.AddWithValue("@Status", comboBoxStatus.Text);
+                cmd.Parameters.AddWithValue(
+                    "@NIDN",
+                    txtNIDN.Text);
+
+                cmd.Parameters.AddWithValue(
+                    "@Nama",
+                    txtNama.Text);
+
+                cmd.Parameters.AddWithValue(
+                    "@Jenis",
+                    comboBoxJenis.Text);
+
+                cmd.Parameters.AddWithValue(
+                    "@Status",
+                    comboBoxStatus.Text);
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Data berhasil ditambahkan");
+                MessageBox.Show(
+                    "Data berhasil ditambahkan");
 
                 conn.Close();
 

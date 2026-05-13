@@ -29,6 +29,8 @@ namespace TESTUCP1PABD
         public Form1()
         {
             InitializeComponent();
+
+            txtPassword.UseSystemPasswordChar = true;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
