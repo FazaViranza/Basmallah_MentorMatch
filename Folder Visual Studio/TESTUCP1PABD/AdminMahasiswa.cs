@@ -149,5 +149,10 @@ namespace TESTUCP1PABD
         {
 
         }
+
+        private void bindingNavigatorPositionItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

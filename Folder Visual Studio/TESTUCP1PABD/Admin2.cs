@@ -160,27 +160,14 @@ namespace TESTUCP1PABD
                 Koneksi();
                 conn.Open();
 
-                string query =
-                "INSERT INTO Dosen (NIDN, NamaDosen, Jenis, Status) VALUES " +
-                "(@NIDN,@Nama,@Jenis,@Status)";
+                cmd = new SqlCommand("sp_InsertDosen", conn);
 
-                cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue(
-                    "@NIDN",
-                    txtNIDN.Text);
-
-                cmd.Parameters.AddWithValue(
-                    "@Nama",
-                    txtNama.Text);
-
-                cmd.Parameters.AddWithValue(
-                    "@Jenis",
-                    comboBoxJenis.Text);
-
-                cmd.Parameters.AddWithValue(
-                    "@Status",
-                    comboBoxStatus.Text);
+                cmd.Parameters.AddWithValue("@NIDN", txtNIDN.Text);
+                cmd.Parameters.AddWithValue("@Nama", txtNama.Text);
+                cmd.Parameters.AddWithValue("@Jenis", comboBoxJenis.Text);
+                cmd.Parameters.AddWithValue("@Status", comboBoxStatus.Text);
 
                 cmd.ExecuteNonQuery();
 
