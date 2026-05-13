@@ -286,21 +286,23 @@ namespace TESTUCP1PABD
                 Koneksi();
                 conn.Open();
 
-                string query =
-                "SELECT * FROM Dosen WHERE Jenis=@jenis";
+                cmd = new SqlCommand("sp_SearchDosen", conn);
 
-                cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@jenis",
+                cmd.Parameters.AddWithValue("@Jenis",
                     comboBoxSearch.Text);
 
-                SqlDataReader reader =
-                    cmd.ExecuteReader();
+                SqlDataAdapter da =
+                    new SqlDataAdapter(cmd);
 
                 DataTable dt = new DataTable();
-                dt.Load(reader);
+                da.Fill(dt);
 
-                dataGridView1.DataSource = dt;
+                bs.DataSource = dt;
+
+                dataGridView1.DataSource = bs;
+                bindingNavigator1.BindingSource = bs;
 
                 conn.Close();
             }
