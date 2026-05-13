@@ -114,30 +114,14 @@ namespace TESTUCP1PABD
                 Koneksi();
                 conn.Open();
 
-                string query =
-                "UPDATE Dosen SET " +
-                "NamaDosen=@Nama, " +
-                "Jenis=@Jenis, " +
-                "Status=@Status " +
-                "WHERE NIDN=@NIDN";
+                cmd = new SqlCommand("sp_UpdateDosen", conn);
 
-                cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue(
-                    "@NIDN",
-                    txtNIDN.Text);
-
-                cmd.Parameters.AddWithValue(
-                    "@Nama",
-                    txtNama.Text);
-
-                cmd.Parameters.AddWithValue(
-                    "@Jenis",
-                    comboBoxJenis.Text);
-
-                cmd.Parameters.AddWithValue(
-                    "@Status",
-                    comboBoxStatus.Text);
+                cmd.Parameters.AddWithValue("@NIDN", txtNIDN.Text);
+                cmd.Parameters.AddWithValue("@Nama", txtNama.Text);
+                cmd.Parameters.AddWithValue("@Jenis", comboBoxJenis.Text);
+                cmd.Parameters.AddWithValue("@Status", comboBoxStatus.Text);
 
                 cmd.ExecuteNonQuery();
 
