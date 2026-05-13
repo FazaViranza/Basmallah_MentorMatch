@@ -95,22 +95,25 @@ namespace TESTUCP1PABD
                 Koneksi();
                 conn.Open();
 
-                string query =
-                "UPDATE PengajuanLomba " +
-                "SET Status=@Status " +
-                "WHERE NIDN=@NIDN";
+                cmd = new SqlCommand(
+                    "sp_UpdateStatusPengajuan",
+                    conn);
 
-                cmd = new SqlCommand(query, conn);
+                cmd.CommandType =
+                    CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@Status",
+                cmd.Parameters.AddWithValue(
+                    "@Status",
                     comboBoxStatus.Text);
 
-                cmd.Parameters.AddWithValue("@NIDN",
+                cmd.Parameters.AddWithValue(
+                    "@NIDN",
                     txtNIDN.Text);
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Status berhasil diupdate");
+                MessageBox.Show(
+                    "Status berhasil diupdate");
 
                 conn.Close();
 
