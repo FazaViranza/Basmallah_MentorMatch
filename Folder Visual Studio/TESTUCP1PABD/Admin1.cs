@@ -61,10 +61,12 @@ namespace TESTUCP1PABD
                     Koneksi();
                     conn.Open();
 
-                    string query =
-                    "DELETE FROM PengajuanLomba WHERE PengajuanID=@ID";
+                    cmd = new SqlCommand(
+                        "sp_DeletePengajuanByID",
+                        conn);
 
-                    cmd = new SqlCommand(query, conn);
+                    cmd.CommandType =
+                        CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue(
                         "@ID",
@@ -72,7 +74,8 @@ namespace TESTUCP1PABD
 
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("ID yang dihapus: " + txtID.Text);
+                    MessageBox.Show(
+                        "ID yang dihapus: " + txtID.Text);
 
                     conn.Close();
 
