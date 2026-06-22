@@ -1,4 +1,4 @@
-﻿namespace TESTUCP1PABD
+namespace TESTUCP1PABD
 {
     partial class Form1
     {
@@ -28,119 +28,202 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.headerPanel = new System.Windows.Forms.Panel();
+            this.logoPictureBox = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.PictureBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.btnConnect = new System.Windows.Forms.Button();
-            this.lblStatus = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.PictureBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.statusPanel = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.bannerPictureBox = new System.Windows.Forms.PictureBox();
+            this.headerPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.label1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.label2)).BeginInit();
+            this.statusPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bannerPictureBox)).BeginInit();
             this.SuspendLayout();
+            
+            // Load resources
+            System.Resources.ResourceManager resources = new System.Resources.ResourceManager("TESTUCP1PABD.Properties.Resources", typeof(Form1).Assembly);
+            
             // 
-            // txtUsername
+            // headerPanel
             // 
-            this.txtUsername.Location = new System.Drawing.Point(406, 131);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(100, 20);
-            this.txtUsername.TabIndex = 0;
-            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
+            this.headerPanel.BackColor = System.Drawing.Color.White;
+            this.headerPanel.Controls.Add(this.logoPictureBox);
+            this.headerPanel.Controls.Add(this.label1);
+            this.headerPanel.Controls.Add(this.txtUsername);
+            this.headerPanel.Controls.Add(this.btnConnect);
+            this.headerPanel.Controls.Add(this.label2);
+            this.headerPanel.Controls.Add(this.txtPassword);
+            this.headerPanel.Controls.Add(this.btnLogin);
+            this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.headerPanel.Location = new System.Drawing.Point(0, 0);
+            this.headerPanel.Name = "headerPanel";
+            this.headerPanel.Size = new System.Drawing.Size(942, 100);
+            this.headerPanel.TabIndex = 0;
             // 
-            // txtPassword
+            // logoPictureBox
             // 
-            this.txtPassword.Location = new System.Drawing.Point(406, 204);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(100, 20);
-            this.txtPassword.TabIndex = 1;
-            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            this.logoPictureBox.Image = (System.Drawing.Image)resources.GetObject("mentormatch_logo");
+            this.logoPictureBox.Location = new System.Drawing.Point(20, 15);
+            this.logoPictureBox.Name = "logoPictureBox";
+            this.logoPictureBox.Size = new System.Drawing.Size(320, 70);
+            this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logoPictureBox.TabIndex = 0;
+            this.logoPictureBox.TabStop = false;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(265, 137);
+            this.label1.Image = (System.Drawing.Image)resources.GetObject("user_icon");
+            this.label1.Location = new System.Drawing.Point(490, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Username";
+            this.label1.Size = new System.Drawing.Size(28, 27);
+            this.label1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.label1.TabIndex = 1;
+            this.label1.TabStop = false;
             // 
-            // label2
+            // txtUsername
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(268, 204);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Password";
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Location = new System.Drawing.Point(415, 293);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 4;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(518, 23);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(197, 27);
+            this.txtUsername.TabIndex = 2;
             // 
             // btnConnect
             // 
-            this.btnConnect.Location = new System.Drawing.Point(290, 293);
+            this.btnConnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(116)))), ((int)(((byte)(144)))));
+            this.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConnect.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConnect.ForeColor = System.Drawing.Color.White;
+            this.btnConnect.Location = new System.Drawing.Point(730, 21);
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(75, 23);
-            this.btnConnect.TabIndex = 5;
+            this.btnConnect.Size = new System.Drawing.Size(100, 31);
+            this.btnConnect.TabIndex = 3;
             this.btnConnect.Text = "Connect";
-            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.UseVisualStyleBackColor = false;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
-            // lblStatus
+            // label2
             // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(360, 260);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(61, 13);
-            this.lblStatus.TabIndex = 6;
-            this.lblStatus.Text = "Disconnect";
-            this.lblStatus.Click += new System.EventHandler(this.lblStatus_Click);
+            this.label2.Image = (System.Drawing.Image)resources.GetObject("lock_icon");
+            this.label2.Location = new System.Drawing.Point(490, 58);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(28, 27);
+            this.label2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.label2.TabIndex = 4;
+            this.label2.TabStop = false;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(518, 58);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(197, 27);
+            this.txtPassword.TabIndex = 5;
+            this.txtPassword.UseSystemPasswordChar = true;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(730, 56);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(100, 31);
+            this.btnLogin.TabIndex = 6;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // statusPanel
+            // 
+            this.statusPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.statusPanel.Controls.Add(this.label3);
+            this.statusPanel.Controls.Add(this.lblStatus);
+            this.statusPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.statusPanel.Location = new System.Drawing.Point(0, 503);
+            this.statusPanel.Name = "statusPanel";
+            this.statusPanel.Size = new System.Drawing.Size(942, 35);
+            this.statusPanel.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(339, 241);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.label3.Location = new System.Drawing.Point(12, 8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 13);
-            this.label3.TabIndex = 7;
+            this.label3.Size = new System.Drawing.Size(142, 20);
+            this.label3.TabIndex = 0;
             this.label3.Text = "status ke database :";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.lblStatus.Location = new System.Drawing.Point(160, 8);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(87, 20);
+            this.lblStatus.TabIndex = 1;
+            this.lblStatus.Text = "Disconnect";
+            // 
+            // bannerPictureBox
+            // 
+            this.bannerPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bannerPictureBox.Image = (System.Drawing.Image)resources.GetObject("campus_banner");
+            this.bannerPictureBox.Location = new System.Drawing.Point(0, 100);
+            this.bannerPictureBox.Name = "bannerPictureBox";
+            this.bannerPictureBox.Size = new System.Drawing.Size(942, 403);
+            this.bannerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bannerPictureBox.TabIndex = 2;
+            this.bannerPictureBox.TabStop = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.lblStatus);
-            this.Controls.Add(this.btnConnect);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUsername);
+            this.ClientSize = new System.Drawing.Size(942, 538);
+            this.Controls.Add(this.bannerPictureBox);
+            this.Controls.Add(this.statusPanel);
+            this.Controls.Add(this.headerPanel);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "MentorMatch - Login";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.headerPanel.ResumeLayout(false);
+            this.headerPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.label1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.label2)).EndInit();
+            this.statusPanel.ResumeLayout(false);
+            this.statusPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bannerPictureBox)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Panel headerPanel;
+        private System.Windows.Forms.PictureBox logoPictureBox;
+        private System.Windows.Forms.PictureBox label1;
         private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnConnect;
-        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.PictureBox label2;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Panel statusPanel;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.PictureBox bannerPictureBox;
     }
 }
-
