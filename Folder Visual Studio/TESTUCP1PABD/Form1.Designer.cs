@@ -28,6 +28,7 @@ namespace TESTUCP1PABD
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.headerPanel = new System.Windows.Forms.Panel();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.PictureBox();
@@ -40,21 +41,20 @@ namespace TESTUCP1PABD
             this.label3 = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.bannerPictureBox = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.label1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.label2)).BeginInit();
             this.statusPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bannerPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            
-            // Load resources
-            System.Resources.ResourceManager resources = new System.Resources.ResourceManager("TESTUCP1PABD.Properties.Resources", typeof(Form1).Assembly);
-            
             // 
             // headerPanel
             // 
             this.headerPanel.BackColor = System.Drawing.Color.White;
+            this.headerPanel.Controls.Add(this.pictureBox1);
             this.headerPanel.Controls.Add(this.logoPictureBox);
             this.headerPanel.Controls.Add(this.label1);
             this.headerPanel.Controls.Add(this.txtUsername);
@@ -67,11 +67,12 @@ namespace TESTUCP1PABD
             this.headerPanel.Name = "headerPanel";
             this.headerPanel.Size = new System.Drawing.Size(942, 100);
             this.headerPanel.TabIndex = 0;
+            this.headerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.headerPanel_Paint);
             // 
             // logoPictureBox
             // 
-            this.logoPictureBox.Image = (System.Drawing.Image)resources.GetObject("mentormatch_logo");
-            this.logoPictureBox.Location = new System.Drawing.Point(20, 15);
+            this.logoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.Image")));
+            this.logoPictureBox.Location = new System.Drawing.Point(152, 15);
             this.logoPictureBox.Name = "logoPictureBox";
             this.logoPictureBox.Size = new System.Drawing.Size(320, 70);
             this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -80,8 +81,8 @@ namespace TESTUCP1PABD
             // 
             // label1
             // 
-            this.label1.Image = (System.Drawing.Image)resources.GetObject("user_icon");
-            this.label1.Location = new System.Drawing.Point(490, 23);
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(573, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 27);
             this.label1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -91,7 +92,7 @@ namespace TESTUCP1PABD
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(518, 23);
+            this.txtUsername.Location = new System.Drawing.Point(601, 15);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(197, 27);
             this.txtUsername.TabIndex = 2;
@@ -102,7 +103,7 @@ namespace TESTUCP1PABD
             this.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConnect.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnect.ForeColor = System.Drawing.Color.White;
-            this.btnConnect.Location = new System.Drawing.Point(730, 21);
+            this.btnConnect.Location = new System.Drawing.Point(813, 13);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(100, 31);
             this.btnConnect.TabIndex = 3;
@@ -112,8 +113,8 @@ namespace TESTUCP1PABD
             // 
             // label2
             // 
-            this.label2.Image = (System.Drawing.Image)resources.GetObject("lock_icon");
-            this.label2.Location = new System.Drawing.Point(490, 58);
+            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
+            this.label2.Location = new System.Drawing.Point(573, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 27);
             this.label2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -123,7 +124,7 @@ namespace TESTUCP1PABD
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(518, 58);
+            this.txtPassword.Location = new System.Drawing.Point(601, 50);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(197, 27);
             this.txtPassword.TabIndex = 5;
@@ -135,7 +136,7 @@ namespace TESTUCP1PABD
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(730, 56);
+            this.btnLogin.Location = new System.Drawing.Point(813, 48);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(100, 31);
             this.btnLogin.TabIndex = 6;
@@ -161,7 +162,7 @@ namespace TESTUCP1PABD
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.label3.Location = new System.Drawing.Point(12, 8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 20);
+            this.label3.Size = new System.Drawing.Size(138, 20);
             this.label3.TabIndex = 0;
             this.label3.Text = "status ke database :";
             // 
@@ -172,20 +173,31 @@ namespace TESTUCP1PABD
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.lblStatus.Location = new System.Drawing.Point(160, 8);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(87, 20);
+            this.lblStatus.Size = new System.Drawing.Size(86, 20);
             this.lblStatus.TabIndex = 1;
             this.lblStatus.Text = "Disconnect";
             // 
             // bannerPictureBox
             // 
             this.bannerPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bannerPictureBox.Image = (System.Drawing.Image)resources.GetObject("campus_banner");
+            this.bannerPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("bannerPictureBox.Image")));
             this.bannerPictureBox.Location = new System.Drawing.Point(0, 100);
             this.bannerPictureBox.Name = "bannerPictureBox";
             this.bannerPictureBox.Size = new System.Drawing.Size(942, 403);
             this.bannerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.bannerPictureBox.TabIndex = 2;
             this.bannerPictureBox.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(16, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(104, 73);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Form1
             // 
@@ -207,6 +219,7 @@ namespace TESTUCP1PABD
             this.statusPanel.ResumeLayout(false);
             this.statusPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bannerPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -225,5 +238,6 @@ namespace TESTUCP1PABD
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.PictureBox bannerPictureBox;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
