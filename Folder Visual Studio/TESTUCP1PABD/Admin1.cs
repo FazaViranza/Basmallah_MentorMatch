@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -163,6 +163,13 @@ namespace TESTUCP1PABD
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnCetak_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormRekapPrestasi rekapPage = new FormRekapPrestasi();
+            rekapPage.Show();
         }
     }
 }
