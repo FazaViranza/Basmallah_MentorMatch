@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace TESTUCP1PABD
 {
@@ -15,6 +16,7 @@ namespace TESTUCP1PABD
     {
         SqlConnection conn;
         SqlCommand cmd;
+        BindingSource bs = new BindingSource();
 
         private void Koneksi()
         {
@@ -82,15 +84,11 @@ namespace TESTUCP1PABD
                 Koneksi();
                 conn.Open();
 
-                string query =
-                "DELETE FROM Dosen " +
-                "WHERE NIDN=@NIDN";
+                cmd = new SqlCommand("sp_DeleteDosen", conn);
 
-                cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue(
-                    "@NIDN",
-                    txtNIDN.Text);
+                cmd.Parameters.AddWithValue("@NIDN", txtNIDN.Text);
 
                 cmd.ExecuteNonQuery();
 
@@ -110,17 +108,39 @@ namespace TESTUCP1PABD
         {
             try
             {
+           
+                if (txtNIDN.Text == "" ||
+                    txtNama.Text == "" ||
+                    comboBoxJenis.Text == "" ||
+                    comboBoxStatus.Text == "")
+                {
+                    MessageBox.Show("Semua field harus diisi!");
+                    return;
+                }
+
+               
+                if (!Regex.IsMatch(txtNIDN.Text, @"^D\d{3}$"))
+                {
+                    MessageBox.Show("NIDN harus format D---!");
+                    return;
+                }
+
+              
+                if (Regex.IsMatch(txtNama.Text, @"\d"))
+                {
+                    MessageBox.Show("Nama tidak boleh mengandung angka!");
+                    return;
+                }
+
                 Koneksi();
                 conn.Open();
 
-                string query =
-                "UPDATE Dosen SET " +
-                "NamaDosen=@Nama, " +
-                "Jenis=@Jenis, " +
-                "Status=@Status " +
-                "WHERE NIDN=@NIDN";
+                cmd = new SqlCommand(
+                    "sp_UpdateDosen",
+                    conn);
 
-                cmd = new SqlCommand(query, conn);
+                cmd.CommandType =
+                    CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue(
                     "@NIDN",
@@ -140,7 +160,8 @@ namespace TESTUCP1PABD
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Data berhasil diupdate");
+                MessageBox.Show(
+                    "Data berhasil diupdate");
 
                 conn.Close();
 
@@ -156,14 +177,39 @@ namespace TESTUCP1PABD
         {
             try
             {
+               
+                if (txtNIDN.Text == "" ||
+                    txtNama.Text == "" ||
+                    comboBoxJenis.Text == "" ||
+                    comboBoxStatus.Text == "")
+                {
+                    MessageBox.Show("Semua field harus diisi!");
+                    return;
+                }
+
+               
+                if (!Regex.IsMatch(txtNIDN.Text, @"^D\d{3}$"))
+                {
+                    MessageBox.Show("NIDN harus format D001!");
+                    return;
+                }
+
+                
+                if (Regex.IsMatch(txtNama.Text, @"\d"))
+                {
+                    MessageBox.Show("Nama tidak boleh mengandung angka!");
+                    return;
+                }
+
                 Koneksi();
                 conn.Open();
 
-                string query =
-                "INSERT INTO Dosen (NIDN, NamaDosen, Jenis, Status) VALUES " +
-                "(@NIDN,@Nama,@Jenis,@Status)";
+                cmd = new SqlCommand(
+                    "sp_InsertDosen",
+                    conn);
 
-                cmd = new SqlCommand(query, conn);
+                cmd.CommandType =
+                    CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue(
                     "@NIDN",
@@ -183,7 +229,8 @@ namespace TESTUCP1PABD
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Data berhasil ditambahkan");
+                MessageBox.Show(
+                    "Data berhasil ditambahkan");
 
                 conn.Close();
 
@@ -193,6 +240,7 @@ namespace TESTUCP1PABD
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
         private void btnRead_Click(object sender, EventArgs e)
@@ -203,17 +251,43 @@ namespace TESTUCP1PABD
                 conn.Open();
 
                 string query =
-                "SELECT * FROM Dosen";
+                "SELECT * FROM vw_Dosen";
 
-                cmd = new SqlCommand(query, conn);
-
-                SqlDataReader reader =
-                    cmd.ExecuteReader();
+                SqlDataAdapter da =
+                    new SqlDataAdapter(query, conn);
 
                 DataTable dt = new DataTable();
-                dt.Load(reader);
+                da.Fill(dt);
 
-                dataGridView1.DataSource = dt;
+                bs.DataSource = dt;
+
+                dataGridView1.DataSource = bs;
+                bindingNavigator1.BindingSource = bs;
+
+                txtNIDN.DataBindings.Clear();
+                txtNama.DataBindings.Clear();
+                comboBoxJenis.DataBindings.Clear();
+                comboBoxStatus.DataBindings.Clear();
+
+                txtNIDN.DataBindings.Add(
+                    "Text",
+                    bs,
+                    "NIDN");
+
+                txtNama.DataBindings.Add(
+                    "Text",
+                    bs,
+                    "NamaDosen");
+
+                comboBoxJenis.DataBindings.Add(
+                    "Text",
+                    bs,
+                    "Jenis");
+
+                comboBoxStatus.DataBindings.Add(
+                    "Text",
+                    bs,
+                    "Status");
 
                 conn.Close();
             }
@@ -317,23 +391,52 @@ namespace TESTUCP1PABD
                 Koneksi();
                 conn.Open();
 
+                cmd = new SqlCommand("sp_SearchDosen", conn);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Jenis",
+                    comboBoxSearch.Text);
+
+                SqlDataAdapter da =
+                    new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                bs.DataSource = dt;
+
+                dataGridView1.DataSource = bs;
+                bindingNavigator1.BindingSource = bs;
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnTestInjection_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Koneksi();
+                conn.Open();
+
                 string query =
-                "SELECT * FROM Dosen WHERE Jenis=@jenis";
+                "UPDATE Dosen SET NamaDosen='HACKED' WHERE NIDN='" +
+                txtNIDN.Text + "'";
 
                 cmd = new SqlCommand(query, conn);
 
-                cmd.Parameters.AddWithValue("@jenis",
-                    comboBoxSearch.Text);
+                int result = cmd.ExecuteNonQuery();
 
-                SqlDataReader reader =
-                    cmd.ExecuteReader();
-
-                DataTable dt = new DataTable();
-                dt.Load(reader);
-
-                dataGridView1.DataSource = dt;
+                MessageBox.Show(result + " data berhasil diubah!");
 
                 conn.Close();
+
+                btnRead_Click(sender, e);
             }
             catch (Exception ex)
             {

@@ -49,6 +49,7 @@ namespace TESTUCP1PABD
             this.statusPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bannerPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // headerPanel
@@ -199,11 +200,22 @@ namespace TESTUCP1PABD
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // btnRegister
+            // 
+            this.btnRegister.Location = new System.Drawing.Point(346, 357);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnRegister.TabIndex = 8;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 538);
+            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.bannerPictureBox);
             this.Controls.Add(this.statusPanel);
             this.Controls.Add(this.headerPanel);
@@ -239,5 +251,6 @@ namespace TESTUCP1PABD
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.PictureBox bannerPictureBox;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnRegister;
     }
 }

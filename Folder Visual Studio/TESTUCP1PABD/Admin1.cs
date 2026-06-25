@@ -15,6 +15,7 @@ namespace TESTUCP1PABD
     {
         SqlConnection conn;
         SqlCommand cmd;
+        BindingSource bs = new BindingSource();
 
         private void Koneksi()
         {
@@ -60,10 +61,12 @@ namespace TESTUCP1PABD
                     Koneksi();
                     conn.Open();
 
-                    string query =
-                    "DELETE FROM PengajuanLomba WHERE PengajuanID=@ID";
+                    cmd = new SqlCommand(
+                        "sp_DeletePengajuanByID",
+                        conn);
 
-                    cmd = new SqlCommand(query, conn);
+                    cmd.CommandType =
+                        CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue(
                         "@ID",
@@ -71,7 +74,8 @@ namespace TESTUCP1PABD
 
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("ID yang dihapus: " + txtID.Text);
+                    MessageBox.Show(
+                        "ID yang dihapus: " + txtID.Text);
 
                     conn.Close();
 
@@ -92,19 +96,28 @@ namespace TESTUCP1PABD
                 conn.Open();
 
                 string query =
-                "SELECT * FROM PengajuanLomba";
+                "SELECT * FROM vw_PengajuanLomba";
 
-                cmd = new SqlCommand(query, conn);
-
-                SqlDataReader reader =
-                    cmd.ExecuteReader();
+                SqlDataAdapter da =
+                    new SqlDataAdapter(query, conn);
 
                 DataTable dt = new DataTable();
-                dt.Load(reader);
+                da.Fill(dt);
 
-                dataGridView1.DataSource = dt;
+                bs.DataSource = dt;
+
+                dataGridView1.DataSource = bs;
+                bindingNavigator1.BindingSource = bs;
+
+                txtID.DataBindings.Clear();
+
+                txtID.DataBindings.Add(
+                    "Text",
+                    bs,
+                    "PengajuanID");
 
                 conn.Close();
+
                 HitungTotal();
             }
             catch (Exception ex)
@@ -146,10 +159,12 @@ namespace TESTUCP1PABD
                 Koneksi();
                 conn.Open();
 
-                string query =
-                "SELECT COUNT(*) FROM PengajuanLomba";
+                cmd = new SqlCommand(
+                    "sp_TotalPengajuan",
+                    conn);
 
-                cmd = new SqlCommand(query, conn);
+                cmd.CommandType =
+                    CommandType.StoredProcedure;
 
                 int total =
                     (int)cmd.ExecuteScalar();
@@ -165,6 +180,18 @@ namespace TESTUCP1PABD
             }
         }
 
+        private void btnMahasiswa_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            AdminMahasiswa mhs = new AdminMahasiswa();
+            mhs.Show();
+        }
+
+        private void bindingNavigatorPositionItem_Click(object sender, EventArgs e)
+        {
+
+        }
         private void btnCetak_Click(object sender, EventArgs e)
         {
             this.Hide();

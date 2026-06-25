@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static System.Collections.Specialized.BitVector32;
 
 namespace TESTUCP1PABD
 {
@@ -16,7 +17,7 @@ namespace TESTUCP1PABD
         SqlConnection conn;
         SqlCommand cmd;
 
-        bool isConnected = false;
+    bool isConnected = false;
 
         private void Koneksi()
         {
@@ -28,20 +29,20 @@ namespace TESTUCP1PABD
         public Form1()
         {
             InitializeComponent();
+
+            txtPassword.UseSystemPasswordChar = true;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
             {
-             
                 if (!isConnected)
                 {
                     MessageBox.Show("Silakan koneksikan database terlebih dahulu!");
                     return;
                 }
 
-               
                 if (txtUsername.Text == "")
                 {
                     MessageBox.Show("Username tidak boleh kosong!");
@@ -57,9 +58,14 @@ namespace TESTUCP1PABD
                 Koneksi();
                 conn.Open();
 
+                // 🔥 FIX QUERY (TAMBAH SPASI + ALIAS)
                 string query =
-                "SELECT Role FROM Users " +
-                "WHERE Username=@Username AND Password=@Password";
+                "SELECT u.Role " +
+                "FROM Users u " +
+                "LEFT JOIN Mahasiswa m ON u.Username = m.NIM " +
+                "WHERE u.Username=@Username " +
+                "AND u.Password=@Password " +
+                "AND (m.Status IS NULL OR m.Status='Active')";
 
                 cmd = new SqlCommand(query, conn);
 
@@ -72,13 +78,17 @@ namespace TESTUCP1PABD
                 {
                     string userRole = role.ToString();
 
+                    // 🔥 SESSION (INI DOANG TAMBAHAN PENTING)
+                    Session.Username = txtUsername.Text;
+                    Session.Role = userRole;
+
                     MessageBox.Show("Login Berhasil sebagai " + userRole);
 
                     this.Hide();
 
                     if (userRole == "Mahasiswa")
                     {
-                        new Mahasiswa().Show();
+                        new MenuMahasiswa().Show();
                     }
                     else if (userRole == "Dosen")
                     {
@@ -91,7 +101,7 @@ namespace TESTUCP1PABD
                 }
                 else
                 {
-                    MessageBox.Show("Username atau Password salah");
+                    MessageBox.Show("Username / Password salah atau akun belum diverifikasi!");
                 }
 
                 conn.Close();
@@ -100,7 +110,6 @@ namespace TESTUCP1PABD
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
@@ -115,14 +124,14 @@ namespace TESTUCP1PABD
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
             try
             {
-                Koneksi(); 
+                Koneksi();
 
                 conn.Open();
 
@@ -130,7 +139,7 @@ namespace TESTUCP1PABD
 
                 lblStatus.Text = "Connected";
 
-                isConnected = true; 
+                isConnected = true;
 
                 conn.Close();
             }
@@ -159,6 +168,12 @@ namespace TESTUCP1PABD
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            RegisterMahasiswa reg = new RegisterMahasiswa();
+            reg.ShowDialog();
         }
     }
 }

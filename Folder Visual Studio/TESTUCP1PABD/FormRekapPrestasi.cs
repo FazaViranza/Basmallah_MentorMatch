@@ -7,7 +7,7 @@ namespace TESTUCP1PABD
 {
     public partial class FormRekapPrestasi : Form
     {
-        private string connectionString = "Data Source=LAPTOP-6UCOLCI3\\RAZFAR;Initial Catalog=MentorMatchMabarDB;Integrated Security=True";
+        private string connectionString = "Data Source=LAPTOP-QL2H17RM;Initial Catalog=MentorMatchMabarDB;Integrated Security=True";
         private SqlConnection conn;
         private SqlDataAdapter da;
         private DataTable dtProdi;
@@ -76,14 +76,25 @@ namespace TESTUCP1PABD
                 // Menggunakan query JOIN yang disesuaikan dengan database MentorMatch
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "SELECT m.NIM, m.NamaMahasiswa, m.Prodi, d.NamaDosen, j.NamaJenis, p.NamaLomba, p.Penyelenggara, p.TanggalPelaksanaan, p.Status, p.HasilLomba, p.Juara " +
-                                 "FROM PengajuanLomba p " +
-                                 "JOIN Mahasiswa m ON p.NIM = m.NIM " +
-                                 "JOIN Dosen d ON p.NIDN = d.NIDN " +
-                                 "JOIN JenisLomba j ON p.JenisID = j.JenisID " +
-                                 "WHERE (@inProdi = '' OR m.Prodi = @inProdi) " +
-                                 "AND (@inStatus = '' OR p.Status = @inStatus)";
-                
+                cmd.CommandText =   "SELECT p.PengajuanID, " +
+                                    "m.NIM, " +
+                                    "m.NamaMahasiswa, " +
+                                    "m.Prodi, " +
+                                    "d.NamaDosen, " +
+                                    "j.NamaJenis, " +
+                                    "p.NamaLomba, " +
+                                    "p.Penyelenggara, " +
+                                    "p.TanggalPelaksanaan, " +
+                                    "p.Status, " +
+                                    "p.HasilLomba, " +
+                                    "p.Juara " +
+                                    "FROM PengajuanLomba p " +
+                                    "JOIN Mahasiswa m ON p.NIM = m.NIM " +
+                                    "JOIN Dosen d ON p.NIDN = d.NIDN " +
+                                    "JOIN JenisLomba j ON p.JenisID = j.JenisID " +
+                                    "WHERE (@inProdi = '' OR m.Prodi = @inProdi) " +
+                                    "AND (@inStatus = '' OR p.Status = @inStatus)";
+
                 cmd.Parameters.AddWithValue("@inProdi", filterProdi);
                 cmd.Parameters.AddWithValue("@inStatus", filterStatus);
 
@@ -92,6 +103,7 @@ namespace TESTUCP1PABD
                 da.Fill(dtPrestasi);
 
                 dataGridView1.DataSource = dtPrestasi;
+                dataGridView1.Columns["PengajuanID"].Visible = false;
 
                 if (dtPrestasi.Rows.Count > 0)
                 {
@@ -130,6 +142,26 @@ namespace TESTUCP1PABD
             // Kembali ke dashboard Admin1
             Admin1 frmAdmin = new Admin1();
             frmAdmin.Show();
+        }
+
+        private void btnCetakTerpilih_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show(
+                    "Pilih data terlebih dahulu!");
+                return;
+            }
+
+            int id =
+                Convert.ToInt32(
+                    dataGridView1.CurrentRow
+                    .Cells["PengajuanID"].Value);
+
+            FormCetakPrestasi frm =
+                new FormCetakPrestasi(id);
+
+            frm.Show();
         }
     }
 }

@@ -37,6 +37,7 @@ namespace TESTUCP1PABD
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnCetak = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.btnCetakTerpilih = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,9 +46,10 @@ namespace TESTUCP1PABD
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            this.label3.Location = new System.Drawing.Point(220, 20);
+            this.label3.Location = new System.Drawing.Point(165, 16);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(434, 32);
+            this.label3.Size = new System.Drawing.Size(338, 25);
             this.label3.TabIndex = 0;
             this.label3.Text = "REKAP DATA PRESTASI MAHASISWA";
             // 
@@ -55,9 +57,10 @@ namespace TESTUCP1PABD
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label1.Location = new System.Drawing.Point(40, 80);
+            this.label1.Location = new System.Drawing.Point(30, 65);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 20);
+            this.label1.Size = new System.Drawing.Size(83, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Program Studi";
             // 
@@ -66,18 +69,20 @@ namespace TESTUCP1PABD
             this.cmbProdi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProdi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cmbProdi.FormattingEnabled = true;
-            this.cmbProdi.Location = new System.Drawing.Point(150, 77);
+            this.cmbProdi.Location = new System.Drawing.Point(112, 63);
+            this.cmbProdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbProdi.Name = "cmbProdi";
-            this.cmbProdi.Size = new System.Drawing.Size(220, 28);
+            this.cmbProdi.Size = new System.Drawing.Size(166, 23);
             this.cmbProdi.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label2.Location = new System.Drawing.Point(400, 80);
+            this.label2.Location = new System.Drawing.Point(300, 65);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 20);
+            this.label2.Size = new System.Drawing.Size(98, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "Status Pengajuan";
             // 
@@ -86,9 +91,10 @@ namespace TESTUCP1PABD
             this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStatus.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(540, 77);
+            this.cmbStatus.Location = new System.Drawing.Point(405, 63);
+            this.cmbStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(160, 28);
+            this.cmbStatus.Size = new System.Drawing.Size(121, 23);
             this.cmbStatus.TabIndex = 4;
             // 
             // btnLoad
@@ -97,9 +103,10 @@ namespace TESTUCP1PABD
             this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoad.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.btnLoad.ForeColor = System.Drawing.Color.White;
-            this.btnLoad.Location = new System.Drawing.Point(720, 75);
+            this.btnLoad.Location = new System.Drawing.Point(540, 61);
+            this.btnLoad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(100, 32);
+            this.btnLoad.Size = new System.Drawing.Size(75, 26);
             this.btnLoad.TabIndex = 5;
             this.btnLoad.Text = "Cari Data";
             this.btnLoad.UseVisualStyleBackColor = false;
@@ -111,12 +118,13 @@ namespace TESTUCP1PABD
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(40, 130);
+            this.dataGridView1.Location = new System.Drawing.Point(30, 106);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(780, 280);
+            this.dataGridView1.Size = new System.Drawing.Size(585, 228);
             this.dataGridView1.TabIndex = 6;
             // 
             // btnCetak
@@ -125,9 +133,10 @@ namespace TESTUCP1PABD
             this.btnCetak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCetak.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.btnCetak.ForeColor = System.Drawing.Color.White;
-            this.btnCetak.Location = new System.Drawing.Point(720, 430);
+            this.btnCetak.Location = new System.Drawing.Point(461, 349);
+            this.btnCetak.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCetak.Name = "btnCetak";
-            this.btnCetak.Size = new System.Drawing.Size(100, 35);
+            this.btnCetak.Size = new System.Drawing.Size(75, 28);
             this.btnCetak.TabIndex = 7;
             this.btnCetak.Text = "Cetak";
             this.btnCetak.UseVisualStyleBackColor = false;
@@ -139,20 +148,37 @@ namespace TESTUCP1PABD
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(40, 430);
+            this.btnBack.Location = new System.Drawing.Point(30, 349);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(100, 35);
+            this.btnBack.Size = new System.Drawing.Size(75, 28);
             this.btnBack.TabIndex = 8;
             this.btnBack.Text = "Kembali";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btnCetakTerpilih
+            // 
+            this.btnCetakTerpilih.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(185)))), ((int)(((byte)(129)))));
+            this.btnCetakTerpilih.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCetakTerpilih.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCetakTerpilih.ForeColor = System.Drawing.Color.White;
+            this.btnCetakTerpilih.Location = new System.Drawing.Point(540, 349);
+            this.btnCetakTerpilih.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCetakTerpilih.Name = "btnCetakTerpilih";
+            this.btnCetakTerpilih.Size = new System.Drawing.Size(75, 28);
+            this.btnCetakTerpilih.TabIndex = 9;
+            this.btnCetakTerpilih.Text = "CetakP";
+            this.btnCetakTerpilih.UseVisualStyleBackColor = false;
+            this.btnCetakTerpilih.Click += new System.EventHandler(this.btnCetakTerpilih_Click);
+            // 
             // FormRekapPrestasi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(862, 493);
+            this.ClientSize = new System.Drawing.Size(646, 401);
+            this.Controls.Add(this.btnCetakTerpilih);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnCetak);
             this.Controls.Add(this.dataGridView1);
@@ -162,6 +188,7 @@ namespace TESTUCP1PABD
             this.Controls.Add(this.cmbProdi);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormRekapPrestasi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MentorMatch - Rekap Prestasi";
@@ -183,5 +210,6 @@ namespace TESTUCP1PABD
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnCetak;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnCetakTerpilih;
     }
 }

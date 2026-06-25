@@ -9,15 +9,25 @@ namespace TESTUCP1PABD
 {
     public partial class FormCetakPrestasi : Form
     {
-        private string connectionString = "Data Source=LAPTOP-6UCOLCI3\\RAZFAR;Initial Catalog=MentorMatchMabarDB;Integrated Security=True";
+        private string connectionString = "Data Source=LAPTOP-QL2H17RM;Initial Catalog=MentorMatchMabarDB;Integrated Security=True";
         private string filterProdi;
         private string filterStatus;
+        private int pengajuanID = 0;
 
         public FormCetakPrestasi(string prodi, string status)
         {
             InitializeComponent();
             this.filterProdi = prodi;
             this.filterStatus = status;
+        }
+
+        public FormCetakPrestasi(int id)
+        {
+            InitializeComponent();
+            pengajuanID = id;
+
+            filterProdi = "";
+            filterStatus = "";
         }
 
         private void FormCetakPrestasi_Load(object sender, EventArgs e)
@@ -30,16 +40,37 @@ namespace TESTUCP1PABD
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "SELECT m.NIM, m.NamaMahasiswa, m.Prodi, d.NamaDosen, j.NamaJenis, p.NamaLomba, p.Penyelenggara, p.TanggalPelaksanaan, p.Status, p.HasilLomba, p.Juara " +
-                                 "FROM PengajuanLomba p " +
-                                 "JOIN Mahasiswa m ON p.NIM = m.NIM " +
-                                 "JOIN Dosen d ON p.NIDN = d.NIDN " +
-                                 "JOIN JenisLomba j ON p.JenisID = j.JenisID " +
-                                 "WHERE (@inProdi = '' OR m.Prodi = @inProdi) " +
-                                 "AND (@inStatus = '' OR p.Status = @inStatus)";
 
-                cmd.Parameters.AddWithValue("@inProdi", filterProdi);
-                cmd.Parameters.AddWithValue("@inStatus", filterStatus);
+                if (pengajuanID > 0)
+                {
+                    cmd.CommandText =
+                    "SELECT m.NIM, m.NamaMahasiswa, m.Prodi, d.NamaDosen, " +
+                    "j.NamaJenis, p.NamaLomba, p.Penyelenggara, " +
+                    "p.TanggalPelaksanaan, p.Status, p.HasilLomba, p.Juara " +
+                    "FROM PengajuanLomba p " +
+                    "JOIN Mahasiswa m ON p.NIM = m.NIM " +
+                    "JOIN Dosen d ON p.NIDN = d.NIDN " +
+                    "JOIN JenisLomba j ON p.JenisID = j.JenisID " +
+                    "WHERE p.PengajuanID = @ID";
+
+                    cmd.Parameters.AddWithValue("@ID", pengajuanID);
+                }
+                else
+                {
+                    cmd.CommandText =
+                    "SELECT m.NIM, m.NamaMahasiswa, m.Prodi, d.NamaDosen, " +
+                    "j.NamaJenis, p.NamaLomba, p.Penyelenggara, " +
+                    "p.TanggalPelaksanaan, p.Status, p.HasilLomba, p.Juara " +
+                    "FROM PengajuanLomba p " +
+                    "JOIN Mahasiswa m ON p.NIM = m.NIM " +
+                    "JOIN Dosen d ON p.NIDN = d.NIDN " +
+                    "JOIN JenisLomba j ON p.JenisID = j.JenisID " +
+                    "WHERE (@inProdi = '' OR m.Prodi = @inProdi) " +
+                    "AND (@inStatus = '' OR p.Status = @inStatus)";
+
+                    cmd.Parameters.AddWithValue("@inProdi", filterProdi);
+                    cmd.Parameters.AddWithValue("@inStatus", filterStatus);
+                }
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -78,6 +109,11 @@ namespace TESTUCP1PABD
             {
                 MessageBox.Show("Gagal memuat laporan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

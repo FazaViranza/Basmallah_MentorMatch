@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Windows.Forms.VisualStyles;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.IO;
 
 namespace TESTUCP1PABD
 {
@@ -16,6 +18,7 @@ namespace TESTUCP1PABD
     {
         SqlConnection conn;
         SqlCommand cmd;
+        BindingSource bs = new BindingSource();
 
         // KONEKSI DATABASE
         private void Koneksi()
@@ -75,30 +78,18 @@ namespace TESTUCP1PABD
                 conn.Open();
 
                 string query =
-                "SELECT " +
-                "p.PengajuanID, " +
-                "p.NIM, " +
-                "m.NamaMahasiswa, " +
-                "d.NamaDosen, " +
-                "j.NamaJenis, " +
-                "p.NamaLomba, " +
-                "p.Penyelenggara, " +
-                "p.TanggalPelaksanaan, " +
-                "p.Status " +
-                "FROM PengajuanLomba p " +
-                "JOIN Mahasiswa m ON p.NIM = m.NIM " +
-                "JOIN Dosen d ON p.NIDN = d.NIDN " +
-                "JOIN JenisLomba j ON p.JenisID = j.JenisID";
+                "SELECT * FROM vw_PengajuanLomba";
 
-                cmd = new SqlCommand(query, conn);
-
-                SqlDataReader reader =
-                    cmd.ExecuteReader();
+                SqlDataAdapter da =
+                    new SqlDataAdapter(query, conn);
 
                 DataTable dt = new DataTable();
-                dt.Load(reader);
+                da.Fill(dt);
 
-                dataGridView1.DataSource = dt;
+                bs.DataSource = dt;
+
+                dataGridView1.DataSource = bs;
+                bindingNavigator1.BindingSource = bs;
 
                 conn.Close();
             }
@@ -143,36 +134,62 @@ namespace TESTUCP1PABD
                     return;
                 }
 
+                // 🔥 TAMBAH DI SINI
+                if (dateTimePickerTanggal.Value.Date < DateTime.Now.Date)
+                {
+                    MessageBox.Show("Tanggal pelaksanaan tidak boleh di masa lalu!");
+                    return;
+                }
+
+                if (dtpTanggalSelesai.Value
+                    <=
+                    dateTimePickerTanggal.Value)
+                {
+                    MessageBox.Show(
+                        "Tanggal selesai harus setelah tanggal pelaksanaan!");
+                    return;
+                }
+
+                if (txtDraftFile.Text == "")
+                {
+                    MessageBox.Show(
+                        "Draft wajib diupload!");
+                    return;
+                }
+
+                
+
+                string ext =
+                    Path.GetExtension(txtDraftFile.Text)
+                    .ToLower();
+
+                if (ext != ".pdf" &&
+                    ext != ".doc" &&
+                    ext != ".docx")
+                {
+                    MessageBox.Show(
+                        "Draft harus PDF, DOC, atau DOCX!");
+                    return;
+                }
+
+                // =====================
+                // BARU MASUK DATABASE
+                // =====================
                 Koneksi();
                 conn.Open();
 
-                cmd.Parameters.AddWithValue("@Jenis",
-                    comboBoxJenisMabar.SelectedValue);
+                cmd = new SqlCommand("sp_SubmitPengajuan", conn);
 
-                string query =
-                "INSERT INTO PengajuanLomba " +
-                "(NIM,NIDN,JenisID,NamaLomba,Penyelenggara,TanggalPelaksanaan,Status) " +
-                "VALUES (@NIM,@NIDN,@Jenis,@Nama,@Penyelenggara,@Tanggal,'Pending')";
+                cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd = new SqlCommand(query, conn);
-
-                cmd.Parameters.AddWithValue("@NIM",
-                    txtNIM.Text);
-
-                cmd.Parameters.AddWithValue("@NIDN",
-                    txtNIDN.Text);
-
-                cmd.Parameters.AddWithValue("@Jenis",
-                    comboBoxJenisMabar.SelectedValue);
-
-                cmd.Parameters.AddWithValue("@Nama",
-                    txtNamaLomba.Text);
-
-                cmd.Parameters.AddWithValue("@Penyelenggara",
-                    txtPenyelenggara.Text);
-
-                cmd.Parameters.AddWithValue("@Tanggal",
-                    dateTimePickerTanggal.Value);
+                cmd.Parameters.AddWithValue("@NIM", txtNIM.Text);
+                cmd.Parameters.AddWithValue("@NIDN", txtNIDN.Text);
+                cmd.Parameters.AddWithValue("@JenisID", comboBoxJenisMabar.SelectedValue);
+                cmd.Parameters.AddWithValue("@NamaLomba", txtNamaLomba.Text);
+                cmd.Parameters.AddWithValue("@Penyelenggara", txtPenyelenggara.Text);
+                cmd.Parameters.AddWithValue("@TanggalPelaksanaan", dateTimePickerTanggal.Value);
+                cmd.Parameters.AddWithValue("@TanggalSelesai", dtpTanggalSelesai.Value);
+                cmd.Parameters.AddWithValue("@DraftFile", txtDraftFile.Text);
 
                 cmd.ExecuteNonQuery();
 
@@ -192,8 +209,10 @@ namespace TESTUCP1PABD
         {
             this.Hide();
 
-            Form1 login = new Form1();
-            login.Show();
+            MenuMahasiswa menu =
+                new MenuMahasiswa();
+
+            menu.Show();
         }
 
 
@@ -316,6 +335,37 @@ namespace TESTUCP1PABD
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpTanggalSelesai_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBrowseDraft_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd =
+                new OpenFileDialog();
+
+            ofd.Filter =
+                "PDF Files|*.pdf";
+
+            if (ofd.ShowDialog() ==
+                DialogResult.OK)
+            {
+                txtDraftFile.Text =
+                    ofd.FileName;
+            }
+        }
+
+        private void txtDraftFile_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
