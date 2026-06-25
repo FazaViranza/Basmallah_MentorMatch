@@ -30,7 +30,6 @@ namespace TESTUCP1PABD
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mahasiswa));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -64,26 +63,20 @@ namespace TESTUCP1PABD
             this.btnBrowseDraft = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.logoPictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
+            this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 35);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(936, 160);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(30, 216);
+            this.label1.Location = new System.Drawing.Point(138, 194);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 26);
@@ -96,7 +89,7 @@ namespace TESTUCP1PABD
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(30, 256);
+            this.label3.Location = new System.Drawing.Point(138, 234);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 26);
@@ -109,7 +102,7 @@ namespace TESTUCP1PABD
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(30, 296);
+            this.label4.Location = new System.Drawing.Point(138, 274);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 26);
@@ -122,7 +115,7 @@ namespace TESTUCP1PABD
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(30, 336);
+            this.label5.Location = new System.Drawing.Point(138, 314);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(120, 26);
@@ -135,7 +128,7 @@ namespace TESTUCP1PABD
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(380, 216);
+            this.label6.Location = new System.Drawing.Point(488, 194);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(150, 26);
@@ -146,7 +139,7 @@ namespace TESTUCP1PABD
             // txtNIM
             // 
             this.txtNIM.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNIM.Location = new System.Drawing.Point(155, 216);
+            this.txtNIM.Location = new System.Drawing.Point(263, 194);
             this.txtNIM.Margin = new System.Windows.Forms.Padding(4);
             this.txtNIM.Name = "txtNIM";
             this.txtNIM.Size = new System.Drawing.Size(200, 29);
@@ -156,7 +149,7 @@ namespace TESTUCP1PABD
             // txtNamaLomba
             // 
             this.txtNamaLomba.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNamaLomba.Location = new System.Drawing.Point(155, 296);
+            this.txtNamaLomba.Location = new System.Drawing.Point(263, 274);
             this.txtNamaLomba.Margin = new System.Windows.Forms.Padding(4);
             this.txtNamaLomba.Name = "txtNamaLomba";
             this.txtNamaLomba.Size = new System.Drawing.Size(200, 29);
@@ -166,7 +159,7 @@ namespace TESTUCP1PABD
             // txtPenyelenggara
             // 
             this.txtPenyelenggara.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPenyelenggara.Location = new System.Drawing.Point(155, 336);
+            this.txtPenyelenggara.Location = new System.Drawing.Point(263, 314);
             this.txtPenyelenggara.Margin = new System.Windows.Forms.Padding(4);
             this.txtPenyelenggara.Name = "txtPenyelenggara";
             this.txtPenyelenggara.Size = new System.Drawing.Size(200, 29);
@@ -176,7 +169,7 @@ namespace TESTUCP1PABD
             // dateTimePickerTanggal
             // 
             this.dateTimePickerTanggal.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerTanggal.Location = new System.Drawing.Point(540, 216);
+            this.dateTimePickerTanggal.Location = new System.Drawing.Point(648, 194);
             this.dateTimePickerTanggal.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerTanggal.Name = "dateTimePickerTanggal";
             this.dateTimePickerTanggal.Size = new System.Drawing.Size(190, 29);
@@ -187,7 +180,7 @@ namespace TESTUCP1PABD
             // 
             this.comboBoxJenisMabar.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxJenisMabar.FormattingEnabled = true;
-            this.comboBoxJenisMabar.Location = new System.Drawing.Point(155, 256);
+            this.comboBoxJenisMabar.Location = new System.Drawing.Point(263, 234);
             this.comboBoxJenisMabar.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxJenisMabar.Name = "comboBoxJenisMabar";
             this.comboBoxJenisMabar.Size = new System.Drawing.Size(200, 29);
@@ -246,7 +239,7 @@ namespace TESTUCP1PABD
             // 
             this.comboBoxDosen.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxDosen.FormattingEnabled = true;
-            this.comboBoxDosen.Location = new System.Drawing.Point(505, 296);
+            this.comboBoxDosen.Location = new System.Drawing.Point(613, 274);
             this.comboBoxDosen.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxDosen.Name = "comboBoxDosen";
             this.comboBoxDosen.Size = new System.Drawing.Size(140, 29);
@@ -258,7 +251,7 @@ namespace TESTUCP1PABD
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(380, 296);
+            this.label2.Location = new System.Drawing.Point(488, 274);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 26);
@@ -269,7 +262,7 @@ namespace TESTUCP1PABD
             // txtNIDN
             // 
             this.txtNIDN.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNIDN.Location = new System.Drawing.Point(655, 296);
+            this.txtNIDN.Location = new System.Drawing.Point(763, 274);
             this.txtNIDN.Margin = new System.Windows.Forms.Padding(4);
             this.txtNIDN.Name = "txtNIDN";
             this.txtNIDN.Size = new System.Drawing.Size(75, 29);
@@ -394,7 +387,7 @@ namespace TESTUCP1PABD
             // dtpTanggalSelesai
             // 
             this.dtpTanggalSelesai.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpTanggalSelesai.Location = new System.Drawing.Point(540, 256);
+            this.dtpTanggalSelesai.Location = new System.Drawing.Point(648, 234);
             this.dtpTanggalSelesai.Margin = new System.Windows.Forms.Padding(4);
             this.dtpTanggalSelesai.Name = "dtpTanggalSelesai";
             this.dtpTanggalSelesai.Size = new System.Drawing.Size(190, 29);
@@ -404,7 +397,7 @@ namespace TESTUCP1PABD
             // txtDraftFile
             // 
             this.txtDraftFile.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDraftFile.Location = new System.Drawing.Point(505, 336);
+            this.txtDraftFile.Location = new System.Drawing.Point(613, 314);
             this.txtDraftFile.Margin = new System.Windows.Forms.Padding(4);
             this.txtDraftFile.Name = "txtDraftFile";
             this.txtDraftFile.Size = new System.Drawing.Size(140, 29);
@@ -418,7 +411,7 @@ namespace TESTUCP1PABD
             this.btnBrowseDraft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBrowseDraft.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrowseDraft.ForeColor = System.Drawing.Color.White;
-            this.btnBrowseDraft.Location = new System.Drawing.Point(655, 336);
+            this.btnBrowseDraft.Location = new System.Drawing.Point(763, 314);
             this.btnBrowseDraft.Margin = new System.Windows.Forms.Padding(4);
             this.btnBrowseDraft.Name = "btnBrowseDraft";
             this.btnBrowseDraft.Size = new System.Drawing.Size(75, 26);
@@ -432,7 +425,7 @@ namespace TESTUCP1PABD
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(380, 256);
+            this.label7.Location = new System.Drawing.Point(488, 234);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(150, 26);
@@ -445,7 +438,7 @@ namespace TESTUCP1PABD
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(380, 336);
+            this.label8.Location = new System.Drawing.Point(488, 314);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(120, 26);
@@ -453,14 +446,40 @@ namespace TESTUCP1PABD
             this.label8.Text = "Draf File";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(272, 51);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(104, 73);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
+            // logoPictureBox
+            // 
+            this.logoPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.logoPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.BackgroundImage")));
+            this.logoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.logoPictureBox.Location = new System.Drawing.Point(382, 54);
+            this.logoPictureBox.Name = "logoPictureBox";
+            this.logoPictureBox.Size = new System.Drawing.Size(320, 70);
+            this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logoPictureBox.TabIndex = 26;
+            this.logoPictureBox.TabStop = false;
+            // 
             // Mahasiswa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BackgroundImage = global::TESTUCP1PABD.Properties.Resources.umy_building_bg;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(960, 480);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.logoPictureBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnBrowseDraft);
@@ -481,7 +500,6 @@ namespace TESTUCP1PABD
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -489,18 +507,17 @@ namespace TESTUCP1PABD
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Mahasiswa - Pendaftaran Lomba";
             this.Load += new System.EventHandler(this.Mahasiswa_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -534,5 +551,7 @@ namespace TESTUCP1PABD
         private System.Windows.Forms.Button btnBrowseDraft;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox logoPictureBox;
     }
 }

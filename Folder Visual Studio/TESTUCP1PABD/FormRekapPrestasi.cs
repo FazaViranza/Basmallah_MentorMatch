@@ -16,6 +16,15 @@ namespace TESTUCP1PABD
         public FormRekapPrestasi()
         {
             InitializeComponent();
+            this.Paint += Form_Paint;
+        }
+
+        private void Form_Paint(object sender, PaintEventArgs e)
+        {
+            using (var brush = new System.Drawing.SolidBrush(System.Drawing.Color.FromArgb(180, 15, 23, 42)))
+            {
+                e.Graphics.FillRectangle(brush, this.ClientRectangle);
+            }
         }
 
         private void FormRekapPrestasi_Load(object sender, EventArgs e)

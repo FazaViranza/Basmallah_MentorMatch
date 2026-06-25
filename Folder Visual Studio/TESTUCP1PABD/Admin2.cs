@@ -27,6 +27,15 @@ namespace TESTUCP1PABD
         public Admin2()
         {
             InitializeComponent();
+            this.Paint += Form_Paint;
+        }
+
+        private void Form_Paint(object sender, PaintEventArgs e)
+        {
+            using (var brush = new SolidBrush(Color.FromArgb(180, 15, 23, 42)))
+            {
+                e.Graphics.FillRectangle(brush, this.ClientRectangle);
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

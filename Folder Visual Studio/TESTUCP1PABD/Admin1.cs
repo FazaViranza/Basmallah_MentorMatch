@@ -26,6 +26,15 @@ namespace TESTUCP1PABD
         public Admin1()
         {
             InitializeComponent();
+            this.Paint += Form_Paint;
+        }
+
+        private void Form_Paint(object sender, PaintEventArgs e)
+        {
+            using (var brush = new SolidBrush(Color.FromArgb(180, 15, 23, 42)))
+            {
+                e.Graphics.FillRectangle(brush, this.ClientRectangle);
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -205,6 +214,16 @@ namespace TESTUCP1PABD
 
             FormImportExcel mhs = new FormImportExcel();
             mhs.Show();
+        }
+
+        private void panelSidebar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Admin1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

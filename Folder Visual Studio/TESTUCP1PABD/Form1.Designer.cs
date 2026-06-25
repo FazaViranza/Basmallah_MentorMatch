@@ -34,7 +34,6 @@ namespace TESTUCP1PABD
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.PictureBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
-
             this.btnRegister = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -72,7 +71,8 @@ namespace TESTUCP1PABD
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(16, 15);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(104, 73);
@@ -83,7 +83,8 @@ namespace TESTUCP1PABD
             // 
             // logoPictureBox
             // 
-            this.logoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.Image")));
+            this.logoPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.BackgroundImage")));
+            this.logoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.logoPictureBox.Location = new System.Drawing.Point(152, 15);
             this.logoPictureBox.Name = "logoPictureBox";
             this.logoPictureBox.Size = new System.Drawing.Size(320, 70);
@@ -93,7 +94,8 @@ namespace TESTUCP1PABD
             // 
             // label1
             // 
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("label1.BackgroundImage")));
+            this.label1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.label1.Location = new System.Drawing.Point(573, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 27);
@@ -125,7 +127,8 @@ namespace TESTUCP1PABD
             // 
             // label2
             // 
-            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
+            this.label2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("label2.BackgroundImage")));
+            this.label2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.label2.Location = new System.Drawing.Point(573, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 27);
@@ -192,8 +195,9 @@ namespace TESTUCP1PABD
             // 
             // bannerPictureBox
             // 
+            this.bannerPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bannerPictureBox.BackgroundImage")));
+            this.bannerPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bannerPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bannerPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("bannerPictureBox.Image")));
             this.bannerPictureBox.Location = new System.Drawing.Point(0, 100);
             this.bannerPictureBox.Name = "bannerPictureBox";
             this.bannerPictureBox.Size = new System.Drawing.Size(942, 403);

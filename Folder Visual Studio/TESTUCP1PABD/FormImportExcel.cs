@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,12 +31,21 @@ namespace TESTUCP1PABD
         public FormImportExcel()
         {
             InitializeComponent();
+            this.Paint += Form_Paint;
 
             cmbJenisImport.Items.Add("Mahasiswa");
             cmbJenisImport.Items.Add("Dosen");
 
             cmbJenisImport.SelectedIndex = -1;
             cmbJenisImport.Text = "-- Pilih Jenis Import --";
+        }
+
+        private void Form_Paint(object sender, PaintEventArgs e)
+        {
+            using (var brush = new SolidBrush(Color.FromArgb(180, 15, 23, 42)))
+            {
+                e.Graphics.FillRectangle(brush, this.ClientRectangle);
+            }
         }
 
         private void txtFile_TextChanged(object sender, EventArgs e)

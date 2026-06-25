@@ -83,7 +83,7 @@ namespace TESTUCP1PABD
             this.txtEmail.Size = new System.Drawing.Size(265, 29);
             this.txtEmail.TabIndex = 3;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
-
+            // 
             // btnRegister
             // 
             this.btnRegister.BackColor = System.Drawing.Color.White;
@@ -91,7 +91,7 @@ namespace TESTUCP1PABD
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            this.btnRegister.Location = new System.Drawing.Point(373, 364);
+            this.btnRegister.Location = new System.Drawing.Point(869, 480);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(147, 43);
@@ -99,7 +99,7 @@ namespace TESTUCP1PABD
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-
+            // 
             // NIM
             // 
             this.NIM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
@@ -151,7 +151,7 @@ namespace TESTUCP1PABD
             this.label3.TabIndex = 10;
             this.label3.Text = "Email";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
+            // 
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.Color.White;
@@ -171,7 +171,8 @@ namespace TESTUCP1PABD
             // logoPictureBox
             // 
             this.logoPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.logoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.Image")));
+            this.logoPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.BackgroundImage")));
+            this.logoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.logoPictureBox.Location = new System.Drawing.Point(44, 25);
             this.logoPictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.logoPictureBox.Name = "logoPictureBox";

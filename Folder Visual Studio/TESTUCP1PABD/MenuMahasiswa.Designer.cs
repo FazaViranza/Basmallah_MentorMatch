@@ -46,7 +46,7 @@ namespace TESTUCP1PABD
             this.btnSubmit.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.btnSubmit.Location = new System.Drawing.Point(193, 222);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(200, 55);
             this.btnSubmit.TabIndex = 0;
@@ -62,7 +62,7 @@ namespace TESTUCP1PABD
             this.btnUpdateHasil.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateHasil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.btnUpdateHasil.Location = new System.Drawing.Point(433, 222);
-            this.btnUpdateHasil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdateHasil.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdateHasil.Name = "btnUpdateHasil";
             this.btnUpdateHasil.Size = new System.Drawing.Size(200, 55);
             this.btnUpdateHasil.TabIndex = 1;
@@ -78,7 +78,7 @@ namespace TESTUCP1PABD
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Location = new System.Drawing.Point(433, 320);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(200, 55);
             this.btnLogout.TabIndex = 2;
@@ -89,10 +89,10 @@ namespace TESTUCP1PABD
             // logoPictureBox
             // 
             this.logoPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.logoPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.BackgroundImage")));
             this.logoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.logoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.Image")));
             this.logoPictureBox.Location = new System.Drawing.Point(45, 25);
-            this.logoPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.logoPictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.logoPictureBox.Name = "logoPictureBox";
             this.logoPictureBox.Size = new System.Drawing.Size(136, 107);
             this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -120,7 +120,7 @@ namespace TESTUCP1PABD
             this.btnStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.btnStatus.Location = new System.Drawing.Point(673, 222);
-            this.btnStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatus.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatus.Name = "btnStatus";
             this.btnStatus.Size = new System.Drawing.Size(200, 55);
             this.btnStatus.TabIndex = 3;
@@ -142,7 +142,7 @@ namespace TESTUCP1PABD
             this.Controls.Add(this.btnUpdateHasil);
             this.Controls.Add(this.btnSubmit);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MenuMahasiswa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Mahasiswa";
