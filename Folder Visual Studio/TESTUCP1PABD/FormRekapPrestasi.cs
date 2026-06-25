@@ -7,7 +7,7 @@ namespace TESTUCP1PABD
 {
     public partial class FormRekapPrestasi : Form
     {
-        private string connectionString = "Data Source=LAPTOP-QL2H17RM;Initial Catalog=MentorMatchMabarDB;Integrated Security=True";
+        private string connectionString = Session.ConnectionString;
         private SqlConnection conn;
         private SqlDataAdapter da;
         private DataTable dtProdi;

@@ -21,9 +21,7 @@ namespace TESTUCP1PABD
 
         void Koneksi()
         {
-            conn = new SqlConnection(
-                "Data Source=LAPTOP-QL2H17RM;Initial Catalog=MentorMatchMabarDB;Integrated Security=True"
-            );
+            conn = new SqlConnection(Session.ConnectionString);
         }
 
         DataTable dtExcel = new DataTable();

@@ -384,6 +384,7 @@ namespace TESTUCP1PABD
             this.DoubleBuffered = true;
             this.Name = "UpdateHasilLomba";
             this.Text = "UpdateHasilLomba";
+            this.Load += new System.EventHandler(this.UpdateHasilLomba_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);

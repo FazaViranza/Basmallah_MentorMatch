@@ -20,9 +20,7 @@ namespace TESTUCP1PABD
 
         private void Koneksi()
         {
-            conn = new SqlConnection(
-                "Data Source=LAPTOP-6UCOLCI3\\RAZFAR;Initial Catalog=MentorMatchMabarDB;Integrated Security=True"
-            );
+            conn = new SqlConnection(Session.ConnectionString);
         }
         public Admin2()
         {

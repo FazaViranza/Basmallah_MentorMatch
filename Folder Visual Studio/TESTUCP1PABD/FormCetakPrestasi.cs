@@ -9,7 +9,7 @@ namespace TESTUCP1PABD
 {
     public partial class FormCetakPrestasi : Form
     {
-        private string connectionString = "Data Source=LAPTOP-QL2H17RM;Initial Catalog=MentorMatchMabarDB;Integrated Security=True";
+        private string connectionString = Session.ConnectionString;
         private string filterProdi;
         private string filterStatus;
         private int pengajuanID = 0;

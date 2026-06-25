@@ -39,7 +39,7 @@
             // txtNIM
             // 
             this.txtNIM.Location = new System.Drawing.Point(376, 306);
-            this.txtNIM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNIM.Margin = new System.Windows.Forms.Padding(4);
             this.txtNIM.Name = "txtNIM";
             this.txtNIM.Size = new System.Drawing.Size(207, 22);
             this.txtNIM.TabIndex = 0;
@@ -52,7 +52,7 @@
             this.btnCari.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Bold);
             this.btnCari.ForeColor = System.Drawing.Color.White;
             this.btnCari.Location = new System.Drawing.Point(617, 303);
-            this.btnCari.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCari.Margin = new System.Windows.Forms.Padding(4);
             this.btnCari.Name = "btnCari";
             this.btnCari.Size = new System.Drawing.Size(100, 28);
             this.btnCari.TabIndex = 9;
@@ -62,11 +62,14 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(16, 493);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Bold);
+            this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
+            this.btnBack.Location = new System.Drawing.Point(33, 481);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(100, 28);
-            this.btnBack.TabIndex = 2;
+            this.btnBack.Size = new System.Drawing.Size(102, 33);
+            this.btnBack.TabIndex = 10;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -75,7 +78,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(16, 15);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1035, 272);
@@ -94,9 +97,10 @@
             this.Controls.Add(this.btnCari);
             this.Controls.Add(this.txtNIM);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormStatusPengajuan";
             this.Text = "FormStatusPengajuan";
+            this.Load += new System.EventHandler(this.FormStatusPengajuan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

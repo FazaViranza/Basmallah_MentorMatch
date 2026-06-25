@@ -414,7 +414,7 @@ namespace TESTUCP1PABD
             this.btnBrowseDraft.Location = new System.Drawing.Point(763, 314);
             this.btnBrowseDraft.Margin = new System.Windows.Forms.Padding(4);
             this.btnBrowseDraft.Name = "btnBrowseDraft";
-            this.btnBrowseDraft.Size = new System.Drawing.Size(75, 26);
+            this.btnBrowseDraft.Size = new System.Drawing.Size(75, 29);
             this.btnBrowseDraft.TabIndex = 23;
             this.btnBrowseDraft.Text = "Browser";
             this.btnBrowseDraft.UseVisualStyleBackColor = false;

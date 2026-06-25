@@ -218,6 +218,7 @@ namespace TESTUCP1PABD
             this.Name = "RegisterMahasiswa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrasi Mahasiswa";
+            this.Load += new System.EventHandler(this.RegisterMahasiswa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -146,6 +146,7 @@ namespace TESTUCP1PABD
             this.Name = "MenuMahasiswa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Mahasiswa";
+            this.Load += new System.EventHandler(this.MenuMahasiswa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.ResumeLayout(false);
 

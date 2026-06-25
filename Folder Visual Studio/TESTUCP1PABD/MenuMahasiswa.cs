@@ -53,5 +53,10 @@ namespace TESTUCP1PABD
 
             frm.Show();
         }
+
+        private void MenuMahasiswa_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

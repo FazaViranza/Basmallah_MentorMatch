@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,8 +20,7 @@ namespace TESTUCP1PABD
 
         private void Koneksi()
         {
-            conn = new SqlConnection(
-                "Data Source=LAPTOP-QL2H17RM;Initial Catalog=MentorMatchMabarDB;Integrated Security=True");
+            conn = new SqlConnection(Session.ConnectionString);
         }
 
         public UpdateHasilLomba()
@@ -242,6 +241,11 @@ namespace TESTUCP1PABD
         }
 
         private void cmbHasilLomba_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdateHasilLomba_Load(object sender, EventArgs e)
         {
 
         }

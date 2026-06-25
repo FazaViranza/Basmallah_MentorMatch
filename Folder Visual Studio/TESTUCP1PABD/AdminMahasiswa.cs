@@ -14,9 +14,7 @@ namespace TESTUCP1PABD
 
         void Koneksi()
         {
-            conn = new SqlConnection(
-                "Data Source=LAPTOP-QL2H17RM;Initial Catalog=MentorMatchMabarDB;Integrated Security=True"
-            );
+            conn = new SqlConnection(Session.ConnectionString);
         }
 
         public AdminMahasiswa()
@@ -176,6 +174,11 @@ namespace TESTUCP1PABD
         }
 
         private void bindingNavigatorPositionItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AdminMahasiswa_Load(object sender, EventArgs e)
         {
 
         }

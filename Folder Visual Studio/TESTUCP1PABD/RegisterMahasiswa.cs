@@ -24,9 +24,7 @@ namespace TESTUCP1PABD
 
         void Koneksi()
         {
-            conn = new SqlConnection(
-                "Data Source=LAPTOP-6UCOLCI3\\RAZFAR;Initial Catalog=MentorMatchMabarDB;Integrated Security=True"
-            );
+            conn = new SqlConnection(Session.ConnectionString);
         }
 
         
@@ -146,6 +144,11 @@ namespace TESTUCP1PABD
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void RegisterMahasiswa_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

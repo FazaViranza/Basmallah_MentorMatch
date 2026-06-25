@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,9 +22,7 @@ namespace TESTUCP1PABD
         // KONEKSI DATABASE
         private void Koneksi()
         {
-            conn = new SqlConnection(
-                "Data Source=LAPTOP-QL2H17RM;Initial Catalog=MentorMatchMabarDB;Integrated Security=True"
-            );
+            conn = new SqlConnection(Session.ConnectionString);
         }
         public Dosen()
         {
