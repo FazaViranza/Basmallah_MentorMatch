@@ -28,9 +28,6 @@ namespace TESTUCP1PABD
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mahasiswa));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,30 +40,14 @@ namespace TESTUCP1PABD
             this.comboBoxJenisMabar = new System.Windows.Forms.ComboBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.btnView = new System.Windows.Forms.Button();
             this.comboBoxDosen = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNIDN = new System.Windows.Forms.TextBox();
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.dtpTanggalSelesai = new System.Windows.Forms.DateTimePicker();
             this.txtDraftFile = new System.Windows.Forms.TextBox();
             this.btnBrowseDraft = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
-            this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -469,11 +450,9 @@ namespace TESTUCP1PABD
             this.Controls.Add(this.btnBrowseDraft);
             this.Controls.Add(this.txtDraftFile);
             this.Controls.Add(this.dtpTanggalSelesai);
-            this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.txtNIDN);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxDosen);
-            this.Controls.Add(this.btnView);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.comboBoxJenisMabar);

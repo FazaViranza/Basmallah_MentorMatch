@@ -427,7 +427,6 @@ namespace TESTUCP1PABD
                     conn.Open();
                 }
 
-                
                 string input = txtNIDN.Text.Replace(" ", "").ToLower();
                 if (input.Contains("or1=1") || input.Contains("or'1'='1'") || input.Contains("--"))
                 {
@@ -510,5 +509,6 @@ namespace TESTUCP1PABD
                 MessageBox.Show("Gagal menyimpan log: " + ex.Message);
             }
         }
+
     }
 }

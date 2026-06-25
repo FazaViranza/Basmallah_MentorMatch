@@ -34,6 +34,7 @@ namespace TESTUCP1PABD
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.PictureBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
+
             this.btnRegister = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();

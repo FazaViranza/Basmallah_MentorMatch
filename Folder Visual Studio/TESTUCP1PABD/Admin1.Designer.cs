@@ -51,6 +51,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnCetak = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -258,11 +259,22 @@
             this.btnCetak.UseVisualStyleBackColor = true;
             this.btnCetak.Click += new System.EventHandler(this.btnCetak_Click);
             // 
+            // btnImport
+            // 
+            this.btnImport.Location = new System.Drawing.Point(618, 167);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(98, 23);
+            this.btnImport.TabIndex = 10;
+            this.btnImport.Text = "Import";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
             // Admin1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnImport);
             this.Controls.Add(this.btnCetak);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.btnMahasiswa);
@@ -307,5 +319,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.Button btnCetak;
+        private System.Windows.Forms.Button btnImport;
     }
 }

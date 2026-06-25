@@ -88,8 +88,6 @@ namespace TESTUCP1PABD
 
                 bs.DataSource = dt;
 
-                dataGridView1.DataSource = bs;
-                bindingNavigator1.BindingSource = bs;
 
                 conn.Close();
             }
@@ -182,7 +180,7 @@ namespace TESTUCP1PABD
 
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@NIM", txtNIM.Text);
+                cmd.Parameters.AddWithValue("@NIM", Session.Username);
                 cmd.Parameters.AddWithValue("@NIDN", txtNIDN.Text);
                 cmd.Parameters.AddWithValue("@JenisID", comboBoxJenisMabar.SelectedValue);
                 cmd.Parameters.AddWithValue("@NamaLomba", txtNamaLomba.Text);
@@ -205,6 +203,12 @@ namespace TESTUCP1PABD
             }
         }
 
+        private void Mahasiswa_Load(object sender, EventArgs e)
+        {
+            txtNIM.Text = Session.Username;
+            txtNIM.ReadOnly = true;
+        }
+
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -218,27 +222,7 @@ namespace TESTUCP1PABD
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row =
-                    dataGridView1.Rows[e.RowIndex];
-
-                txtNIM.Text =
-                    row.Cells["NIM"].Value.ToString();
-
-                comboBoxJenisMabar.SelectedValue =
-                    row.Cells["JenisID"].Value;
-
-                txtNamaLomba.Text =
-                    row.Cells["NamaLomba"].Value.ToString();
-
-                txtPenyelenggara.Text =
-                    row.Cells["Penyelenggara"].Value.ToString();
-
-                dateTimePickerTanggal.Value =
-                    Convert.ToDateTime(
-                        row.Cells["TanggalPelaksanaan"].Value);
-            }
+            
 
         }
 
@@ -364,11 +348,6 @@ namespace TESTUCP1PABD
         }
 
         private void txtDraftFile_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Mahasiswa_Load(object sender, EventArgs e)
         {
 
         }

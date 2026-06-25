@@ -33,14 +33,11 @@ namespace TESTUCP1PABD
             this.txtNama = new System.Windows.Forms.TextBox();
             this.txtProdi = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtCode = new System.Windows.Forms.TextBox();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.btnVerify = new System.Windows.Forms.Button();
             this.NIM = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();

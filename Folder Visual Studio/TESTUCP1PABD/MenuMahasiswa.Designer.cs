@@ -34,6 +34,7 @@ namespace TESTUCP1PABD
             this.btnLogout = new System.Windows.Forms.Button();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.btnStatus = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@ namespace TESTUCP1PABD
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            this.btnSubmit.Location = new System.Drawing.Point(293, 222);
+            this.btnSubmit.Location = new System.Drawing.Point(193, 222);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(200, 55);
@@ -60,7 +61,7 @@ namespace TESTUCP1PABD
             this.btnUpdateHasil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateHasil.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateHasil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            this.btnUpdateHasil.Location = new System.Drawing.Point(573, 222);
+            this.btnUpdateHasil.Location = new System.Drawing.Point(433, 222);
             this.btnUpdateHasil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpdateHasil.Name = "btnUpdateHasil";
             this.btnUpdateHasil.Size = new System.Drawing.Size(200, 55);
@@ -111,6 +112,22 @@ namespace TESTUCP1PABD
             this.lblTitle.Text = "Menu Mahasiswa";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnStatus
+            // 
+            this.btnStatus.BackColor = System.Drawing.Color.White;
+            this.btnStatus.FlatAppearance.BorderSize = 0;
+            this.btnStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
+            this.btnStatus.Location = new System.Drawing.Point(673, 222);
+            this.btnStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatus.Name = "btnStatus";
+            this.btnStatus.Size = new System.Drawing.Size(200, 55);
+            this.btnStatus.TabIndex = 3;
+            this.btnStatus.Text = "Status";
+            this.btnStatus.UseVisualStyleBackColor = false;
+            this.btnStatus.Click += new System.EventHandler(this.btnStatus_Click);
+            // 
             // MenuMahasiswa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -120,6 +137,7 @@ namespace TESTUCP1PABD
             this.ClientSize = new System.Drawing.Size(1067, 517);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.logoPictureBox);
+            this.Controls.Add(this.btnStatus);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnUpdateHasil);
             this.Controls.Add(this.btnSubmit);
@@ -140,5 +158,6 @@ namespace TESTUCP1PABD
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.PictureBox logoPictureBox;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button btnStatus;
     }
 }

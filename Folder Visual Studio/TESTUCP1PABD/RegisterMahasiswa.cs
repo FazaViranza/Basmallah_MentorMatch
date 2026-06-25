@@ -20,7 +20,6 @@ namespace TESTUCP1PABD
     public RegisterMahasiswa()
         {
             InitializeComponent();
-            txtCode.Enabled = false;
         }
 
         void Koneksi()
@@ -30,11 +29,7 @@ namespace TESTUCP1PABD
             );
         }
 
-        string GenerateCode()
-        {
-            Random rnd = new Random();
-            return rnd.Next(100000, 999999).ToString();
-        }
+        
 
         // ================= REGISTER =================
         private void btnRegister_Click(object sender, EventArgs e)
@@ -96,8 +91,6 @@ namespace TESTUCP1PABD
                     return;
                 }
 
-                // 🔥 GENERATE CODE
-                string code = GenerateCode();
 
                 // 🔥 STORED PROCEDURE
                 cmd = new SqlCommand(
@@ -123,18 +116,17 @@ namespace TESTUCP1PABD
                     "@Email",
                     txtEmail.Text);
 
-                cmd.Parameters.AddWithValue(
-                    "@Code",
-                    code);
 
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show(
-                    "Kode verifikasi: " + code);
+                "Registrasi berhasil.\nMenunggu persetujuan Admin.");
 
                 conn.Close();
 
-                txtCode.Enabled = true;
+                this.Close();
+
+
             }
             catch (Exception ex)
             {
@@ -143,64 +135,7 @@ namespace TESTUCP1PABD
         }
 
         // ================= VERIFY =================
-        private void btnVerify_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (txtNIM.Text == "" || txtCode.Text == "")
-                {
-                    MessageBox.Show("Masukkan NIM dan kode!");
-                    return;
-                }
-
-                Koneksi();
-                conn.Open();
-
-                cmd = new SqlCommand("sp_VerifyMahasiswa", conn);
-
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@NIM", txtNIM.Text);
-                cmd.Parameters.AddWithValue("@Code", txtCode.Text);
-
-                int result = cmd.ExecuteNonQuery();
-
-                if (result > 0)
-                {
-                    MessageBox.Show("Verifikasi berhasil!");
-
-                    // 🔥 CEK USER BIAR GA DOUBLE
-                    string checkUser = "SELECT COUNT(*) FROM Users WHERE Username=@Username";
-                    SqlCommand checkUserCmd = new SqlCommand(checkUser, conn);
-                    checkUserCmd.Parameters.AddWithValue("@Username", txtNIM.Text);
-
-                    int count = (int)checkUserCmd.ExecuteScalar();
-
-                    if (count == 0)
-                    {
-                        string insertUser =
-                        "INSERT INTO Users (Username, Password, Role) VALUES (@Username,'123','Mahasiswa')";
-
-                        SqlCommand userCmd = new SqlCommand(insertUser, conn);
-                        userCmd.Parameters.AddWithValue("@Username", txtNIM.Text);
-
-                        userCmd.ExecuteNonQuery();
-                    }
-
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Kode salah!");
-                }
-
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        
 
         private void txtNIM_TextChanged(object sender, EventArgs e) { }
         private void txtNama_TextChanged(object sender, EventArgs e) { }
