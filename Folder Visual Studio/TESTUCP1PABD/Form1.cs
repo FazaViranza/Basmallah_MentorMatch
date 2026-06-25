@@ -127,29 +127,6 @@ namespace TESTUCP1PABD
 
         }
 
-        private void btnConnect_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Koneksi();
-
-                conn.Open();
-
-                MessageBox.Show("Koneksi ke database berhasil!");
-
-                lblStatus.Text = "Connected";
-
-                isConnected = true;
-
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Koneksi gagal: " + ex.Message);
-                lblStatus.Text = "Failed";
-            }
-        }
-
         private void lblStatus_Click(object sender, EventArgs e)
         {
 
@@ -157,7 +134,21 @@ namespace TESTUCP1PABD
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                Koneksi();
+                conn.Open();
+                lblStatus.Text = "Connected";
+                lblStatus.ForeColor = System.Drawing.Color.FromArgb(34, 197, 94); // Green
+                isConnected = true;
+                conn.Close();
+            }
+            catch (Exception)
+            {
+                lblStatus.Text = "Failed";
+                lblStatus.ForeColor = System.Drawing.Color.FromArgb(239, 68, 68); // Red
+                isConnected = false;
+            }
         }
 
         private void headerPanel_Paint(object sender, PaintEventArgs e)
@@ -174,6 +165,11 @@ namespace TESTUCP1PABD
         {
             RegisterMahasiswa reg = new RegisterMahasiswa();
             reg.ShowDialog();
+        }
+
+        private void lblStatus_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

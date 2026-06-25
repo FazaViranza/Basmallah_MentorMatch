@@ -30,10 +30,11 @@ namespace TESTUCP1PABD
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.headerPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.PictureBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.btnConnect = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -41,15 +42,13 @@ namespace TESTUCP1PABD
             this.label3 = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.bannerPictureBox = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.headerPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.label1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.label2)).BeginInit();
             this.statusPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bannerPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.btnRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // headerPanel
@@ -59,7 +58,7 @@ namespace TESTUCP1PABD
             this.headerPanel.Controls.Add(this.logoPictureBox);
             this.headerPanel.Controls.Add(this.label1);
             this.headerPanel.Controls.Add(this.txtUsername);
-            this.headerPanel.Controls.Add(this.btnConnect);
+            this.headerPanel.Controls.Add(this.btnRegister);
             this.headerPanel.Controls.Add(this.label2);
             this.headerPanel.Controls.Add(this.txtPassword);
             this.headerPanel.Controls.Add(this.btnLogin);
@@ -69,6 +68,17 @@ namespace TESTUCP1PABD
             this.headerPanel.Size = new System.Drawing.Size(942, 100);
             this.headerPanel.TabIndex = 0;
             this.headerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.headerPanel_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(16, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(104, 73);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // logoPictureBox
             // 
@@ -98,19 +108,19 @@ namespace TESTUCP1PABD
             this.txtUsername.Size = new System.Drawing.Size(197, 27);
             this.txtUsername.TabIndex = 2;
             // 
-            // btnConnect
+            // btnRegister
             // 
-            this.btnConnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(116)))), ((int)(((byte)(144)))));
-            this.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConnect.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConnect.ForeColor = System.Drawing.Color.White;
-            this.btnConnect.Location = new System.Drawing.Point(813, 13);
-            this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(100, 31);
-            this.btnConnect.TabIndex = 3;
-            this.btnConnect.Text = "Connect";
-            this.btnConnect.UseVisualStyleBackColor = false;
-            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegister.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
+            this.btnRegister.Location = new System.Drawing.Point(813, 48);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(100, 31);
+            this.btnRegister.TabIndex = 6;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // label2
             // 
@@ -137,10 +147,10 @@ namespace TESTUCP1PABD
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(813, 48);
+            this.btnLogin.Location = new System.Drawing.Point(813, 13);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(100, 31);
-            this.btnLogin.TabIndex = 6;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -177,6 +187,7 @@ namespace TESTUCP1PABD
             this.lblStatus.Size = new System.Drawing.Size(86, 20);
             this.lblStatus.TabIndex = 1;
             this.lblStatus.Text = "Disconnect";
+            this.lblStatus.Click += new System.EventHandler(this.lblStatus_Click_1);
             // 
             // bannerPictureBox
             // 
@@ -189,33 +200,11 @@ namespace TESTUCP1PABD
             this.bannerPictureBox.TabIndex = 2;
             this.bannerPictureBox.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(16, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(104, 73);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.Location = new System.Drawing.Point(346, 357);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(75, 23);
-            this.btnRegister.TabIndex = 8;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = true;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 538);
-            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.bannerPictureBox);
             this.Controls.Add(this.statusPanel);
             this.Controls.Add(this.headerPanel);
@@ -225,13 +214,13 @@ namespace TESTUCP1PABD
             this.Load += new System.EventHandler(this.Form1_Load);
             this.headerPanel.ResumeLayout(false);
             this.headerPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.label1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.label2)).EndInit();
             this.statusPanel.ResumeLayout(false);
             this.statusPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bannerPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -242,7 +231,6 @@ namespace TESTUCP1PABD
         private System.Windows.Forms.PictureBox logoPictureBox;
         private System.Windows.Forms.PictureBox label1;
         private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.PictureBox label2;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
