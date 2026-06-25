@@ -7,7 +7,7 @@ namespace TESTUCP1PABD
 {
     public partial class FormRekapPrestasi : Form
     {
-        private string connectionString = "Data Source=LAPTOP-QL2H17RM;Initial Catalog=MentorMatchMabarDB;Integrated Security=True";
+        private string connectionString = "Data Source=192.168.100.124,1433;\r\nInitial Catalog=MentorMatchMabarDB;\r\nUser ID=AdminUser;\r\nPassword=Admin123!;\r\nTrustServerCertificate=True";
         private SqlConnection conn;
         private SqlDataAdapter da;
         private DataTable dtProdi;
@@ -45,9 +45,9 @@ namespace TESTUCP1PABD
                 cmbStatus.Items.Clear();
                 cmbStatus.Items.Add("Semua Status");
                 cmbStatus.Items.Add("Pending");
-                cmbStatus.Items.Add("Disetujui");
-                cmbStatus.Items.Add("Ditolak");
-                cmbStatus.Items.Add("Selesai");
+                cmbStatus.Items.Add("Approved");
+                cmbStatus.Items.Add("Rejected");
+                cmbStatus.Items.Add("Completed");
                 cmbStatus.SelectedIndex = 0;
 
                 btnCetak.Enabled = false;
@@ -162,6 +162,11 @@ namespace TESTUCP1PABD
                 new FormCetakPrestasi(id);
 
             frm.Show();
+        }
+
+        private void cmbStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

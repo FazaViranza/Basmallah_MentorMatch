@@ -60,6 +60,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(776, 193);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // txtNIM
             // 
@@ -71,7 +72,7 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(273, 317);
+            this.btnRead.Location = new System.Drawing.Point(275, 287);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(75, 23);
             this.btnRead.TabIndex = 2;
@@ -81,7 +82,7 @@
             // 
             // btnApprove
             // 
-            this.btnApprove.Location = new System.Drawing.Point(414, 317);
+            this.btnApprove.Location = new System.Drawing.Point(418, 287);
             this.btnApprove.Name = "btnApprove";
             this.btnApprove.Size = new System.Drawing.Size(75, 23);
             this.btnApprove.TabIndex = 3;
@@ -91,7 +92,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(355, 362);
+            this.btnBack.Location = new System.Drawing.Point(12, 415);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 4;

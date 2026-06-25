@@ -19,18 +19,28 @@ namespace TESTUCP1PABD
         void Koneksi()
         {
             conn = new SqlConnection(
-                "Data Source=LAPTOP-QL2H17RM;Initial Catalog=MentorMatchMabarDB;Integrated Security=True"
+                "Data Source=192.168.100.124,1433;\r\nInitial Catalog=MentorMatchMabarDB;\r\nUser ID=AdminUser;\r\nPassword=Admin123!;\r\nTrustServerCertificate=True"
             );
 
         }
         public FormStatusPengajuan()
         {
             InitializeComponent();
+
+            txtNIM.Text = Session.Username;
+            txtNIM.ReadOnly = true;
+
+            this.Load += FormStatusPengajuan_Load;
         }
 
         private void txtNIM_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormStatusPengajuan_Load(object sender, EventArgs e)
+        {
+            btnCari.PerformClick();
         }
 
         private void txtNIM_KeyDown(object sender, KeyEventArgs e)
@@ -76,7 +86,7 @@ namespace TESTUCP1PABD
 
                 cmd.Parameters.AddWithValue(
                     "@NIM",
-                    txtNIM.Text.Trim());
+                    Session.Username);
 
                 SqlDataAdapter da =
                     new SqlDataAdapter(cmd);

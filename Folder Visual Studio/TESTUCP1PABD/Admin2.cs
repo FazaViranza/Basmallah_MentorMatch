@@ -21,7 +21,7 @@ namespace TESTUCP1PABD
         private void Koneksi()
         {
             conn = new SqlConnection(
-                "Data Source=LAPTOP-QL2H17RM;Initial Catalog=MentorMatchMabarDB;Integrated Security=True"
+                "Data Source=192.168.100.124,1433;\r\nInitial Catalog=MentorMatchMabarDB;\r\nUser ID=AdminUser;\r\nPassword=Admin123!;\r\nTrustServerCertificate=True"
             );
         }
         public Admin2()
@@ -125,10 +125,10 @@ namespace TESTUCP1PABD
                     return;
                 }
 
-              
-                if (Regex.IsMatch(txtNama.Text, @"\d"))
+
+                if (!Regex.IsMatch(txtNama.Text, @"^[a-zA-Z\s.]+$"))
                 {
-                    MessageBox.Show("Nama tidak boleh mengandung angka!");
+                    MessageBox.Show("Nama hanya boleh berisi huruf, titik, dan spasi!");
                     return;
                 }
 
@@ -403,6 +403,11 @@ namespace TESTUCP1PABD
 
                 DataTable dt = new DataTable();
                 da.Fill(dt);
+
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("Data dosen tidak ditemukan!");
+                }
 
                 bs.DataSource = dt;
 

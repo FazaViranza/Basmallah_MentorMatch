@@ -14,7 +14,7 @@ namespace TESTUCP1PABD
         void Koneksi()
         {
             conn = new SqlConnection(
-                "Data Source=LAPTOP-QL2H17RM;Initial Catalog=MentorMatchMabarDB;Integrated Security=True"
+                "Data Source=192.168.100.124,1433;\r\nInitial Catalog=MentorMatchMabarDB;\r\nUser ID=AdminUser;\r\nPassword=Admin123!;\r\nTrustServerCertificate=True"
             );
         }
 
@@ -127,7 +127,9 @@ namespace TESTUCP1PABD
                     "VALUES (@Username,'123','Mahasiswa')";
 
                     SqlCommand userCmd =
-                        new SqlCommand(insertUser, conn);
+                        new SqlCommand(insertUser, conn, trans);
+
+                    userCmd.Transaction = trans;
 
                     userCmd.Parameters.AddWithValue("@Username", nim);
 
@@ -158,7 +160,7 @@ namespace TESTUCP1PABD
 
             Admin1 admin = new Admin1();
             admin.Show();
-        }
+        }   
 
         private void txtNIM_TextChanged(object sender, EventArgs e)
         {
@@ -166,6 +168,11 @@ namespace TESTUCP1PABD
         }
 
         private void bindingNavigatorPositionItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -49,7 +49,6 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.txtID = new System.Windows.Forms.Label();
             this.txtReview = new System.Windows.Forms.TextBox();
             this.dtpJadwal = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,6 +56,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtDraftFile = new System.Windows.Forms.TextBox();
             this.btnLihatDraft = new System.Windows.Forms.Button();
+            this.txtID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -92,7 +92,7 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(633, 219);
+            this.btnRead.Location = new System.Drawing.Point(713, 214);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(75, 23);
             this.btnRead.TabIndex = 3;
@@ -102,7 +102,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(633, 250);
+            this.btnUpdate.Location = new System.Drawing.Point(713, 415);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 4;
@@ -112,7 +112,7 @@
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(633, 280);
+            this.btnLogOut.Location = new System.Drawing.Point(15, 418);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(75, 23);
             this.btnLogOut.TabIndex = 5;
@@ -242,16 +242,6 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // txtID
-            // 
-            this.txtID.AutoSize = true;
-            this.txtID.ForeColor = System.Drawing.SystemColors.Control;
-            this.txtID.Location = new System.Drawing.Point(753, 428);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(35, 13);
-            this.txtID.TabIndex = 8;
-            this.txtID.Text = "label1";
-            // 
             // txtReview
             // 
             this.txtReview.Location = new System.Drawing.Point(119, 273);
@@ -263,9 +253,9 @@
             // 
             // dtpJadwal
             // 
-            this.dtpJadwal.Location = new System.Drawing.Point(119, 410);
+            this.dtpJadwal.Location = new System.Drawing.Point(423, 243);
             this.dtpJadwal.Name = "dtpJadwal";
-            this.dtpJadwal.Size = new System.Drawing.Size(200, 20);
+            this.dtpJadwal.Size = new System.Drawing.Size(195, 20);
             this.dtpJadwal.TabIndex = 10;
             this.dtpJadwal.ValueChanged += new System.EventHandler(this.dtpJadwal_ValueChanged);
             // 
@@ -281,7 +271,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 416);
+            this.label2.Location = new System.Drawing.Point(325, 245);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 13);
             this.label2.TabIndex = 12;
@@ -298,7 +288,7 @@
             // 
             // txtDraftFile
             // 
-            this.txtDraftFile.Location = new System.Drawing.Point(363, 216);
+            this.txtDraftFile.Location = new System.Drawing.Point(355, 219);
             this.txtDraftFile.Name = "txtDraftFile";
             this.txtDraftFile.ReadOnly = true;
             this.txtDraftFile.Size = new System.Drawing.Size(100, 20);
@@ -306,19 +296,28 @@
             // 
             // btnLihatDraft
             // 
-            this.btnLihatDraft.Location = new System.Drawing.Point(473, 341);
+            this.btnLihatDraft.Location = new System.Drawing.Point(713, 243);
             this.btnLihatDraft.Name = "btnLihatDraft";
             this.btnLihatDraft.Size = new System.Drawing.Size(75, 23);
             this.btnLihatDraft.TabIndex = 15;
-            this.btnLihatDraft.Text = "ReadD";
+            this.btnLihatDraft.Text = "Open Draf";
             this.btnLihatDraft.UseVisualStyleBackColor = true;
             this.btnLihatDraft.Click += new System.EventHandler(this.btnLihatDraft_Click);
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(325, 217);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(24, 20);
+            this.txtID.TabIndex = 16;
+            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // Dosen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.btnLihatDraft);
             this.Controls.Add(this.txtDraftFile);
             this.Controls.Add(this.label3);
@@ -326,7 +325,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpJadwal);
             this.Controls.Add(this.txtReview);
-            this.Controls.Add(this.txtID);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.txtNIDN);
             this.Controls.Add(this.btnLogOut);
@@ -368,7 +366,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.Label txtID;
         private System.Windows.Forms.TextBox txtReview;
         private System.Windows.Forms.DateTimePicker dtpJadwal;
         private System.Windows.Forms.Label label1;
@@ -376,5 +373,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDraftFile;
         private System.Windows.Forms.Button btnLihatDraft;
+        private System.Windows.Forms.TextBox txtID;
     }
 }

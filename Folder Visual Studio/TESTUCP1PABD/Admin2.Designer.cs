@@ -59,7 +59,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnTestInjection = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
@@ -79,7 +78,7 @@
             // labelNIDN
             // 
             this.labelNIDN.AutoSize = true;
-            this.labelNIDN.Location = new System.Drawing.Point(39, 275);
+            this.labelNIDN.Location = new System.Drawing.Point(33, 242);
             this.labelNIDN.Name = "labelNIDN";
             this.labelNIDN.Size = new System.Drawing.Size(34, 13);
             this.labelNIDN.TabIndex = 1;
@@ -88,7 +87,7 @@
             // labelNama
             // 
             this.labelNama.AutoSize = true;
-            this.labelNama.Location = new System.Drawing.Point(39, 319);
+            this.labelNama.Location = new System.Drawing.Point(33, 286);
             this.labelNama.Name = "labelNama";
             this.labelNama.Size = new System.Drawing.Size(35, 13);
             this.labelNama.TabIndex = 2;
@@ -97,7 +96,7 @@
             // labelJenis
             // 
             this.labelJenis.AutoSize = true;
-            this.labelJenis.Location = new System.Drawing.Point(39, 356);
+            this.labelJenis.Location = new System.Drawing.Point(33, 323);
             this.labelJenis.Name = "labelJenis";
             this.labelJenis.Size = new System.Drawing.Size(31, 13);
             this.labelJenis.TabIndex = 3;
@@ -106,7 +105,7 @@
             // labelStatus
             // 
             this.labelStatus.AutoSize = true;
-            this.labelStatus.Location = new System.Drawing.Point(39, 386);
+            this.labelStatus.Location = new System.Drawing.Point(33, 353);
             this.labelStatus.Name = "labelStatus";
             this.labelStatus.Size = new System.Drawing.Size(37, 13);
             this.labelStatus.TabIndex = 4;
@@ -114,7 +113,7 @@
             // 
             // txtNIDN
             // 
-            this.txtNIDN.Location = new System.Drawing.Point(113, 268);
+            this.txtNIDN.Location = new System.Drawing.Point(107, 235);
             this.txtNIDN.Name = "txtNIDN";
             this.txtNIDN.Size = new System.Drawing.Size(100, 20);
             this.txtNIDN.TabIndex = 5;
@@ -122,7 +121,7 @@
             // 
             // txtNama
             // 
-            this.txtNama.Location = new System.Drawing.Point(113, 313);
+            this.txtNama.Location = new System.Drawing.Point(107, 280);
             this.txtNama.Name = "txtNama";
             this.txtNama.Size = new System.Drawing.Size(100, 20);
             this.txtNama.TabIndex = 6;
@@ -130,7 +129,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(639, 243);
+            this.btnDelete.Location = new System.Drawing.Point(579, 344);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 8;
@@ -140,7 +139,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(639, 277);
+            this.btnUpdate.Location = new System.Drawing.Point(671, 315);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 9;
@@ -150,7 +149,7 @@
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(639, 313);
+            this.btnInsert.Location = new System.Drawing.Point(671, 344);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(75, 23);
             this.btnInsert.TabIndex = 10;
@@ -160,7 +159,7 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(639, 352);
+            this.btnRead.Location = new System.Drawing.Point(671, 286);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(75, 23);
             this.btnRead.TabIndex = 11;
@@ -171,7 +170,7 @@
             // comboBoxJenis
             // 
             this.comboBoxJenis.FormattingEnabled = true;
-            this.comboBoxJenis.Location = new System.Drawing.Point(113, 348);
+            this.comboBoxJenis.Location = new System.Drawing.Point(107, 315);
             this.comboBoxJenis.Name = "comboBoxJenis";
             this.comboBoxJenis.Size = new System.Drawing.Size(121, 21);
             this.comboBoxJenis.TabIndex = 12;
@@ -180,14 +179,14 @@
             // comboBoxStatus
             // 
             this.comboBoxStatus.FormattingEnabled = true;
-            this.comboBoxStatus.Location = new System.Drawing.Point(113, 386);
+            this.comboBoxStatus.Location = new System.Drawing.Point(107, 353);
             this.comboBoxStatus.Name = "comboBoxStatus";
             this.comboBoxStatus.Size = new System.Drawing.Size(121, 21);
             this.comboBoxStatus.TabIndex = 13;
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(639, 390);
+            this.btnBack.Location = new System.Drawing.Point(12, 415);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 14;
@@ -332,7 +331,7 @@
             // 
             this.btnTestInjection.BackColor = System.Drawing.Color.Red;
             this.btnTestInjection.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnTestInjection.Location = new System.Drawing.Point(497, 389);
+            this.btnTestInjection.Location = new System.Drawing.Point(579, 286);
             this.btnTestInjection.Name = "btnTestInjection";
             this.btnTestInjection.Size = new System.Drawing.Size(75, 23);
             this.btnTestInjection.TabIndex = 18;
@@ -340,20 +339,11 @@
             this.btnTestInjection.UseVisualStyleBackColor = false;
             this.btnTestInjection.Click += new System.EventHandler(this.btnTestInjection_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(484, 373);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 13);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "\"Testing SQL Injection\"";
-            // 
             // btnReset
             // 
             this.btnReset.BackColor = System.Drawing.Color.Red;
             this.btnReset.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnReset.Location = new System.Drawing.Point(497, 300);
+            this.btnReset.Location = new System.Drawing.Point(579, 315);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 23);
             this.btnReset.TabIndex = 20;
@@ -367,7 +357,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnTestInjection);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.btnSearch);
@@ -429,7 +418,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.Button btnTestInjection;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnReset;
     }
 }

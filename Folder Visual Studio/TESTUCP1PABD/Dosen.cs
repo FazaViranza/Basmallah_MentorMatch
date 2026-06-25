@@ -23,7 +23,7 @@ namespace TESTUCP1PABD
         private void Koneksi()
         {
             conn = new SqlConnection(
-                "Data Source=LAPTOP-QL2H17RM;Initial Catalog=MentorMatchMabarDB;Integrated Security=True"
+                "Data Source=192.168.100.124,1433;\r\nInitial Catalog=MentorMatchMabarDB;\r\nUser ID=AdminUser;\r\nPassword=Admin123!;\r\nTrustServerCertificate=True"
             );
         }
         public Dosen()
@@ -57,7 +57,8 @@ namespace TESTUCP1PABD
 
         private void comboBoxStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            dtpJadwal.Enabled =
+                comboBoxStatus.Text != "Rejected";
         }
 
         private void btnRead_Click(object sender, EventArgs e)
@@ -68,8 +69,9 @@ namespace TESTUCP1PABD
                 conn.Open();
 
                 string query =
-                "SELECT * FROM vw_PengajuanLomba";
-
+                "SELECT * FROM vw_PengajuanLomba " +
+                "WHERE Status = 'Pending'";
+                 
                 SqlDataAdapter da =
                     new SqlDataAdapter(query, conn);
 
@@ -158,9 +160,6 @@ namespace TESTUCP1PABD
                     "@ReviewDosen",
                     txtReview.Text);
 
-                cmd.Parameters.AddWithValue(
-                    "@JadwalBimbingan",
-                    dtpJadwal.Value);
 
                 DateTime tanggalLomba =
                     Convert.ToDateTime(
@@ -180,6 +179,20 @@ namespace TESTUCP1PABD
                         "Jadwal bimbingan tidak boleh sebelum hari ini!");
                     return;
                 }
+
+                if (comboBoxStatus.Text == "Rejected")
+                {
+                    cmd.Parameters.AddWithValue(
+                        "@JadwalBimbingan",
+                        DBNull.Value);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue(
+                        "@JadwalBimbingan",
+                        dtpJadwal.Value);
+                }
+
 
                 cmd.ExecuteNonQuery();
 
@@ -262,6 +275,11 @@ namespace TESTUCP1PABD
             }
 
             Process.Start(txtDraftFile.Text);
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

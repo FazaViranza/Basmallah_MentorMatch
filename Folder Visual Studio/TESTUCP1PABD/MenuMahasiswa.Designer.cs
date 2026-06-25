@@ -36,7 +36,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(336, 147);
+            this.btnSubmit.Location = new System.Drawing.Point(200, 196);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 0;
@@ -46,11 +46,11 @@
             // 
             // btnUpdateHasil
             // 
-            this.btnUpdateHasil.Location = new System.Drawing.Point(336, 185);
+            this.btnUpdateHasil.Location = new System.Drawing.Point(336, 196);
             this.btnUpdateHasil.Name = "btnUpdateHasil";
             this.btnUpdateHasil.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateHasil.TabIndex = 1;
-            this.btnUpdateHasil.Text = "Afdet";
+            this.btnUpdateHasil.Text = "Update";
             this.btnUpdateHasil.UseVisualStyleBackColor = true;
             this.btnUpdateHasil.Click += new System.EventHandler(this.btnUpdateHasil_Click);
             // 
@@ -66,7 +66,7 @@
             // 
             // btnStatus
             // 
-            this.btnStatus.Location = new System.Drawing.Point(336, 214);
+            this.btnStatus.Location = new System.Drawing.Point(496, 196);
             this.btnStatus.Name = "btnStatus";
             this.btnStatus.Size = new System.Drawing.Size(75, 23);
             this.btnStatus.TabIndex = 3;

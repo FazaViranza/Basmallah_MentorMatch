@@ -69,7 +69,7 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(641, 415);
+            this.btnLogout.Location = new System.Drawing.Point(641, 410);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(75, 23);
             this.btnLogout.TabIndex = 1;
@@ -79,7 +79,7 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(630, 80);
+            this.btnRead.Location = new System.Drawing.Point(568, 80);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(75, 23);
             this.btnRead.TabIndex = 2;
@@ -89,7 +89,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(630, 109);
+            this.btnDelete.Location = new System.Drawing.Point(725, 80);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 3;
@@ -99,7 +99,7 @@
             // 
             // btnPage
             // 
-            this.btnPage.Location = new System.Drawing.Point(630, 235);
+            this.btnPage.Location = new System.Drawing.Point(568, 235);
             this.btnPage.Name = "btnPage";
             this.btnPage.Size = new System.Drawing.Size(75, 23);
             this.btnPage.TabIndex = 4;
@@ -109,7 +109,7 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(618, 54);
+            this.txtID.Location = new System.Drawing.Point(568, 54);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 5;
@@ -118,7 +118,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(625, 28);
+            this.lblTotal.Location = new System.Drawing.Point(565, 38);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(91, 13);
             this.lblTotal.TabIndex = 6;
@@ -126,7 +126,7 @@
             // 
             // btnMahasiswa
             // 
-            this.btnMahasiswa.Location = new System.Drawing.Point(618, 264);
+            this.btnMahasiswa.Location = new System.Drawing.Point(702, 235);
             this.btnMahasiswa.Name = "btnMahasiswa";
             this.btnMahasiswa.Size = new System.Drawing.Size(98, 23);
             this.btnMahasiswa.TabIndex = 7;
@@ -158,7 +158,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(800, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(812, 25);
             this.bindingNavigator1.TabIndex = 8;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -214,7 +214,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -251,7 +250,7 @@
             // 
             // btnCetak
             // 
-            this.btnCetak.Location = new System.Drawing.Point(630, 138);
+            this.btnCetak.Location = new System.Drawing.Point(568, 109);
             this.btnCetak.Name = "btnCetak";
             this.btnCetak.Size = new System.Drawing.Size(75, 23);
             this.btnCetak.TabIndex = 9;
@@ -261,9 +260,9 @@
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(618, 167);
+            this.btnImport.Location = new System.Drawing.Point(725, 109);
             this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(98, 23);
+            this.btnImport.Size = new System.Drawing.Size(75, 23);
             this.btnImport.TabIndex = 10;
             this.btnImport.Text = "Import";
             this.btnImport.UseVisualStyleBackColor = true;
@@ -273,7 +272,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(812, 445);
             this.Controls.Add(this.btnImport);
             this.Controls.Add(this.btnCetak);
             this.Controls.Add(this.bindingNavigator1);

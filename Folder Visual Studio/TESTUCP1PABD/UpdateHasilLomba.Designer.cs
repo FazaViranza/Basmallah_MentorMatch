@@ -80,7 +80,7 @@
             // cmbJuara
             // 
             this.cmbJuara.FormattingEnabled = true;
-            this.cmbJuara.Location = new System.Drawing.Point(658, 77);
+            this.cmbJuara.Location = new System.Drawing.Point(657, 62);
             this.cmbJuara.Name = "cmbJuara";
             this.cmbJuara.Size = new System.Drawing.Size(121, 21);
             this.cmbJuara.TabIndex = 3;
@@ -88,7 +88,7 @@
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(558, 377);
+            this.btnBrowse.Location = new System.Drawing.Point(557, 362);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(75, 23);
             this.btnBrowse.TabIndex = 4;
@@ -98,7 +98,7 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(537, 46);
+            this.btnRead.Location = new System.Drawing.Point(682, 400);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(75, 23);
             this.btnRead.TabIndex = 5;
@@ -108,7 +108,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(683, 377);
+            this.btnUpdate.Location = new System.Drawing.Point(682, 362);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 6;
@@ -118,7 +118,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(621, 415);
+            this.btnBack.Location = new System.Drawing.Point(557, 400);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 7;
@@ -255,7 +255,7 @@
             // cmbHasilLomba
             // 
             this.cmbHasilLomba.FormattingEnabled = true;
-            this.cmbHasilLomba.Location = new System.Drawing.Point(658, 115);
+            this.cmbHasilLomba.Location = new System.Drawing.Point(657, 100);
             this.cmbHasilLomba.Name = "cmbHasilLomba";
             this.cmbHasilLomba.Size = new System.Drawing.Size(121, 21);
             this.cmbHasilLomba.TabIndex = 10;
@@ -263,7 +263,7 @@
             // 
             // pictureBoxSertifikat
             // 
-            this.pictureBoxSertifikat.Location = new System.Drawing.Point(537, 177);
+            this.pictureBoxSertifikat.Location = new System.Drawing.Point(536, 162);
             this.pictureBoxSertifikat.Name = "pictureBoxSertifikat";
             this.pictureBoxSertifikat.Size = new System.Drawing.Size(242, 181);
             this.pictureBoxSertifikat.TabIndex = 11;
@@ -271,7 +271,7 @@
             // 
             // txtSertifikat
             // 
-            this.txtSertifikat.Location = new System.Drawing.Point(537, 151);
+            this.txtSertifikat.Location = new System.Drawing.Point(536, 136);
             this.txtSertifikat.Name = "txtSertifikat";
             this.txtSertifikat.Size = new System.Drawing.Size(242, 20);
             this.txtSertifikat.TabIndex = 2;
@@ -280,7 +280,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(534, 80);
+            this.label1.Location = new System.Drawing.Point(533, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 12;
@@ -289,7 +289,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(534, 123);
+            this.label2.Location = new System.Drawing.Point(533, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 13;
