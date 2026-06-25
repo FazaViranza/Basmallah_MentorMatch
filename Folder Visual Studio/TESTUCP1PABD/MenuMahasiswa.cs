@@ -43,5 +43,15 @@ namespace TESTUCP1PABD
             Form1 login = new Form1();
             login.Show();
         }
+
+        private void btnStatus_Click(object sender, EventArgs e)
+        {
+           FormStatusPengajuan frm =
+                new FormStatusPengajuan();
+
+            this.Hide();
+
+            frm.Show();
+        }
     }
 }

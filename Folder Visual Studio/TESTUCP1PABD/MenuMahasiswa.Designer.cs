@@ -31,11 +31,12 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnUpdateHasil = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.btnStatus = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(269, 201);
+            this.btnSubmit.Location = new System.Drawing.Point(336, 147);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 0;
@@ -45,7 +46,7 @@
             // 
             // btnUpdateHasil
             // 
-            this.btnUpdateHasil.Location = new System.Drawing.Point(409, 201);
+            this.btnUpdateHasil.Location = new System.Drawing.Point(336, 185);
             this.btnUpdateHasil.Name = "btnUpdateHasil";
             this.btnUpdateHasil.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateHasil.TabIndex = 1;
@@ -63,11 +64,22 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // btnStatus
+            // 
+            this.btnStatus.Location = new System.Drawing.Point(336, 214);
+            this.btnStatus.Name = "btnStatus";
+            this.btnStatus.Size = new System.Drawing.Size(75, 23);
+            this.btnStatus.TabIndex = 3;
+            this.btnStatus.Text = "Status";
+            this.btnStatus.UseVisualStyleBackColor = true;
+            this.btnStatus.Click += new System.EventHandler(this.btnStatus_Click);
+            // 
             // MenuMahasiswa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnStatus);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnUpdateHasil);
             this.Controls.Add(this.btnSubmit);
@@ -82,5 +94,6 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnUpdateHasil;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnStatus;
     }
 }

@@ -32,14 +32,11 @@
             this.txtNama = new System.Windows.Forms.TextBox();
             this.txtProdi = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtCode = new System.Windows.Forms.TextBox();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.btnVerify = new System.Windows.Forms.Button();
             this.NIM = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -75,14 +72,6 @@
             this.txtEmail.TabIndex = 3;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
-            // txtCode
-            // 
-            this.txtCode.Location = new System.Drawing.Point(413, 173);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(100, 20);
-            this.txtCode.TabIndex = 4;
-            this.txtCode.TextChanged += new System.EventHandler(this.txtCode_TextChanged);
-            // 
             // btnRegister
             // 
             this.btnRegister.Location = new System.Drawing.Point(299, 271);
@@ -92,16 +81,6 @@
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
-            // btnVerify
-            // 
-            this.btnVerify.Location = new System.Drawing.Point(425, 270);
-            this.btnVerify.Name = "btnVerify";
-            this.btnVerify.Size = new System.Drawing.Size(75, 23);
-            this.btnVerify.TabIndex = 6;
-            this.btnVerify.Text = "Verify";
-            this.btnVerify.UseVisualStyleBackColor = true;
-            this.btnVerify.Click += new System.EventHandler(this.btnVerify_Click);
             // 
             // NIM
             // 
@@ -139,18 +118,9 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Email";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(299, 180);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Kode";
-            // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(360, 325);
+            this.btnBack.Location = new System.Drawing.Point(422, 271);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 12;
@@ -164,14 +134,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.NIM);
-            this.Controls.Add(this.btnVerify);
             this.Controls.Add(this.btnRegister);
-            this.Controls.Add(this.txtCode);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtProdi);
             this.Controls.Add(this.txtNama);
@@ -189,14 +156,11 @@
         private System.Windows.Forms.TextBox txtNama;
         private System.Windows.Forms.TextBox txtProdi;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.Button btnVerify;
         private System.Windows.Forms.Label NIM;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnBack;
     }
 }

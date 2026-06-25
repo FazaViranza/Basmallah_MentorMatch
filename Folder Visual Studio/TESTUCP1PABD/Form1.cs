@@ -17,7 +17,6 @@ namespace TESTUCP1PABD
         SqlConnection conn;
         SqlCommand cmd;
 
-    bool isConnected = false;
 
         private void Koneksi()
         {
@@ -31,17 +30,26 @@ namespace TESTUCP1PABD
             InitializeComponent();
 
             txtPassword.UseSystemPasswordChar = true;
+
+            try
+            {
+                Koneksi();
+                conn.Open();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Koneksi database gagal!\n\n" + ex.Message);
+
+                Application.Exit();
+            }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
             {
-                if (!isConnected)
-                {
-                    MessageBox.Show("Silakan koneksikan database terlebih dahulu!");
-                    return;
-                }
 
                 if (txtUsername.Text == "")
                 {
@@ -127,28 +135,7 @@ namespace TESTUCP1PABD
 
         }
 
-        private void btnConnect_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Koneksi();
-
-                conn.Open();
-
-                MessageBox.Show("Koneksi ke database berhasil!");
-
-                lblStatus.Text = "Connected";
-
-                isConnected = true;
-
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Koneksi gagal: " + ex.Message);
-                lblStatus.Text = "Failed";
-            }
-        }
+        
 
         private void lblStatus_Click(object sender, EventArgs e)
         {
