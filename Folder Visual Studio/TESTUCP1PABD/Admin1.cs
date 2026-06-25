@@ -199,5 +199,13 @@ namespace TESTUCP1PABD
             FormRekapPrestasi rekapPage = new FormRekapPrestasi();
             rekapPage.Show();
         }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            FormImportExcel mhs = new FormImportExcel();
+            mhs.Show();
+        }
     }
 }
