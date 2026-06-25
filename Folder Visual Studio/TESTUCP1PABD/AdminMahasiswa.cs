@@ -77,6 +77,8 @@ namespace TESTUCP1PABD
         // ================= APPROVE =================
         private void btnApprove_Click(object sender, EventArgs e)
         {
+            SqlTransaction trans = null;
+
             try
             {
                 if (txtNIM.Text == "")
@@ -87,11 +89,12 @@ namespace TESTUCP1PABD
 
                 Koneksi();
                 conn.Open();
+                trans = conn.BeginTransaction();
 
                 string nim = txtNIM.Text.Trim();
 
                 // 🔥 STORED PROCEDURE
-                cmd = new SqlCommand("sp_ApproveMahasiswa", conn);
+                cmd = new SqlCommand("sp_ApproveMahasiswa", conn, trans);
 
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -110,8 +113,7 @@ namespace TESTUCP1PABD
                 string checkUser =
                 "SELECT COUNT(*) FROM Users WHERE Username=@Username";
 
-                SqlCommand checkCmd =
-                    new SqlCommand(checkUser, conn);
+                SqlCommand checkCmd = new SqlCommand(checkUser, conn, trans);
 
                 checkCmd.Parameters.AddWithValue("@Username", nim);
 
@@ -131,6 +133,7 @@ namespace TESTUCP1PABD
 
                     userCmd.ExecuteNonQuery();
                 }
+                trans.Commit();
 
                 MessageBox.Show("Mahasiswa berhasil di-approve!");
 
@@ -140,6 +143,11 @@ namespace TESTUCP1PABD
             }
             catch (Exception ex)
             {
+                if (trans != null)
+                {
+                    trans.Rollback();
+                }
+
                 MessageBox.Show(ex.Message);
             }
         }

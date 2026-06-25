@@ -192,5 +192,12 @@ namespace TESTUCP1PABD
         {
 
         }
+
+        private void btnCetak_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormRekapPrestasi rekapPage = new FormRekapPrestasi();
+            rekapPage.Show();
+        }
     }
 }

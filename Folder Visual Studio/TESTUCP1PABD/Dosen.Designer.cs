@@ -50,6 +50,13 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.txtID = new System.Windows.Forms.Label();
+            this.txtReview = new System.Windows.Forms.TextBox();
+            this.dtpJadwal = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtDraftFile = new System.Windows.Forms.TextBox();
+            this.btnLihatDraft = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -68,7 +75,7 @@
             // LabelStatus
             // 
             this.LabelStatus.AutoSize = true;
-            this.LabelStatus.Location = new System.Drawing.Point(280, 213);
+            this.LabelStatus.Location = new System.Drawing.Point(12, 250);
             this.LabelStatus.Name = "LabelStatus";
             this.LabelStatus.Size = new System.Drawing.Size(37, 13);
             this.LabelStatus.TabIndex = 1;
@@ -77,15 +84,15 @@
             // comboBoxStatus
             // 
             this.comboBoxStatus.FormattingEnabled = true;
-            this.comboBoxStatus.Location = new System.Drawing.Point(356, 210);
+            this.comboBoxStatus.Location = new System.Drawing.Point(119, 242);
             this.comboBoxStatus.Name = "comboBoxStatus";
-            this.comboBoxStatus.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxStatus.Size = new System.Drawing.Size(200, 21);
             this.comboBoxStatus.TabIndex = 2;
             this.comboBoxStatus.SelectedIndexChanged += new System.EventHandler(this.comboBoxStatus_SelectedIndexChanged);
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(303, 275);
+            this.btnRead.Location = new System.Drawing.Point(633, 219);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(75, 23);
             this.btnRead.TabIndex = 3;
@@ -95,7 +102,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(435, 275);
+            this.btnUpdate.Location = new System.Drawing.Point(633, 250);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 4;
@@ -105,7 +112,7 @@
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(368, 329);
+            this.btnLogOut.Location = new System.Drawing.Point(633, 280);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(75, 23);
             this.btnLogOut.TabIndex = 5;
@@ -115,9 +122,9 @@
             // 
             // txtNIDN
             // 
-            this.txtNIDN.Location = new System.Drawing.Point(356, 184);
+            this.txtNIDN.Location = new System.Drawing.Point(119, 216);
             this.txtNIDN.Name = "txtNIDN";
-            this.txtNIDN.Size = new System.Drawing.Size(100, 20);
+            this.txtNIDN.Size = new System.Drawing.Size(200, 20);
             this.txtNIDN.TabIndex = 6;
             this.txtNIDN.TextChanged += new System.EventHandler(this.txtNIDN_TextChanged);
             // 
@@ -245,11 +252,80 @@
             this.txtID.TabIndex = 8;
             this.txtID.Text = "label1";
             // 
+            // txtReview
+            // 
+            this.txtReview.Location = new System.Drawing.Point(119, 273);
+            this.txtReview.Multiline = true;
+            this.txtReview.Name = "txtReview";
+            this.txtReview.Size = new System.Drawing.Size(200, 131);
+            this.txtReview.TabIndex = 9;
+            this.txtReview.TextChanged += new System.EventHandler(this.txtReview_TextChanged);
+            // 
+            // dtpJadwal
+            // 
+            this.dtpJadwal.Location = new System.Drawing.Point(119, 410);
+            this.dtpJadwal.Name = "dtpJadwal";
+            this.dtpJadwal.Size = new System.Drawing.Size(200, 20);
+            this.dtpJadwal.TabIndex = 10;
+            this.dtpJadwal.ValueChanged += new System.EventHandler(this.dtpJadwal_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 280);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Review Dosen";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 416);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Jadwal Bimbingan";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 219);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(34, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "NIDN";
+            // 
+            // txtDraftFile
+            // 
+            this.txtDraftFile.Location = new System.Drawing.Point(363, 216);
+            this.txtDraftFile.Name = "txtDraftFile";
+            this.txtDraftFile.ReadOnly = true;
+            this.txtDraftFile.Size = new System.Drawing.Size(100, 20);
+            this.txtDraftFile.TabIndex = 14;
+            // 
+            // btnLihatDraft
+            // 
+            this.btnLihatDraft.Location = new System.Drawing.Point(473, 341);
+            this.btnLihatDraft.Name = "btnLihatDraft";
+            this.btnLihatDraft.Size = new System.Drawing.Size(75, 23);
+            this.btnLihatDraft.TabIndex = 15;
+            this.btnLihatDraft.Text = "ReadD";
+            this.btnLihatDraft.UseVisualStyleBackColor = true;
+            this.btnLihatDraft.Click += new System.EventHandler(this.btnLihatDraft_Click);
+            // 
             // Dosen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnLihatDraft);
+            this.Controls.Add(this.txtDraftFile);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dtpJadwal);
+            this.Controls.Add(this.txtReview);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.txtNIDN);
@@ -261,6 +337,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Dosen";
             this.Text = "Dosen";
+            this.Load += new System.EventHandler(this.Dosen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
@@ -292,5 +369,12 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.Label txtID;
+        private System.Windows.Forms.TextBox txtReview;
+        private System.Windows.Forms.DateTimePicker dtpJadwal;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtDraftFile;
+        private System.Windows.Forms.Button btnLihatDraft;
     }
 }

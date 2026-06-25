@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Windows.Forms.VisualStyles;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.IO;
 
 namespace TESTUCP1PABD
 {
@@ -139,6 +141,37 @@ namespace TESTUCP1PABD
                     return;
                 }
 
+                if (dtpTanggalSelesai.Value
+                    <=
+                    dateTimePickerTanggal.Value)
+                {
+                    MessageBox.Show(
+                        "Tanggal selesai harus setelah tanggal pelaksanaan!");
+                    return;
+                }
+
+                if (txtDraftFile.Text == "")
+                {
+                    MessageBox.Show(
+                        "Draft wajib diupload!");
+                    return;
+                }
+
+                
+
+                string ext =
+                    Path.GetExtension(txtDraftFile.Text)
+                    .ToLower();
+
+                if (ext != ".pdf" &&
+                    ext != ".doc" &&
+                    ext != ".docx")
+                {
+                    MessageBox.Show(
+                        "Draft harus PDF, DOC, atau DOCX!");
+                    return;
+                }
+
                 // =====================
                 // BARU MASUK DATABASE
                 // =====================
@@ -155,6 +188,8 @@ namespace TESTUCP1PABD
                 cmd.Parameters.AddWithValue("@NamaLomba", txtNamaLomba.Text);
                 cmd.Parameters.AddWithValue("@Penyelenggara", txtPenyelenggara.Text);
                 cmd.Parameters.AddWithValue("@TanggalPelaksanaan", dateTimePickerTanggal.Value);
+                cmd.Parameters.AddWithValue("@TanggalSelesai", dtpTanggalSelesai.Value);
+                cmd.Parameters.AddWithValue("@DraftFile", txtDraftFile.Text);
 
                 cmd.ExecuteNonQuery();
 
@@ -174,8 +209,10 @@ namespace TESTUCP1PABD
         {
             this.Hide();
 
-            Form1 login = new Form1();
-            login.Show();
+            MenuMahasiswa menu =
+                new MenuMahasiswa();
+
+            menu.Show();
         }
 
 
@@ -301,6 +338,32 @@ namespace TESTUCP1PABD
         }
 
         private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpTanggalSelesai_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBrowseDraft_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd =
+                new OpenFileDialog();
+
+            ofd.Filter =
+                "PDF Files|*.pdf";
+
+            if (ofd.ShowDialog() ==
+                DialogResult.OK)
+            {
+                txtDraftFile.Text =
+                    ofd.FileName;
+            }
+        }
+
+        private void txtDraftFile_TextChanged(object sender, EventArgs e)
         {
 
         }

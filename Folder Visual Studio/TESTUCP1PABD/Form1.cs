@@ -88,7 +88,7 @@ namespace TESTUCP1PABD
 
                     if (userRole == "Mahasiswa")
                     {
-                        new Mahasiswa().Show();
+                        new MenuMahasiswa().Show();
                     }
                     else if (userRole == "Dosen")
                     {
