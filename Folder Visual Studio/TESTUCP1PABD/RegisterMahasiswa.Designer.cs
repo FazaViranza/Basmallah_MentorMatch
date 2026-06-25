@@ -83,17 +83,7 @@ namespace TESTUCP1PABD
             this.txtEmail.Size = new System.Drawing.Size(265, 29);
             this.txtEmail.TabIndex = 3;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
-            // 
-            // txtCode
-            // 
-            this.txtCode.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode.Location = new System.Drawing.Point(453, 300);
-            this.txtCode.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(265, 29);
-            this.txtCode.TabIndex = 4;
-            this.txtCode.TextChanged += new System.EventHandler(this.txtCode_TextChanged);
-            // 
+
             // btnRegister
             // 
             this.btnRegister.BackColor = System.Drawing.Color.White;
@@ -109,23 +99,7 @@ namespace TESTUCP1PABD
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
-            // btnVerify
-            // 
-            this.btnVerify.BackColor = System.Drawing.Color.White;
-            this.btnVerify.FlatAppearance.BorderSize = 0;
-            this.btnVerify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerify.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerify.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            this.btnVerify.Location = new System.Drawing.Point(547, 364);
-            this.btnVerify.Margin = new System.Windows.Forms.Padding(4);
-            this.btnVerify.Name = "btnVerify";
-            this.btnVerify.Size = new System.Drawing.Size(147, 43);
-            this.btnVerify.TabIndex = 6;
-            this.btnVerify.Text = "Verify";
-            this.btnVerify.UseVisualStyleBackColor = false;
-            this.btnVerify.Click += new System.EventHandler(this.btnVerify_Click);
-            // 
+
             // NIM
             // 
             this.NIM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
@@ -177,20 +151,7 @@ namespace TESTUCP1PABD
             this.label3.TabIndex = 10;
             this.label3.Text = "Email";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(347, 300);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 30);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Kode";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
+
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.Color.White;
@@ -242,14 +203,11 @@ namespace TESTUCP1PABD
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.logoPictureBox);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.NIM);
-            this.Controls.Add(this.btnVerify);
             this.Controls.Add(this.btnRegister);
-            this.Controls.Add(this.txtCode);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtProdi);
             this.Controls.Add(this.txtNama);
@@ -271,14 +229,11 @@ namespace TESTUCP1PABD
         private System.Windows.Forms.TextBox txtNama;
         private System.Windows.Forms.TextBox txtProdi;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.Button btnVerify;
         private System.Windows.Forms.Label NIM;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.PictureBox logoPictureBox;
         private System.Windows.Forms.Label lblTitle;

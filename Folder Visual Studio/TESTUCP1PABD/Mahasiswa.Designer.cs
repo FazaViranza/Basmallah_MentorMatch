@@ -28,6 +28,9 @@ namespace TESTUCP1PABD
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mahasiswa));
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,9 +43,22 @@ namespace TESTUCP1PABD
             this.comboBoxJenisMabar = new System.Windows.Forms.ComboBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.btnView = new System.Windows.Forms.Button();
             this.comboBoxDosen = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNIDN = new System.Windows.Forms.TextBox();
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.dtpTanggalSelesai = new System.Windows.Forms.DateTimePicker();
             this.txtDraftFile = new System.Windows.Forms.TextBox();
             this.btnBrowseDraft = new System.Windows.Forms.Button();
@@ -54,11 +70,11 @@ namespace TESTUCP1PABD
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 43);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 35);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1248, 215);
+            this.dataGridView1.Size = new System.Drawing.Size(936, 160);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -67,10 +83,10 @@ namespace TESTUCP1PABD
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(40, 283);
+            this.label1.Location = new System.Drawing.Point(30, 216);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 32);
+            this.label1.Size = new System.Drawing.Size(120, 26);
             this.label1.TabIndex = 1;
             this.label1.Text = "NIM";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -80,10 +96,10 @@ namespace TESTUCP1PABD
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(40, 327);
+            this.label3.Location = new System.Drawing.Point(30, 256);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(173, 32);
+            this.label3.Size = new System.Drawing.Size(120, 26);
             this.label3.TabIndex = 3;
             this.label3.Text = "Jenis Lomba";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -93,10 +109,10 @@ namespace TESTUCP1PABD
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(40, 372);
+            this.label4.Location = new System.Drawing.Point(30, 296);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(173, 32);
+            this.label4.Size = new System.Drawing.Size(120, 26);
             this.label4.TabIndex = 4;
             this.label4.Text = "Nama Lomba";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -106,10 +122,10 @@ namespace TESTUCP1PABD
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(40, 416);
+            this.label5.Location = new System.Drawing.Point(30, 336);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(173, 32);
+            this.label5.Size = new System.Drawing.Size(120, 26);
             this.label5.TabIndex = 5;
             this.label5.Text = "Penyelenggara";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -119,10 +135,10 @@ namespace TESTUCP1PABD
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(507, 283);
+            this.label6.Location = new System.Drawing.Point(380, 216);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(240, 32);
+            this.label6.Size = new System.Drawing.Size(150, 26);
             this.label6.TabIndex = 6;
             this.label6.Text = "Tanggal Lomba Dimulai";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -130,40 +146,40 @@ namespace TESTUCP1PABD
             // txtNIM
             // 
             this.txtNIM.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNIM.Location = new System.Drawing.Point(220, 283);
-            this.txtNIM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNIM.Location = new System.Drawing.Point(155, 216);
+            this.txtNIM.Margin = new System.Windows.Forms.Padding(4);
             this.txtNIM.Name = "txtNIM";
-            this.txtNIM.Size = new System.Drawing.Size(212, 29);
+            this.txtNIM.Size = new System.Drawing.Size(200, 29);
             this.txtNIM.TabIndex = 7;
             this.txtNIM.TextChanged += new System.EventHandler(this.txtNIM_TextChanged);
             // 
             // txtNamaLomba
             // 
             this.txtNamaLomba.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNamaLomba.Location = new System.Drawing.Point(220, 372);
-            this.txtNamaLomba.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNamaLomba.Location = new System.Drawing.Point(155, 296);
+            this.txtNamaLomba.Margin = new System.Windows.Forms.Padding(4);
             this.txtNamaLomba.Name = "txtNamaLomba";
-            this.txtNamaLomba.Size = new System.Drawing.Size(212, 29);
+            this.txtNamaLomba.Size = new System.Drawing.Size(200, 29);
             this.txtNamaLomba.TabIndex = 9;
             this.txtNamaLomba.TextChanged += new System.EventHandler(this.txtNamaLomba_TextChanged);
             // 
             // txtPenyelenggara
             // 
             this.txtPenyelenggara.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPenyelenggara.Location = new System.Drawing.Point(220, 416);
-            this.txtPenyelenggara.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPenyelenggara.Location = new System.Drawing.Point(155, 336);
+            this.txtPenyelenggara.Margin = new System.Windows.Forms.Padding(4);
             this.txtPenyelenggara.Name = "txtPenyelenggara";
-            this.txtPenyelenggara.Size = new System.Drawing.Size(212, 29);
+            this.txtPenyelenggara.Size = new System.Drawing.Size(200, 29);
             this.txtPenyelenggara.TabIndex = 10;
             this.txtPenyelenggara.TextChanged += new System.EventHandler(this.txtPenyelenggara_TextChanged);
             // 
             // dateTimePickerTanggal
             // 
             this.dateTimePickerTanggal.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerTanggal.Location = new System.Drawing.Point(753, 283);
-            this.dateTimePickerTanggal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerTanggal.Location = new System.Drawing.Point(540, 216);
+            this.dateTimePickerTanggal.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerTanggal.Name = "dateTimePickerTanggal";
-            this.dateTimePickerTanggal.Size = new System.Drawing.Size(265, 29);
+            this.dateTimePickerTanggal.Size = new System.Drawing.Size(190, 29);
             this.dateTimePickerTanggal.TabIndex = 11;
             this.dateTimePickerTanggal.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -171,10 +187,10 @@ namespace TESTUCP1PABD
             // 
             this.comboBoxJenisMabar.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxJenisMabar.FormattingEnabled = true;
-            this.comboBoxJenisMabar.Location = new System.Drawing.Point(220, 327);
-            this.comboBoxJenisMabar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxJenisMabar.Location = new System.Drawing.Point(155, 256);
+            this.comboBoxJenisMabar.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxJenisMabar.Name = "comboBoxJenisMabar";
-            this.comboBoxJenisMabar.Size = new System.Drawing.Size(212, 29);
+            this.comboBoxJenisMabar.Size = new System.Drawing.Size(200, 29);
             this.comboBoxJenisMabar.TabIndex = 12;
             this.comboBoxJenisMabar.SelectedIndexChanged += new System.EventHandler(this.comboBoxJenisMabar_SelectedIndexChanged);
             // 
@@ -185,10 +201,10 @@ namespace TESTUCP1PABD
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(960, 505);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSubmit.Location = new System.Drawing.Point(830, 410);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(133, 43);
+            this.btnSubmit.Size = new System.Drawing.Size(100, 35);
             this.btnSubmit.TabIndex = 14;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
@@ -201,10 +217,10 @@ namespace TESTUCP1PABD
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            this.btnLogout.Location = new System.Drawing.Point(40, 505);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Location = new System.Drawing.Point(30, 410);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(133, 43);
+            this.btnLogout.Size = new System.Drawing.Size(100, 35);
             this.btnLogout.TabIndex = 15;
             this.btnLogout.Text = "Back";
             this.btnLogout.UseVisualStyleBackColor = false;
@@ -217,10 +233,10 @@ namespace TESTUCP1PABD
             this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnView.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnView.ForeColor = System.Drawing.Color.White;
-            this.btnView.Location = new System.Drawing.Point(1147, 283);
-            this.btnView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnView.Location = new System.Drawing.Point(840, 216);
+            this.btnView.Margin = new System.Windows.Forms.Padding(4);
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(107, 34);
+            this.btnView.Size = new System.Drawing.Size(100, 26);
             this.btnView.TabIndex = 16;
             this.btnView.Text = "Show";
             this.btnView.UseVisualStyleBackColor = false;
@@ -230,10 +246,10 @@ namespace TESTUCP1PABD
             // 
             this.comboBoxDosen.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxDosen.FormattingEnabled = true;
-            this.comboBoxDosen.Location = new System.Drawing.Point(647, 372);
-            this.comboBoxDosen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxDosen.Location = new System.Drawing.Point(505, 296);
+            this.comboBoxDosen.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxDosen.Name = "comboBoxDosen";
-            this.comboBoxDosen.Size = new System.Drawing.Size(199, 29);
+            this.comboBoxDosen.Size = new System.Drawing.Size(140, 29);
             this.comboBoxDosen.TabIndex = 17;
             this.comboBoxDosen.SelectedIndexChanged += new System.EventHandler(this.comboBoxDosen_SelectedIndexChanged);
             // 
@@ -242,10 +258,10 @@ namespace TESTUCP1PABD
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(507, 372);
+            this.label2.Location = new System.Drawing.Point(380, 296);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 32);
+            this.label2.Size = new System.Drawing.Size(120, 26);
             this.label2.TabIndex = 18;
             this.label2.Text = "Nama Dosen";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -253,10 +269,10 @@ namespace TESTUCP1PABD
             // txtNIDN
             // 
             this.txtNIDN.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNIDN.Location = new System.Drawing.Point(860, 372);
-            this.txtNIDN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNIDN.Location = new System.Drawing.Point(655, 296);
+            this.txtNIDN.Margin = new System.Windows.Forms.Padding(4);
             this.txtNIDN.Name = "txtNIDN";
-            this.txtNIDN.Size = new System.Drawing.Size(159, 29);
+            this.txtNIDN.Size = new System.Drawing.Size(75, 29);
             this.txtNIDN.TabIndex = 19;
             // 
             // bindingNavigator1
@@ -284,7 +300,7 @@ namespace TESTUCP1PABD
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(1280, 27);
+            this.bindingNavigator1.Size = new System.Drawing.Size(960, 27);
             this.bindingNavigator1.TabIndex = 20;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -378,20 +394,20 @@ namespace TESTUCP1PABD
             // dtpTanggalSelesai
             // 
             this.dtpTanggalSelesai.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpTanggalSelesai.Location = new System.Drawing.Point(753, 327);
-            this.dtpTanggalSelesai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpTanggalSelesai.Location = new System.Drawing.Point(540, 256);
+            this.dtpTanggalSelesai.Margin = new System.Windows.Forms.Padding(4);
             this.dtpTanggalSelesai.Name = "dtpTanggalSelesai";
-            this.dtpTanggalSelesai.Size = new System.Drawing.Size(265, 29);
+            this.dtpTanggalSelesai.Size = new System.Drawing.Size(190, 29);
             this.dtpTanggalSelesai.TabIndex = 21;
             this.dtpTanggalSelesai.ValueChanged += new System.EventHandler(this.dtpTanggalSelesai_ValueChanged);
             // 
             // txtDraftFile
             // 
             this.txtDraftFile.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDraftFile.Location = new System.Drawing.Point(647, 416);
-            this.txtDraftFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDraftFile.Location = new System.Drawing.Point(505, 336);
+            this.txtDraftFile.Margin = new System.Windows.Forms.Padding(4);
             this.txtDraftFile.Name = "txtDraftFile";
-            this.txtDraftFile.Size = new System.Drawing.Size(259, 29);
+            this.txtDraftFile.Size = new System.Drawing.Size(140, 29);
             this.txtDraftFile.TabIndex = 22;
             this.txtDraftFile.TextChanged += new System.EventHandler(this.txtDraftFile_TextChanged);
             // 
@@ -402,10 +418,10 @@ namespace TESTUCP1PABD
             this.btnBrowseDraft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBrowseDraft.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrowseDraft.ForeColor = System.Drawing.Color.White;
-            this.btnBrowseDraft.Location = new System.Drawing.Point(913, 416);
-            this.btnBrowseDraft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBrowseDraft.Location = new System.Drawing.Point(655, 336);
+            this.btnBrowseDraft.Margin = new System.Windows.Forms.Padding(4);
             this.btnBrowseDraft.Name = "btnBrowseDraft";
-            this.btnBrowseDraft.Size = new System.Drawing.Size(107, 32);
+            this.btnBrowseDraft.Size = new System.Drawing.Size(75, 26);
             this.btnBrowseDraft.TabIndex = 23;
             this.btnBrowseDraft.Text = "Browser";
             this.btnBrowseDraft.UseVisualStyleBackColor = false;
@@ -416,10 +432,10 @@ namespace TESTUCP1PABD
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(507, 327);
+            this.label7.Location = new System.Drawing.Point(380, 256);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(240, 32);
+            this.label7.Size = new System.Drawing.Size(150, 26);
             this.label7.TabIndex = 24;
             this.label7.Text = "Tanggal Lomba Berakhir";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -429,10 +445,10 @@ namespace TESTUCP1PABD
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(507, 416);
+            this.label8.Location = new System.Drawing.Point(380, 336);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(133, 32);
+            this.label8.Size = new System.Drawing.Size(120, 26);
             this.label8.TabIndex = 25;
             this.label8.Text = "Draf File";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -442,9 +458,9 @@ namespace TESTUCP1PABD
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::TESTUCP1PABD.Properties.Resources.umy_building_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1280, 591);
+            this.ClientSize = new System.Drawing.Size(960, 480);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnBrowseDraft);
@@ -468,7 +484,7 @@ namespace TESTUCP1PABD
             this.Controls.Add(this.dataGridView1);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Mahasiswa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Mahasiswa - Pendaftaran Lomba";

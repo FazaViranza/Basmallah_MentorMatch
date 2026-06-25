@@ -16,6 +16,7 @@ namespace TESTUCP1PABD
     {
         SqlConnection conn;
         SqlCommand cmd;
+        private bool isConnected;
 
 
         private void Koneksi()
