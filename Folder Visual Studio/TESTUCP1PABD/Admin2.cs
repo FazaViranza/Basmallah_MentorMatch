@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,7 +21,7 @@ namespace TESTUCP1PABD
         private void Koneksi()
         {
             conn = new SqlConnection(
-                "Data Source=LAPTOP-QL2H17RM;Initial Catalog=MentorMatchMabarDB;Integrated Security=True"
+                "Data Source=LAPTOP-6UCOLCI3\\RAZFAR;Initial Catalog=MentorMatchMabarDB;Integrated Security=True"
             );
         }
         public Admin2()
@@ -422,25 +422,92 @@ namespace TESTUCP1PABD
             try
             {
                 Koneksi();
-                conn.Open();
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
 
-                string query =
-                "UPDATE Dosen SET NamaDosen='HACKED' WHERE NIDN='" +
-                txtNIDN.Text + "'";
+                
+                string input = txtNIDN.Text.Replace(" ", "").ToLower();
+                if (input.Contains("or1=1") || input.Contains("or'1'='1'") || input.Contains("--"))
+                {
+                    throw new Exception("SQL Error : Unsafe UPDATE operation not allowed");
+                }
 
+                string query = "UPDATE Dosen SET NamaDosen='HACKED' WHERE NIDN='" + txtNIDN.Text + "'";
                 cmd = new SqlCommand(query, conn);
-
                 int result = cmd.ExecuteNonQuery();
 
                 MessageBox.Show(result + " data berhasil diubah!");
+                conn.Close();
 
+                btnRead_Click(sender, e);
+            }
+            catch (SqlException ex)
+            {
+                simpanLog(ex.Message);
+                MessageBox.Show("SQL Error : " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.Contains("Unsafe UPDATE") || ex.Message.ToLower().Contains("safe"))
+                {
+                    simpanLog(ex.Message);
+                    MessageBox.Show("SQL Error : Unsafe UPDATE operation not allowed");
+                }
+                else
+                {
+                    simpanLog(ex.Message);
+                    MessageBox.Show("General Error : " + ex.Message);
+                }
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Koneksi();
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
+
+                string query = @"
+                    UPDATE Dosen SET NamaDosen = 'Dr. Ahmad' WHERE NIDN = 'D001';
+                    UPDATE Dosen SET NamaDosen = 'Dr. Siti' WHERE NIDN = 'D002';
+                    UPDATE Dosen SET NamaDosen = 'Dr. Budi' WHERE NIDN = 'D003';
+                    UPDATE Dosen SET NamaDosen = 'Dr. Hendra' WHERE NIDN = 'D004';
+                    UPDATE Dosen SET NamaDosen = 'Dr. Rina' WHERE NIDN = 'D005';
+                ";
+
+                cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Data Dosen berhasil di-reset ke data semula!");
                 conn.Close();
 
                 btnRead_Click(sender, e);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error saat reset data: " + ex.Message);
+            }
+        }
+
+        private void simpanLog(string message)
+        {
+            try
+            {
+                string logPath = AppDomain.CurrentDomain.BaseDirectory + "log.txt";
+                using (System.IO.StreamWriter writer = new System.IO.StreamWriter(logPath, true))
+                {
+                    writer.WriteLine($"{DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal menyimpan log: " + ex.Message);
             }
         }
     }
