@@ -77,45 +77,62 @@
             // 
             // labelNIDN
             // 
-            this.labelNIDN.AutoSize = true;
-            this.labelNIDN.Location = new System.Drawing.Point(33, 242);
+            this.labelNIDN.BackColor = System.Drawing.Color.Navy;
+            this.labelNIDN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelNIDN.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNIDN.ForeColor = System.Drawing.Color.White;
+            this.labelNIDN.Location = new System.Drawing.Point(67, 235);
             this.labelNIDN.Name = "labelNIDN";
-            this.labelNIDN.Size = new System.Drawing.Size(34, 13);
+            this.labelNIDN.Size = new System.Drawing.Size(60, 20);
             this.labelNIDN.TabIndex = 1;
             this.labelNIDN.Text = "NIDN";
+            this.labelNIDN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelNama
             // 
-            this.labelNama.AutoSize = true;
-            this.labelNama.Location = new System.Drawing.Point(33, 286);
+            this.labelNama.BackColor = System.Drawing.Color.Navy;
+            this.labelNama.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelNama.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNama.ForeColor = System.Drawing.Color.White;
+            this.labelNama.Location = new System.Drawing.Point(67, 280);
             this.labelNama.Name = "labelNama";
-            this.labelNama.Size = new System.Drawing.Size(35, 13);
+            this.labelNama.Size = new System.Drawing.Size(48, 19);
             this.labelNama.TabIndex = 2;
             this.labelNama.Text = "Nama";
+            this.labelNama.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelJenis
             // 
-            this.labelJenis.AutoSize = true;
-            this.labelJenis.Location = new System.Drawing.Point(33, 323);
+            this.labelJenis.BackColor = System.Drawing.Color.Navy;
+            this.labelJenis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelJenis.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelJenis.ForeColor = System.Drawing.Color.White;
+            this.labelJenis.Location = new System.Drawing.Point(67, 315);
             this.labelJenis.Name = "labelJenis";
-            this.labelJenis.Size = new System.Drawing.Size(31, 13);
+            this.labelJenis.Size = new System.Drawing.Size(48, 21);
             this.labelJenis.TabIndex = 3;
             this.labelJenis.Text = "Jenis";
+            this.labelJenis.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelJenis.Click += new System.EventHandler(this.labelJenis_Click);
             // 
             // labelStatus
             // 
-            this.labelStatus.AutoSize = true;
-            this.labelStatus.Location = new System.Drawing.Point(33, 353);
+            this.labelStatus.BackColor = System.Drawing.Color.Navy;
+            this.labelStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelStatus.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStatus.ForeColor = System.Drawing.Color.White;
+            this.labelStatus.Location = new System.Drawing.Point(67, 354);
             this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(37, 13);
+            this.labelStatus.Size = new System.Drawing.Size(48, 20);
             this.labelStatus.TabIndex = 4;
             this.labelStatus.Text = "Status";
+            this.labelStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtNIDN
             // 
             this.txtNIDN.Location = new System.Drawing.Point(107, 235);
             this.txtNIDN.Name = "txtNIDN";
-            this.txtNIDN.Size = new System.Drawing.Size(100, 20);
+            this.txtNIDN.Size = new System.Drawing.Size(121, 20);
             this.txtNIDN.TabIndex = 5;
             this.txtNIDN.TextChanged += new System.EventHandler(this.txtNIDN_TextChanged);
             // 
@@ -123,48 +140,60 @@
             // 
             this.txtNama.Location = new System.Drawing.Point(107, 280);
             this.txtNama.Name = "txtNama";
-            this.txtNama.Size = new System.Drawing.Size(100, 20);
+            this.txtNama.Size = new System.Drawing.Size(121, 20);
             this.txtNama.TabIndex = 6;
             this.txtNama.TextChanged += new System.EventHandler(this.txtNama_TextChanged);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(579, 344);
+            this.btnDelete.BackColor = System.Drawing.Color.Red;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(640, 280);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(81, 30);
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(671, 315);
+            this.btnUpdate.BackColor = System.Drawing.Color.Navy;
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Location = new System.Drawing.Point(690, 235);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(68, 35);
             this.btnUpdate.TabIndex = 9;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(671, 344);
+            this.btnInsert.BackColor = System.Drawing.Color.Navy;
+            this.btnInsert.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.ForeColor = System.Drawing.Color.White;
+            this.btnInsert.Location = new System.Drawing.Point(600, 238);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(75, 23);
+            this.btnInsert.Size = new System.Drawing.Size(65, 32);
             this.btnInsert.TabIndex = 10;
             this.btnInsert.Text = "Insert";
-            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(671, 286);
+            this.btnRead.BackColor = System.Drawing.Color.Navy;
+            this.btnRead.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRead.ForeColor = System.Drawing.Color.White;
+            this.btnRead.Location = new System.Drawing.Point(690, 201);
             this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(75, 23);
+            this.btnRead.Size = new System.Drawing.Size(68, 31);
             this.btnRead.TabIndex = 11;
             this.btnRead.Text = "Read";
-            this.btnRead.UseVisualStyleBackColor = true;
+            this.btnRead.UseVisualStyleBackColor = false;
             this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
             // 
             // comboBoxJenis
@@ -186,11 +215,14 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(12, 415);
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Segoe Fluent Icons", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(90, 393);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.Size = new System.Drawing.Size(75, 30);
             this.btnBack.TabIndex = 14;
             this.btnBack.Text = "Back";
+            this.btnBack.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -205,12 +237,16 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(467, 199);
+            this.btnSearch.BackColor = System.Drawing.Color.Navy;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(484, 199);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 16;
             this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // bindingNavigator1
@@ -330,10 +366,11 @@
             // btnTestInjection
             // 
             this.btnTestInjection.BackColor = System.Drawing.Color.Red;
-            this.btnTestInjection.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnTestInjection.Location = new System.Drawing.Point(579, 286);
+            this.btnTestInjection.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTestInjection.ForeColor = System.Drawing.Color.White;
+            this.btnTestInjection.Location = new System.Drawing.Point(600, 201);
             this.btnTestInjection.Name = "btnTestInjection";
-            this.btnTestInjection.Size = new System.Drawing.Size(75, 23);
+            this.btnTestInjection.Size = new System.Drawing.Size(65, 31);
             this.btnTestInjection.TabIndex = 18;
             this.btnTestInjection.Text = "Injecction";
             this.btnTestInjection.UseVisualStyleBackColor = false;
@@ -342,10 +379,11 @@
             // btnReset
             // 
             this.btnReset.BackColor = System.Drawing.Color.Red;
-            this.btnReset.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnReset.Location = new System.Drawing.Point(579, 315);
+            this.btnReset.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.Location = new System.Drawing.Point(640, 386);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.Size = new System.Drawing.Size(81, 37);
             this.btnReset.TabIndex = 20;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
@@ -355,6 +393,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnTestInjection);
@@ -375,6 +415,7 @@
             this.Controls.Add(this.labelNama);
             this.Controls.Add(this.labelNIDN);
             this.Controls.Add(this.dataGridView1);
+            this.DoubleBuffered = true;
             this.Name = "Admin2";
             this.Text = "Admin2";
             this.Load += new System.EventHandler(this.Admin2_Load);

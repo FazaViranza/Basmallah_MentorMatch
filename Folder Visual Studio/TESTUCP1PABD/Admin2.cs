@@ -517,5 +517,9 @@ namespace TESTUCP1PABD
             }
         }
 
+        private void labelJenis_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

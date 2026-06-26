@@ -69,69 +69,92 @@
             // 
             // btnLogout
             // 
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Location = new System.Drawing.Point(641, 410);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(75, 23);
+            this.btnLogout.Size = new System.Drawing.Size(70, 28);
             this.btnLogout.TabIndex = 1;
             this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(568, 80);
+            this.btnRead.BackColor = System.Drawing.Color.Navy;
+            this.btnRead.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRead.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRead.ForeColor = System.Drawing.Color.White;
+            this.btnRead.Location = new System.Drawing.Point(568, 92);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(75, 23);
             this.btnRead.TabIndex = 2;
             this.btnRead.Text = "Read";
-            this.btnRead.UseVisualStyleBackColor = true;
+            this.btnRead.UseVisualStyleBackColor = false;
             this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(725, 80);
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(725, 92);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnPage
             // 
+            this.btnPage.BackColor = System.Drawing.Color.Navy;
+            this.btnPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPage.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPage.ForeColor = System.Drawing.Color.White;
             this.btnPage.Location = new System.Drawing.Point(568, 235);
             this.btnPage.Name = "btnPage";
             this.btnPage.Size = new System.Drawing.Size(75, 23);
             this.btnPage.TabIndex = 4;
             this.btnPage.Text = "Page Dosen";
-            this.btnPage.UseVisualStyleBackColor = true;
+            this.btnPage.UseVisualStyleBackColor = false;
             this.btnPage.Click += new System.EventHandler(this.btnPage_Click);
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(568, 54);
+            this.txtID.Location = new System.Drawing.Point(649, 54);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(100, 20);
+            this.txtID.Size = new System.Drawing.Size(153, 20);
             this.txtID.TabIndex = 5;
             this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // lblTotal
             // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(565, 38);
+            this.lblTotal.BackColor = System.Drawing.Color.Navy;
+            this.lblTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTotal.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.ForeColor = System.Drawing.Color.White;
+            this.lblTotal.Location = new System.Drawing.Point(579, 54);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(91, 13);
+            this.lblTotal.Size = new System.Drawing.Size(75, 20);
             this.lblTotal.TabIndex = 6;
-            this.lblTotal.Text = "Total Pengajuan :";
+            this.lblTotal.Text = "Total Pengajuan ";
             // 
             // btnMahasiswa
             // 
+            this.btnMahasiswa.BackColor = System.Drawing.Color.Navy;
+            this.btnMahasiswa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMahasiswa.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMahasiswa.ForeColor = System.Drawing.Color.White;
             this.btnMahasiswa.Location = new System.Drawing.Point(702, 235);
             this.btnMahasiswa.Name = "btnMahasiswa";
             this.btnMahasiswa.Size = new System.Drawing.Size(98, 23);
             this.btnMahasiswa.TabIndex = 7;
             this.btnMahasiswa.Text = "Page Mahasiswa";
-            this.btnMahasiswa.UseVisualStyleBackColor = true;
+            this.btnMahasiswa.UseVisualStyleBackColor = false;
             this.btnMahasiswa.Click += new System.EventHandler(this.btnMahasiswa_Click);
             // 
             // bindingNavigator1
@@ -214,6 +237,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -250,28 +274,38 @@
             // 
             // btnCetak
             // 
-            this.btnCetak.Location = new System.Drawing.Point(568, 109);
+            this.btnCetak.BackColor = System.Drawing.Color.Navy;
+            this.btnCetak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCetak.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCetak.ForeColor = System.Drawing.Color.White;
+            this.btnCetak.Location = new System.Drawing.Point(568, 121);
             this.btnCetak.Name = "btnCetak";
             this.btnCetak.Size = new System.Drawing.Size(75, 23);
             this.btnCetak.TabIndex = 9;
-            this.btnCetak.Text = "cetakh";
-            this.btnCetak.UseVisualStyleBackColor = true;
+            this.btnCetak.Text = "Cetak";
+            this.btnCetak.UseVisualStyleBackColor = false;
             this.btnCetak.Click += new System.EventHandler(this.btnCetak_Click);
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(725, 109);
+            this.btnImport.BackColor = System.Drawing.Color.Navy;
+            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImport.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImport.ForeColor = System.Drawing.Color.White;
+            this.btnImport.Location = new System.Drawing.Point(725, 121);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(75, 23);
             this.btnImport.TabIndex = 10;
             this.btnImport.Text = "Import";
-            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.UseVisualStyleBackColor = false;
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // Admin1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(812, 445);
             this.Controls.Add(this.btnImport);
             this.Controls.Add(this.btnCetak);
@@ -284,6 +318,7 @@
             this.Controls.Add(this.btnRead);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.dataGridView1);
+            this.DoubleBuffered = true;
             this.Name = "Admin1";
             this.Text = "Admin1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

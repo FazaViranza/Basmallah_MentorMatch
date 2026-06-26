@@ -60,9 +60,10 @@ namespace TESTUCP1PABD
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.MidnightBlue;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            this.label3.Location = new System.Drawing.Point(165, 25);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(166, 45);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(338, 25);
@@ -72,8 +73,10 @@ namespace TESTUCP1PABD
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.MidnightBlue;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label1.Location = new System.Drawing.Point(30, 65);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(31, 85);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 15);
@@ -85,17 +88,19 @@ namespace TESTUCP1PABD
             this.cmbProdi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProdi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cmbProdi.FormattingEnabled = true;
-            this.cmbProdi.Location = new System.Drawing.Point(112, 63);
+            this.cmbProdi.Location = new System.Drawing.Point(118, 83);
             this.cmbProdi.Margin = new System.Windows.Forms.Padding(2);
             this.cmbProdi.Name = "cmbProdi";
-            this.cmbProdi.Size = new System.Drawing.Size(166, 23);
+            this.cmbProdi.Size = new System.Drawing.Size(161, 23);
             this.cmbProdi.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.MidnightBlue;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label2.Location = new System.Drawing.Point(300, 65);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(301, 85);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 15);
@@ -107,7 +112,7 @@ namespace TESTUCP1PABD
             this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStatus.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(405, 63);
+            this.cmbStatus.Location = new System.Drawing.Point(406, 83);
             this.cmbStatus.Margin = new System.Windows.Forms.Padding(2);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(121, 23);
@@ -116,11 +121,11 @@ namespace TESTUCP1PABD
             // 
             // btnLoad
             // 
-            this.btnLoad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(116)))), ((int)(((byte)(144)))));
+            this.btnLoad.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoad.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.btnLoad.ForeColor = System.Drawing.Color.White;
-            this.btnLoad.Location = new System.Drawing.Point(540, 61);
+            this.btnLoad.Location = new System.Drawing.Point(541, 81);
             this.btnLoad.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 26);
@@ -135,7 +140,7 @@ namespace TESTUCP1PABD
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(30, 106);
+            this.dataGridView1.Location = new System.Drawing.Point(31, 126);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -150,7 +155,7 @@ namespace TESTUCP1PABD
             this.btnCetak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCetak.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.btnCetak.ForeColor = System.Drawing.Color.White;
-            this.btnCetak.Location = new System.Drawing.Point(428, 349);
+            this.btnCetak.Location = new System.Drawing.Point(429, 369);
             this.btnCetak.Margin = new System.Windows.Forms.Padding(2);
             this.btnCetak.Name = "btnCetak";
             this.btnCetak.Size = new System.Drawing.Size(75, 28);
@@ -161,11 +166,11 @@ namespace TESTUCP1PABD
             // 
             // btnBack
             // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            this.btnBack.BackColor = System.Drawing.Color.White;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(30, 349);
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBack.Location = new System.Drawing.Point(31, 369);
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 28);
@@ -180,7 +185,7 @@ namespace TESTUCP1PABD
             this.btnCetakTerpilih.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCetakTerpilih.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.btnCetakTerpilih.ForeColor = System.Drawing.Color.White;
-            this.btnCetakTerpilih.Location = new System.Drawing.Point(507, 349);
+            this.btnCetakTerpilih.Location = new System.Drawing.Point(508, 369);
             this.btnCetakTerpilih.Margin = new System.Windows.Forms.Padding(2);
             this.btnCetakTerpilih.Name = "btnCetakTerpilih";
             this.btnCetakTerpilih.Size = new System.Drawing.Size(108, 28);
@@ -213,7 +218,7 @@ namespace TESTUCP1PABD
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(646, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(650, 25);
             this.bindingNavigator1.TabIndex = 10;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -308,7 +313,9 @@ namespace TESTUCP1PABD
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(646, 401);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(650, 419);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.btnCetakTerpilih);
             this.Controls.Add(this.btnBack);
@@ -320,6 +327,7 @@ namespace TESTUCP1PABD
             this.Controls.Add(this.cmbProdi);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
+            this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormRekapPrestasi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormImportExcel));
             this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmbJenisImport = new System.Windows.Forms.ComboBox();
@@ -47,6 +48,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(32, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
@@ -69,6 +72,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Location = new System.Drawing.Point(32, 124);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
@@ -77,16 +82,17 @@
             // 
             // txtFile
             // 
-            this.txtFile.Location = new System.Drawing.Point(117, 121);
+            this.txtFile.Location = new System.Drawing.Point(91, 121);
+            this.txtFile.Multiline = true;
             this.txtFile.Name = "txtFile";
             this.txtFile.ReadOnly = true;
-            this.txtFile.Size = new System.Drawing.Size(100, 20);
+            this.txtFile.Size = new System.Drawing.Size(177, 21);
             this.txtFile.TabIndex = 4;
             this.txtFile.TextChanged += new System.EventHandler(this.txtFile_TextChanged);
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(238, 118);
+            this.btnBrowse.Location = new System.Drawing.Point(274, 121);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(75, 23);
             this.btnBrowse.TabIndex = 5;
@@ -97,6 +103,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.MidnightBlue;
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label3.Location = new System.Drawing.Point(32, 165);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 13);
@@ -114,27 +122,31 @@
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(106, 392);
+            this.btnImport.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnImport.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnImport.Location = new System.Drawing.Point(461, 299);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(75, 23);
             this.btnImport.TabIndex = 8;
             this.btnImport.Text = "Import";
-            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.UseVisualStyleBackColor = false;
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(238, 392);
+            this.btnClear.BackColor = System.Drawing.Color.Maroon;
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnClear.Location = new System.Drawing.Point(461, 328);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(602, 392);
+            this.btnBack.Location = new System.Drawing.Point(44, 398);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 10;
@@ -145,8 +157,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.MidnightBlue;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(326, 9);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
@@ -158,6 +171,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnBack);
@@ -170,6 +185,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbJenisImport);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Name = "FormImportExcel";
             this.Text = "FormImportExcel";
             this.Load += new System.EventHandler(this.FormImportExcel_Load);

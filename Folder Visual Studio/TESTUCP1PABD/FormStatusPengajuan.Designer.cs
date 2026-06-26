@@ -61,12 +61,14 @@
             // 
             // btnCari
             // 
+            this.btnCari.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnCari.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCari.Location = new System.Drawing.Point(459, 258);
             this.btnCari.Name = "btnCari";
             this.btnCari.Size = new System.Drawing.Size(75, 23);
             this.btnCari.TabIndex = 1;
             this.btnCari.Text = "Search";
-            this.btnCari.UseVisualStyleBackColor = true;
+            this.btnCari.UseVisualStyleBackColor = false;
             this.btnCari.Click += new System.EventHandler(this.btnCari_Click);
             // 
             // btnBack
@@ -206,12 +208,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnCari);
             this.Controls.Add(this.txtNIM);
+            this.DoubleBuffered = true;
             this.Name = "FormStatusPengajuan";
             this.Text = "FormStatusPengajuan";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

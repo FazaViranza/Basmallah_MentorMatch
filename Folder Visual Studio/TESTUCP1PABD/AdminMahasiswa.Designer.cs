@@ -66,35 +66,45 @@
             // 
             this.txtNIM.Location = new System.Drawing.Point(330, 240);
             this.txtNIM.Name = "txtNIM";
-            this.txtNIM.Size = new System.Drawing.Size(100, 20);
+            this.txtNIM.Size = new System.Drawing.Size(176, 20);
             this.txtNIM.TabIndex = 1;
             this.txtNIM.TextChanged += new System.EventHandler(this.txtNIM_TextChanged);
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(275, 287);
+            this.btnRead.BackColor = System.Drawing.Color.Navy;
+            this.btnRead.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRead.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRead.ForeColor = System.Drawing.Color.White;
+            this.btnRead.Location = new System.Drawing.Point(271, 279);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(75, 23);
             this.btnRead.TabIndex = 2;
             this.btnRead.Text = "Read";
-            this.btnRead.UseVisualStyleBackColor = true;
+            this.btnRead.UseVisualStyleBackColor = false;
             this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
             // 
             // btnApprove
             // 
-            this.btnApprove.Location = new System.Drawing.Point(418, 287);
+            this.btnApprove.BackColor = System.Drawing.Color.Navy;
+            this.btnApprove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApprove.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApprove.ForeColor = System.Drawing.Color.White;
+            this.btnApprove.Location = new System.Drawing.Point(494, 279);
             this.btnApprove.Name = "btnApprove";
             this.btnApprove.Size = new System.Drawing.Size(75, 23);
             this.btnApprove.TabIndex = 3;
             this.btnApprove.Text = "Approve";
-            this.btnApprove.UseVisualStyleBackColor = true;
+            this.btnApprove.UseVisualStyleBackColor = false;
             this.btnApprove.Click += new System.EventHandler(this.btnApprove_Click);
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(12, 415);
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(34, 397);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.Size = new System.Drawing.Size(81, 30);
             this.btnBack.TabIndex = 4;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -219,6 +229,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.btnBack);
@@ -226,6 +238,7 @@
             this.Controls.Add(this.btnRead);
             this.Controls.Add(this.txtNIM);
             this.Controls.Add(this.dataGridView1);
+            this.DoubleBuffered = true;
             this.Name = "AdminMahasiswa";
             this.Text = "AdminMahasiswa";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

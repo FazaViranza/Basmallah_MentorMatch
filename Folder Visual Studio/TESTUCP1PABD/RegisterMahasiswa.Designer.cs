@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterMahasiswa));
             this.txtNIM = new System.Windows.Forms.TextBox();
             this.txtNama = new System.Windows.Forms.TextBox();
             this.txtProdi = new System.Windows.Forms.TextBox();
@@ -38,11 +39,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtNIM
             // 
-            this.txtNIM.Location = new System.Drawing.Point(448, 136);
+            this.txtNIM.Location = new System.Drawing.Point(358, 134);
             this.txtNIM.Name = "txtNIM";
             this.txtNIM.Size = new System.Drawing.Size(100, 20);
             this.txtNIM.TabIndex = 0;
@@ -50,7 +52,7 @@
             // 
             // txtNama
             // 
-            this.txtNama.Location = new System.Drawing.Point(448, 162);
+            this.txtNama.Location = new System.Drawing.Point(358, 160);
             this.txtNama.Name = "txtNama";
             this.txtNama.Size = new System.Drawing.Size(100, 20);
             this.txtNama.TabIndex = 1;
@@ -58,7 +60,7 @@
             // 
             // txtProdi
             // 
-            this.txtProdi.Location = new System.Drawing.Point(448, 188);
+            this.txtProdi.Location = new System.Drawing.Point(358, 186);
             this.txtProdi.Name = "txtProdi";
             this.txtProdi.Size = new System.Drawing.Size(100, 20);
             this.txtProdi.TabIndex = 2;
@@ -66,7 +68,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(448, 214);
+            this.txtEmail.Location = new System.Drawing.Point(358, 212);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
             this.txtEmail.TabIndex = 3;
@@ -74,9 +76,9 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(438, 268);
+            this.btnRegister.Location = new System.Drawing.Point(497, 382);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnRegister.Size = new System.Drawing.Size(91, 29);
             this.btnRegister.TabIndex = 5;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
@@ -85,7 +87,9 @@
             // NIM
             // 
             this.NIM.AutoSize = true;
-            this.NIM.Location = new System.Drawing.Point(334, 142);
+            this.NIM.BackColor = System.Drawing.Color.MidnightBlue;
+            this.NIM.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.NIM.Location = new System.Drawing.Point(320, 140);
             this.NIM.Name = "NIM";
             this.NIM.Size = new System.Drawing.Size(27, 13);
             this.NIM.TabIndex = 7;
@@ -94,7 +98,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(334, 169);
+            this.label1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(320, 167);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 8;
@@ -103,7 +109,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(334, 195);
+            this.label2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(320, 193);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 9;
@@ -112,7 +120,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(334, 221);
+            this.label3.BackColor = System.Drawing.Color.MidnightBlue;
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(320, 219);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 10;
@@ -120,19 +130,35 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(329, 268);
+            this.btnBack.Location = new System.Drawing.Point(198, 382);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.Size = new System.Drawing.Size(91, 29);
             this.btnBack.TabIndex = 12;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.MidnightBlue;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(306, 40);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(164, 25);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Menu Mahasiswa";
+            // 
             // RegisterMahasiswa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -143,6 +169,7 @@
             this.Controls.Add(this.txtProdi);
             this.Controls.Add(this.txtNama);
             this.Controls.Add(this.txtNIM);
+            this.DoubleBuffered = true;
             this.Name = "RegisterMahasiswa";
             this.Text = "RegisterMahasiswa";
             this.ResumeLayout(false);
@@ -162,5 +189,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label label4;
     }
 }

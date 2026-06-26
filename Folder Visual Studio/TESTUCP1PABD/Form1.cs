@@ -147,5 +147,10 @@ namespace TESTUCP1PABD
             RegisterMahasiswa reg = new RegisterMahasiswa();
             reg.ShowDialog();
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

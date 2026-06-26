@@ -74,10 +74,12 @@
             // 
             // LabelStatus
             // 
-            this.LabelStatus.AutoSize = true;
-            this.LabelStatus.Location = new System.Drawing.Point(12, 250);
+            this.LabelStatus.BackColor = System.Drawing.Color.Navy;
+            this.LabelStatus.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelStatus.ForeColor = System.Drawing.Color.White;
+            this.LabelStatus.Location = new System.Drawing.Point(38, 242);
             this.LabelStatus.Name = "LabelStatus";
-            this.LabelStatus.Size = new System.Drawing.Size(37, 13);
+            this.LabelStatus.Size = new System.Drawing.Size(77, 21);
             this.LabelStatus.TabIndex = 1;
             this.LabelStatus.Text = "Status";
             // 
@@ -92,16 +94,22 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(713, 214);
+            this.btnRead.BackColor = System.Drawing.Color.Navy;
+            this.btnRead.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRead.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRead.ForeColor = System.Drawing.Color.White;
+            this.btnRead.Location = new System.Drawing.Point(639, 184);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(75, 23);
             this.btnRead.TabIndex = 3;
             this.btnRead.Text = "Read";
-            this.btnRead.UseVisualStyleBackColor = true;
+            this.btnRead.UseVisualStyleBackColor = false;
             this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
             this.btnUpdate.Location = new System.Drawing.Point(713, 415);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
@@ -112,12 +120,16 @@
             // 
             // btnLogOut
             // 
+            this.btnLogOut.BackColor = System.Drawing.Color.Red;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.Color.White;
             this.btnLogOut.Location = new System.Drawing.Point(15, 418);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(75, 23);
             this.btnLogOut.TabIndex = 5;
             this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // txtNIDN
@@ -253,7 +265,7 @@
             // 
             // dtpJadwal
             // 
-            this.dtpJadwal.Location = new System.Drawing.Point(423, 243);
+            this.dtpJadwal.Location = new System.Drawing.Point(434, 242);
             this.dtpJadwal.Name = "dtpJadwal";
             this.dtpJadwal.Size = new System.Drawing.Size(195, 20);
             this.dtpJadwal.TabIndex = 10;
@@ -261,28 +273,34 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 280);
+            this.label1.BackColor = System.Drawing.Color.Navy;
+            this.label1.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(38, 278);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.Size = new System.Drawing.Size(77, 31);
             this.label1.TabIndex = 11;
             this.label1.Text = "Review Dosen";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(325, 245);
+            this.label2.BackColor = System.Drawing.Color.Navy;
+            this.label2.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(325, 242);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 13);
+            this.label2.Size = new System.Drawing.Size(103, 23);
             this.label2.TabIndex = 12;
             this.label2.Text = "Jadwal Bimbingan";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 219);
+            this.label3.BackColor = System.Drawing.Color.Navy;
+            this.label3.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(38, 217);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 13);
+            this.label3.Size = new System.Drawing.Size(77, 19);
             this.label3.TabIndex = 13;
             this.label3.Text = "NIDN";
             // 
@@ -296,12 +314,16 @@
             // 
             // btnLihatDraft
             // 
-            this.btnLihatDraft.Location = new System.Drawing.Point(713, 243);
+            this.btnLihatDraft.BackColor = System.Drawing.Color.Navy;
+            this.btnLihatDraft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLihatDraft.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLihatDraft.ForeColor = System.Drawing.Color.White;
+            this.btnLihatDraft.Location = new System.Drawing.Point(720, 184);
             this.btnLihatDraft.Name = "btnLihatDraft";
             this.btnLihatDraft.Size = new System.Drawing.Size(75, 23);
             this.btnLihatDraft.TabIndex = 15;
             this.btnLihatDraft.Text = "Open Draf";
-            this.btnLihatDraft.UseVisualStyleBackColor = true;
+            this.btnLihatDraft.UseVisualStyleBackColor = false;
             this.btnLihatDraft.Click += new System.EventHandler(this.btnLihatDraft_Click);
             // 
             // txtID
@@ -316,6 +338,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.btnLihatDraft);
@@ -333,6 +357,7 @@
             this.Controls.Add(this.comboBoxStatus);
             this.Controls.Add(this.LabelStatus);
             this.Controls.Add(this.dataGridView1);
+            this.DoubleBuffered = true;
             this.Name = "Dosen";
             this.Text = "Dosen";
             this.Load += new System.EventHandler(this.Dosen_Load);

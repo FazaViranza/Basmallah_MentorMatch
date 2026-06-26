@@ -88,32 +88,38 @@
             // 
             // btnBrowse
             // 
+            this.btnBrowse.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnBrowse.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnBrowse.Location = new System.Drawing.Point(557, 362);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(75, 23);
             this.btnBrowse.TabIndex = 4;
             this.btnBrowse.Text = "Browse";
-            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.UseVisualStyleBackColor = false;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // btnRead
             // 
+            this.btnRead.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnRead.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnRead.Location = new System.Drawing.Point(682, 400);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(75, 23);
             this.btnRead.TabIndex = 5;
             this.btnRead.Text = "Read";
-            this.btnRead.UseVisualStyleBackColor = true;
+            this.btnRead.UseVisualStyleBackColor = false;
             this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
             // 
             // btnUpdate
             // 
+            this.btnUpdate.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnUpdate.Location = new System.Drawing.Point(682, 362);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnBack
@@ -280,6 +286,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(533, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 13);
@@ -289,6 +297,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Location = new System.Drawing.Point(533, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 13);
@@ -299,6 +309,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -314,6 +326,7 @@
             this.Controls.Add(this.txtSertifikat);
             this.Controls.Add(this.txtHasilLomba);
             this.Controls.Add(this.txtID);
+            this.DoubleBuffered = true;
             this.Name = "UpdateHasilLomba";
             this.Text = "UpdateHasilLomba";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
